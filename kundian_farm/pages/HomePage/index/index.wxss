@@ -1,0 +1,37 @@
+@import "../../../../wuBaseWxss/1.wxss";
+
+.swiper_pic{width: 100%; height: 490rpx !important;}
+.content{background-color: #fff; padding: 0 30rpx;
+    position: relative; top: -30rpx;
+}
+.graph{
+    height: 410rpx; padding: 30rpx; position: relative;
+    box-shadow: 0 2rpx 20rpx 0 rgba(0,0,0,0.08); border-radius: 20rpx;
+}
+.charts_group{display: flex; justify-content: space-between; align-items: center;}
+.right{display: flex; align-items: center;}
+.right .red, .right .blue{width: 14rpx; height: 14rpx; border-radius: 50%; margin-right: 12rpx;}
+.right .red{ background-color: #ED4F4F; box-shadow: 0 0 0 6rpx #fcbaba;}
+.right .blue{ background-color: #447FFF; box-shadow: 0 0 0 6rpx #9fbbf6;}
+.right1{margin-left: 40rpx;}
+#mychart_line{width: 100%; height: 170rpx; position: absolute; bottom: 16rpx; left: 0; z-index: 9;}
+.home_bar{display: flex; align-items: center; background-color: #E8EFFC; border-radius: 20rpx; padding: 16rpx 30rpx; margin: 30rpx 0;}
+.bar_pic{display: block; flex-shrink: 0; width: 70rpx; height: 82rpx;}
+.bar_right{position: relative; margin-left: 24rpx; padding-left: 24rpx;}
+.bar_right::before{content: ''; display: block; width: 2rpx; height: 50rpx; background-color: #7fa7fd; position: absolute; left: 0; top: 50%; transform: translateY(-50%);}
+.bar_title{display: block; font-size: 28rpx; color: #333333;}
+.bar_desc{font-size: 20rpx; color: #999999;}
+
+.adopt_list{height: auto;}
+.adopt_list .icon_time{ width: 20rpx; height: 20rpx; margin-right: 8rpx; }
+.flex_wid{width: 390rpx;}
+.list_item{display: flex; align-items: center;}
+.item_pic{display: block; width: 220rpx; height: 220rpx; border-radius: 16rpx; margin-right: 24rpx;}
+.item_title{font-size: 32rpx; color: #333333; font-weight: 500;}
+.flex_center{display: flex; align-items: center; justify-content: space-between;}
+.adopt_list .text1{font-size: 24rpx; color: #999999; margin-top: 16rpx;}
+.adopt_list .red_num{font-size: 32rpx; color: #ED4F4F;}
+.adopt_list .progress{margin: 12rpx 0 38rpx; position: relative; height: 26rpx;}
+.adopt_list .progress_bg, .adopt_list .progress_active{width: 100%; height: 26rpx; border-radius: 16px; position: absolute; top: 0;}
+.adopt_list .progress_bg{ background-color: #F2F2F2;  z-index: 1;}
+.adopt_list .progress_active{width: 30%; background-color: #447FFF;  z-index: 3;}

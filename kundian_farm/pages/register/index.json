@@ -1,0 +1,10 @@
+{
+    "enablePullDownRefresh": false,
+    "navigationBarTitleText": "微信登录",
+    "navigationStyle": "custom",
+    "backgroundTextStyle":"dark",
+    "backgroundColor": "#fff",
+    "usingComponents": {
+        "cu-custom": "/colorui/components/cu-custom"
+    }
+}

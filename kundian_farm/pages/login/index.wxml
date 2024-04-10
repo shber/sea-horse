@@ -1,0 +1,28 @@
+<!--
+ * @Author: Shber
+ * @Date: 2023-09-13 18:48:16
+ * @LastEditors: Shber
+ * @LastEditTime: 2024-04-09 21:42:28
+ * @Description: 
+-->
+<view class="login_content">
+  <view class="header">
+    <view class="title">密码登录</view>
+    <view class="title_desc">登录享受更精彩</view>
+  </view>
+  <view class="content">
+    <view class="label">
+      <image src="../../images/new/login.png" class="login_icon"></image>
+      <input type="number" class="login_input" placeholder-class="placeholder" maxlength="11" placeholder="请输入手机号"/>
+    </view>
+    <view class="label label1">
+      <image src="../../images/new/login1.png" class="login_icon"></image>
+      <input class="login_input" placeholder-class="placeholder" placeholder="请输入密码"/>
+    </view>
+    <view>
+      <button type="primary" class="primary">登录</button>
+      <text class="link" bindtap="goPath">没有账户，立即注册</text>
+    </view>
+  </view>
+</view>
+

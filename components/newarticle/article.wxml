@@ -1,0 +1,33 @@
+<!--
+ * @Author: Shber
+ * @Date: 2024-04-09 20:14:40
+ * @LastEditors: Shber
+ * @LastEditTime: 2024-04-09 20:33:53
+ * @Description: 
+-->
+<view bindtap="intoArticle" class="notice-wrapper">
+    <image class="title_bg" src="../../kundian_farm/images/new/title.jpg"></image>
+    <view class="content">
+        <view class="common-wrapper">
+            <view class="titles">{{typeData[0].type_name}}</view>
+            <view class="desc">东方红撒疯哈哈等哈看了凤凰的考拉和疯狂老大开发打开了点饭哈发达</view>
+            <!-- <view class="swiper">
+                <swiper autoplay="true" circular="true" class="swiper-content" vertical="true">
+                    <swiper-item wx:if="{{idx%2==0}}" wx:for="{{list}}" wx:for-index="idx" wx:key="id">
+                        <view class="swiper-item">{{item.title}}</view>
+                    </swiper-item>
+                </swiper>
+            </view> -->
+        </view>
+        <!-- <view class="common-wrapper">
+            <view class="titles">{{typeData[1].type_name}}</view>
+            <view class="swiper">
+                <swiper autoplay="true" circular="true" class="swiper-content" vertical="true">
+                    <swiper-item wx:if="{{idx%2!=0}}" wx:for="{{list}}" wx:for-index="idx" wx:key="index">
+                        <view class="swiper-item">{{item.title}}</view>
+                    </swiper-item>
+                </swiper>
+            </view>
+        </view> -->
+    </view>
+</view>

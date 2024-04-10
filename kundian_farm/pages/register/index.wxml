@@ -1,0 +1,36 @@
+<!--
+ * @Author: Shber
+ * @Date: 2023-09-13 18:48:16
+ * @LastEditors: Shber
+ * @LastEditTime: 2024-04-09 21:42:04
+ * @Description: 
+-->
+<view class="login_content">
+  <view class="header">
+    <view class="title">立即注册</view>
+    <view class="title_desc">登录享受更精彩</view>
+  </view>
+  <view class="content">
+    <view class="label">
+      <image src="../../images/new/login.png" class="login_icon"></image>
+      <input type="number" class="login_input" placeholder-class="placeholder" maxlength="11" placeholder="请输入手机号"/>
+    </view>
+    <view class="label label1">
+      <image src="../../images/new/login1.png" class="login_icon"></image>
+      <input class="login_input" placeholder-class="placeholder" placeholder="请输入密码"/>
+    </view>
+    <view class="label_code label1">
+      <view class="label" style="flex:3">
+        <image src="../../images/new/login2.png" class="login_icon"></image>
+        <input class="login_input" placeholder-class="placeholder" placeholder="验证码"/>
+      </view>
+      <button style="flex:2" type="primary" class="send_btn" hover-class="none" wx:if="{{false}}">发送验证码</button>
+      <button style="flex:2" type="normal" class="send_btn" wx:else>40S后重发</button>
+    </view>
+    <view>
+    <button type="primary" class="primary" hover-class="none">注册</button>
+    <text class="link" bindtap="goPath">已有账户，立即登录</text>
+    </view>
+  </view>
+</view>
+

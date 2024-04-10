@@ -1,0 +1,66 @@
+<!--
+ * @Author: Shber
+ * @Date: 2020-12-01 23:03:44
+ * @LastEditors: Shber
+ * @LastEditTime: 2024-04-10 21:37:40
+ * @Description: 
+-->
+<!-- <tarbar SystemInfo="{{SystemInfo}}" list="{{tarbar}}" path="kundian_farm/pages/HomePage/index/index"></tarbar> -->
+<!-- <navigation bgColor="{{setData.nav_top_color}}" fontColor="{{setData.front_color}}" hidden="{{isBarHidden}}" isIphoneX="{{isIphoneX}}" istopShow="true" title="{{setData.bar_title}}"></navigation> -->
+<view class="home_page">
+    <view class="swiper_pic">
+        <swiper style="height: 490rpx;" autoplay="{{autoplay}}" duration="{{duration}}">
+          <block wx:for="{{background}}" wx:key="*this">
+            <swiper-item class="swiper_item">
+                <image src="https://st-b2b.maiyatian.com/product/202404/t254984736522305.png" class="swiper_pic"></image>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <view class="content">
+        <view class="graph">
+            <view class="charts_group"> 
+                <view class="my_title"><text>走势图</text></view>
+                <view class="right">
+                    <view class="right"> <view class="blue"></view> 价格</view>
+                    <view class="right right1"> <view class="red"></view> 销量</view>
+                </view>
+            </view>
+            <ec-canvas id="mychart_line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+        </view>
+        <view class="home_bar">
+            <image src="../../../images/new/img_gao.png" class="bar_pic"></image>
+            <view class="bar_right">
+                <text class="bar_title">放大喝了咖啡哈哈</text>
+                <text class="bar_desc">的好看立法会大楼开会发了阿道夫厉害啊啊发的的好看立法会大楼开</text>
+            </view>
+        </view>
+
+        <view class="graph adopt_list">
+            <view class="list_item">
+                <image src="https://st-b2b.maiyatian.com/product/202404/t254984736522305.png" class="item_pic"></image>
+                <view class="flex_wid">
+                    <view class="item_title">海马人样</view>
+                    <view class="flex_center text1">
+                        <view class="flex_center">  
+                            <image src="../../../images/new/ico_time.png" class="icon_time"></image>距离成熟
+                        </view>
+                        <text>64天/90天</text>
+                    </view>
+                    <view class="progress">
+                        <view class="progress_bg"></view>
+                        <view class="progress_active"></view>
+                    </view>
+                    <view class="flex_center">
+                        <text class="red_num">$232.00</text>
+                        <view class="selectedNum-wrapper">
+                            <view bindtap="reduce">-</view>
+                            <input bindinput="inputNum" type="number" value="{{selectNum}}"></input>
+                            <view bindtap="add">+</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+      </view>
+</view>

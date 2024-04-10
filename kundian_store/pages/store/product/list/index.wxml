@@ -1,0 +1,67 @@
+<view>
+    <!-- <scroll-view scrollX class="bg-white nav">
+        <view class="flex text-center">
+            <view bindtap="changeIndex" class="cu-item flex-sub {{currentIndex==4?'text-green cur':''}}" data-index="4" style="color:{{currentIndex==4?bgColor:''}};">
+                全部
+            </view>
+            <view bindtap="changeIndex" class="cu-item flex-sub {{currentIndex==1?'text-green cur':''}}" data-index="1" style="color:{{currentIndex==1?bgColor:''}};">
+                待付款
+            </view>
+            <view bindtap="changeIndex" class="cu-item flex-sub {{currentIndex==2?'text-green cur':''}}" data-index="2" style="color:{{currentIndex==2?bgColor:''}};">
+                待配送
+            </view>
+            <view bindtap="changeIndex" class="cu-item flex-sub {{currentIndex==3?'text-green cur':''}}" data-index="3" style="color:{{currentIndex==3?bgColor:''}};">
+                待收货
+            </view>
+        </view>
+    </scroll-view> -->
+    <view class="order-content" wx:if="{{isContent}}">
+        <block wx:for="{{orderData}}" wx:key="id">
+            <view class="mainBody" >
+                <view class="ptl30">
+                    <!-- <view style="color:{{bgColor}}">
+                        <view class="itemType">
+                            <text class="order-number">订单编号：{{item.order_number}}</text>
+                            <text class="order-time">添加时间：{{item.create_time}}</text>
+                            <text class="order-status">{{item.status_txt}}</text>
+                        </view>
+                    </view> -->
+                    <view bindtap="intoGoodsDetail" class="flex mt20 brb" data-orderid="{{item.id}}" >
+                        <image class="HeadImg" src="{{item.cover}}"></image>
+                        <view class="ml20">
+                            <view class="itemName">{{item.goods_name}}</view>
+                            <view class="flex mt10 f28 cf93">
+                                <block wx:for="{{val.specItem}}" wx:for-item="value" wx:key="valIndex">
+                                    <text>{{value.name}}:</text>
+                                    <text class="ml10">{{value.spec_value}}</text>
+                                </block>
+                            </view>
+                            <view class="cf93">
+                                <text class="f32 cf2b">￥{{item.price}}</text>
+                                <!-- <text class="ml20 f26 fThrough">￥{{item.Oprice}}</text>
+                                <text class="ml20 f26">X{{val.count}}</text> -->
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="btnArr">
+                    <button bindtap="intoGoodsDetail" class="cu-btn round line-blue" data-orderid="{{item.id}}" style="color:{{bgColor}}" >查看</button>
+                    <!-- <button bindtap="deleteOrder" class="cu-btn round line-gray button-hover" data-orderid="{{item.id}}" >编辑</button> -->
+                    <!-- <button bindtap="commentOrder" class="cu-btn round line-green" data-orderid="{{item.id}}" style="color:{{bgColor}}" wx:if="{{item.status_code==3&&item.is_comment==0}}">删除</button> -->
+                </view>
+            </view>
+
+        </block>
+    </view>
+    <view wx:if="{{!isContent}}">
+        <view class="none">
+            <image src="../../../images/icon/none.png"></image>
+            <text class="tags">您还没有相关的商品</text>
+        </view>
+    </view>
+</view>
+<view bindtap="hideVerify" class="verify-mask" hidden="{{show_verify}}"></view>
+<view class="verify-code" hidden="{{show_verify}}">
+    <view>核销二维码</view>
+    <image src="{{verify_qrcode}}"></image>
+</view>

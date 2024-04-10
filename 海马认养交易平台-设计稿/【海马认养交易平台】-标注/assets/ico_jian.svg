@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ico_jian</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1-1首页" transform="translate(-516.000000, -1238.000000)" fill-rule="nonzero">
+            <g id="认养" transform="translate(30.000000, 1022.000000)">
+                <g id="缩小" transform="translate(486.000000, 216.000000)">
+                    <g id="编组-7">
+                        <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="18" height="18"></rect>
+                        <path d="M15.52464,7.56 L2.484,7.56 C1.68870996,7.56 1.044,8.20470996 1.044,9 C1.044,9.79529004 1.68870996,10.44 2.484,10.44 L15.52464,10.44 C16.31993,10.44 16.96464,9.79529004 16.96464,9 C16.96464,8.20470996 16.31993,7.56 15.52464,7.56 L15.52464,7.56 Z" id="路径" fill="#999999"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

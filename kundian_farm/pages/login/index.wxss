@@ -1,0 +1,21 @@
+page {
+    font-size: 30rpx;
+    background: white;
+}
+.header{
+    color: #fff; font-size: 56rpx; background-color: #447fff;
+    padding: 16rpx 60rpx; padding-bottom: 180rpx; padding-top: 140rpx; 
+}
+.content{background-color: #fff; padding: 100rpx 80rpx 0; border-radius: 50rpx;
+    position: relative; top: -70rpx;
+}
+.title_desc{font-size: 30rpx; margin-top: 16rpx;}
+.label{display: flex; align-items: center; padding: 26rpx 40rpx;
+    background-color: #F6F6F6; border-radius: 50rpx;
+}
+.placeholder{color: #B8B8B8;}
+.label1{margin-top: 50rpx;}
+.login_icon{width: 34rpx; height: 34rpx; margin-right: 26rpx;}
+.primary{margin-top: 150rpx;}
+.link{ margin-top: 50rpx; display: flex; color: #447FFF; justify-content: center; text-align: center; text-decoration: underline;}
+button[type=primary]{background-color: #447FFF; border-radius: 25px;}
