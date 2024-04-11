@@ -1,0 +1,9 @@
+{
+    "enablePullDownRefresh": false,
+    "navigationBarTitleText": "转卖",
+    "backgroundColor": "#fff",
+    "usingComponents": {
+        "cu-custom": "/colorui/components/cu-custom",
+        "popupView": "/components/popupView/index"
+    }
+}

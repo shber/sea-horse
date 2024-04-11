@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-09 21:42:28
+ * @LastEditTime: 2024-04-11 20:25:17
  * @Description: 
 -->
 <view class="login_content">
@@ -20,7 +20,7 @@
       <input class="login_input" placeholder-class="placeholder" placeholder="请输入密码"/>
     </view>
     <view>
-      <button type="primary" class="primary">登录</button>
+      <button type="primary" hover-class="none" class="primary">登录</button>
       <text class="link" bindtap="goPath">没有账户，立即注册</text>
     </view>
   </view>

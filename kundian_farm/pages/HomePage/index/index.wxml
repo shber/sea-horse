@@ -2,10 +2,10 @@
  * @Author: Shber
  * @Date: 2020-12-01 23:03:44
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-10 21:37:40
+ * @LastEditTime: 2024-04-11 19:09:19
  * @Description: 
 -->
-<!-- <tarbar SystemInfo="{{SystemInfo}}" list="{{tarbar}}" path="kundian_farm/pages/HomePage/index/index"></tarbar> -->
+<tarbar SystemInfo="{{SystemInfo}}" list="{{tarbar}}" path="kundian_farm/pages/HomePage/index/index"></tarbar>
 <!-- <navigation bgColor="{{setData.nav_top_color}}" fontColor="{{setData.front_color}}" hidden="{{isBarHidden}}" isIphoneX="{{isIphoneX}}" istopShow="true" title="{{setData.bar_title}}"></navigation> -->
 <view class="home_page">
     <view class="swiper_pic">

@@ -1,0 +1,15 @@
+<!--
+ * @Author: Shber
+ * @Date: 2024-04-11 21:11:09
+ * @LastEditors: Shber
+ * @LastEditTime: 2024-04-11 21:22:05
+ * @Description: 
+-->
+<view class="popupView" wx:if="{{ showPopup }}">
+    <!-- 遮罩区域，点击隐藏弹出层 -->
+    <view class="close" bindtap="changePopupView"></view> 
+    <!-- 内容区 -->
+    <view class="content" style="height: {{height}}rpx">
+        <slot></slot>
+    </view>
+</view>

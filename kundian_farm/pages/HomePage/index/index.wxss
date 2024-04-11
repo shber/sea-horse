@@ -8,6 +8,7 @@
     height: 410rpx; padding: 30rpx; position: relative;
     box-shadow: 0 2rpx 20rpx 0 rgba(0,0,0,0.08); border-radius: 20rpx;
 }
+.home_page{padding-bottom: 102rpx;}
 .charts_group{display: flex; justify-content: space-between; align-items: center;}
 .right{display: flex; align-items: center;}
 .right .red, .right .blue{width: 14rpx; height: 14rpx; border-radius: 50%; margin-right: 12rpx;}

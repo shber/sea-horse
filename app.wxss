@@ -3659,6 +3659,8 @@ page {
     width: 200rpx; height: 14rpx;
     background-image: linear-gradient(270deg, rgba(68,127,255,0.00) 0%, #447FFF 100%);
     border-radius: 7rpx; position: absolute; bottom: 0; left: 0; z-index: 3;}
+    .no_check{color: #808080; font-weight: normal;}
+    .no_check::after{display: none;}
 .selectedNum-wrapper {
     display: flex;
     align-items: center;
@@ -3709,4 +3711,6 @@ page {
     border: 1rpx solid #D1D1D1;
     color: #989898;
 }
+button[type=primary]{background-color: #447FFF; border-radius: 25px;}
+
     

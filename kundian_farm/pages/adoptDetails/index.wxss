@@ -1,0 +1,40 @@
+page { font-size: 30rpx; background: #f8f8f9; }
+.my_content{
+ position: relative;
+ padding-bottom: 140rpx;
+}
+.header{
+    padding-top: 500rpx;
+    background-color: skyblue; width: 100%; height: 760rpx;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+.pic_bg{width: 100%; height: 760rpx; position: absolute; top: 0;}
+.head_tab{ display: flex; color: #fff; }
+.head_tab view{white-space: nowrap; padding: 16rpx 30rpx;
+    background-color: rgba(0,0,0, 0.4); border: 1rpx solid #fff; border-radius: 20rpx; margin: 0 5rpx;
+}
+.details{margin-top: 0;}
+.active{background-color: #fff !important; color: #447FFF;}
+.pd_30{padding: 0 30rpx; height: auto;}
+.shadow_card{
+    padding: 30rpx; background-color: #fff;
+    box-shadow: 0 2rpx 20rpx 0 rgba(0,0,0,0.08); border-radius: 20rpx;
+    position: relative; top: -100rpx;
+}
+
+.shadow_card .item_title{ margin-top: 20rpx; font-size: 34rpx; color: #333333; font-weight: 500;}
+.shadow_card .item_money{font-size: 46rpx; color: #ED4F4F; font-weight: 500;}
+.shadow_card .progress{ margin-left: 40rpx; position: relative; height: 26rpx; width: 240rpx;}
+.shadow_card .progress_bg, .shadow_card .progress_active{width: 100%; height: 26rpx; border-radius: 16px; position: absolute; top: 0;}
+.shadow_card .progress_bg{ background-color: #F2F2F2;  z-index: 1;}
+.shadow_card .progress_active{width: 30%; background-color: #447FFF;  z-index: 3;}
+.flex_center{display: flex; justify-content: space-between; align-items: center; font-size: 28rpx;}
+.text1{margin: 30rpx 0;}
+.text1 text{color: #999;}
+.check_tab{ margin: 30rpx 0; display: flex; justify-content: space-around;}
+.fixed_btn{padding: 20rpx 30rpx; width: 100%; box-sizing: border-box; box-shadow: 0 0 10px 0 rgba(0,0,0,0.10);
+    position: fixed; bottom: 0; z-index: 9; background-color: #fff;
+}
+

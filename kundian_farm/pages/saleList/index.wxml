@@ -1,0 +1,68 @@
+<!--
+ * @Author: Shber
+ * @Date: 2023-09-13 18:48:16
+ * @LastEditors: Shber
+ * @LastEditTime: 2024-04-11 21:39:24
+ * @Description: 
+-->
+<view class="my_content">
+  <view class="pd_30">
+    <view class="graph adopt_list">
+      <view>
+        <view class="list_item">
+          <image src="https://yhm.m666m.cc/addons/kundian_farm/resource/image/animal-src.png" class="item_pic"></image>
+          <view class="flex_wid">
+              <view class="item_title">海马人样</view>
+              <view class="flex_center text1">
+                  <view class="flex_center">  
+                      <image src="../../images/new/ico_shu.png" class="icon_time"></image>转卖数量
+                  </view>
+                  <text class="number">200只</text>
+              </view>
+              <view class="flex_center text1">
+                <view class="flex_center">  
+                    <image src="../../images/new/ico_time.png" class="icon_time"></image>距离成熟
+                </view>
+                <text>64天/90天</text>
+            </view>
+              <view class="progress">
+                  <view class="progress_bg"></view>
+                  <view class="progress_active"></view>
+              </view>
+          </view>
+        </view>
+        <view class="flex_center flex_center1">
+          <text class="red_num">$232.00</text>
+          <view class="">
+            <button type="primary" hover-class="none" class="primary" bindtap="setPopupShow">立即领养</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <popupView showPopup="{{popupShow}}" height="{{558}}"> 
+    <view>
+      <view class="card_item">
+        <image src="https://yhm.m666m.cc/addons/kundian_farm/resource/image/animal-src.png" class="item_pic"></image>
+        <view class="item_right">
+          <view class="item_title">海马人样</view>
+          <view class="item_number">$200.32</view>
+        </view>
+      </view>
+      <view class="flex_center flex_center2">
+        <text class="">数量</text>
+        <view class="selectedNum-wrapper">
+            <view bindtap="reduce">-</view>
+            <input bindinput="inputNum" type="number" value="{{selectNum}}"></input>
+            <view bindtap="add">+</view>
+        </view>
+      </view>
+
+      <button type="primary" hover-class="none" bindtap="setPopupHide">立即领养</button>
+    </view>
+
+  </popupView>
+
+</view>
+
