@@ -11,6 +11,20 @@
     "miniprogram": {
       "list": [
         {
+          "name": "个人中心",
+          "pathName": "kundian_farm/pages/userInfo/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "订单列表",
+          "pathName": "kundian_farm/pages/adoptList/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "转卖列表",
           "pathName": "kundian_farm/pages/saleList/index",
           "query": "",

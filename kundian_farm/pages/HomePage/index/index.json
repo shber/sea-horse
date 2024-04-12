@@ -5,28 +5,6 @@
     "navigationBarTitleText": "首页",
     "enablePullDownRefresh": true,
     "usingComponents": {
-        "ec-canvas": "/components/echarts/ec-canvas/ec-canvas",
-        "slide": "/components/slide/slide",
-        "newslide": "/components/newslide/slide",
-        "weather": "/components/weather/weather",
-        "homeBtm": "/components/homeBtm/homeBtm",
-        "icon": "/components/icon/icon",
-        "headline": "/components/headline/headline",
-        "pictureList": "/components/pictureList/pictureList",
-        "glossary": "/components/glossary/glossary",
-        "blank": "/components/blank/blank",
-        "searchBox": "/components/searchBox/searchBox",
-        "line": "/components/line/line",
-        "coupon": "/components/coupon/coupon",
-        "article": "/components/article/article",
-        "newarticle": "/components/newarticle/article",
-        "advert": "/components/advert/advert",
-        "shopList": "/components/shopList/shopList",
-        "active": "/components/active/active",
-        "tarbar": "/components/tarbar/tarbar",
-        "videos": "/components/videos/videos",
-        "navigation": "/components/navigation/navigation",
-        "crowd": "/components/crowd/crowd",
-        "cu-custom": "/colorui/components/cu-custom"
+        "tarbar": "/components/tarbar/tarbar"
     }
 }

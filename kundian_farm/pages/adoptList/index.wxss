@@ -1,0 +1,50 @@
+page { font-size: 30rpx; background: #f8f8f9; }
+.my_content{ position: relative; padding-top: 80rpx;}
+.pd_30{padding: 0 30rpx; height: auto;}
+
+.graph{
+    height: 410rpx; padding: 30rpx; position: relative; margin-top: 30rpx;
+    box-shadow: 0 2rpx 20rpx 0 rgba(0,0,0,0.08); border-radius: 20rpx; background-color: #fff;
+}
+.status{font-size: 30rpx; color: #447FFF; font-weight: 500;}
+.adopt_item{height: auto;}
+.adopt_item .icon_time{ width: 20rpx; height: 20rpx; margin-right: 8rpx; }
+.flex_wid{width: 390rpx;}
+.list_item{display: flex; align-items: center;}
+.item_pic{display: block; width: 220rpx; height: 220rpx; border-radius: 16rpx; margin-right: 24rpx;}
+.item_title{font-size: 32rpx; color: #333333; font-weight: 500;}
+.flex_center{display: flex; align-items: center; justify-content: space-between;}
+.adopt_item .text1{font-size: 24rpx; color: #999999; margin-top: 16rpx;}
+.flex_center .red_num{font-size: 40rpx; color: #ED4F4F; font-weight: 500;}
+.adopt_item .progress{margin: 12rpx 0rpx; position: relative; height: 26rpx;}
+.adopt_item .progress_bg, .adopt_item .progress_active{width: 100%; height: 26rpx; border-radius: 16px; position: absolute; top: 0;}
+.adopt_item .progress_bg{ background-color: #F2F2F2;  z-index: 1;}
+.adopt_item .progress_active{width: 30%; background-color: #447FFF;  z-index: 3;}
+.primary{height: 64rpx; line-height: 64rpx; border-radius: 12rpx !important; font-size: 28rpx;}
+.flex_center1{margin-top: 24rpx;}
+.number1{font-size: 26rpx; color: #333333;}
+
+.item_right{display: flex; flex-direction: column; justify-content: space-between; padding: 8rpx 0;}
+.card_item{display: flex;}
+.card_item .item_tip{font-size: 28rpx; color: #666666; margin-top: 16rpx;}
+.item_number{font-size: 46rpx; color: #ED4F4F;}
+.flex_center2{margin: 45rpx 0 65rpx;}
+
+.tab_info{
+    display: flex; width: 100%; box-sizing: border-box; justify-content: space-between; align-items: center;
+    font-size: 28rpx; padding: 21rpx 60rpx 0; background-color: #fff;
+    position: fixed;
+    top: 0; left: 0; z-index: 99;
+}
+.tab_info view{ border-bottom: 2px solid transparent; padding-bottom: 16rpx; }
+.tab_info .active{ color: #447FFF; font-weight: 500; border-bottom: 2px solid #447FFF;}
+.text2{font-size: 28rpx; color: #999999; margin-top: 43rpx;}
+.text2 .number{font-size: 32rpx; color: #ED4F4F;}
+.flex_center1 .text, .bottom_text{font-size: 26rpx; color: #666666; line-height: 50rpx;}
+.right_text{font-size: 26rpx; color: #333333;}
+.right_text i{font-size: 26rpx; color: #ED4F4F;}
+.right_btn{display: flex; justify-content: flex-end; margin-top: 24rpx;}
+.right_btn .primary{width: 168rpx; float: right; margin: 0;}
+
+
+

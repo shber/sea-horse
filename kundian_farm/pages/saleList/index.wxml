@@ -2,10 +2,15 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-11 21:39:24
+ * @LastEditTime: 2024-04-12 17:46:57
  * @Description: 
 -->
 <view class="my_content">
+  <view class="tab_info">
+    <view>成熟时间</view>
+    <view class="active">价格</view>
+    <view>溢价比例</view>
+  </view>
   <view class="pd_30">
     <view class="graph adopt_list">
       <view>

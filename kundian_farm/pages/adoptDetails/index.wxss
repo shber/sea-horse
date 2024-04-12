@@ -18,11 +18,7 @@ page { font-size: 30rpx; background: #f8f8f9; }
 .details{margin-top: 0;}
 .active{background-color: #fff !important; color: #447FFF;}
 .pd_30{padding: 0 30rpx; height: auto;}
-.shadow_card{
-    padding: 30rpx; background-color: #fff;
-    box-shadow: 0 2rpx 20rpx 0 rgba(0,0,0,0.08); border-radius: 20rpx;
-    position: relative; top: -100rpx;
-}
+.shadow_card{ top: -100rpx; }
 
 .shadow_card .item_title{ margin-top: 20rpx; font-size: 34rpx; color: #333333; font-weight: 500;}
 .shadow_card .item_money{font-size: 46rpx; color: #ED4F4F; font-weight: 500;}

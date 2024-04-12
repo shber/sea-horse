@@ -3712,5 +3712,10 @@ page {
     color: #989898;
 }
 button[type=primary]{background-color: #447FFF; border-radius: 25px;}
+.shadow_card{
+    padding: 30rpx; background-color: #fff;
+    box-shadow: 0 2rpx 20rpx 0 rgba(0,0,0,0.08); border-radius: 20rpx;
+    position: relative;
+}
 
     

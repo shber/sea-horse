@@ -1,0 +1,70 @@
+<!--
+ * @Author: Shber
+ * @Date: 2023-09-13 18:48:16
+ * @LastEditors: Shber
+ * @LastEditTime: 2024-04-12 18:57:56
+ * @Description: 
+-->
+<view class="my_content">
+  <view class="header">
+    <view class="flex_left user_info">
+      <image src="https://yhm.m666m.cc/addons/kundian_farm/resource/image/animal-src.png" class="user_pic"></image>
+      <view>登录/注册</view>
+    </view>
+
+    
+  </view>
+  <view class="pd_30 card1">
+    <view class="shadow_card">
+      <view class="money">560.12</view>
+      <view class="label_tip">账户余额（元）</view>
+      <view class="flex_center">
+        <button type="primary" class="small_btn small_btn1" hover-class="none" bindtap="setPopupHide">充值</button>
+        <button type="primary" class="small_btn small_btn2" hover-class="none" bindtap="setPopupHide">提现</button>
+      </view>
+    </view>
+
+    <view class="shadow_card card2">
+      <view class="my_title">我的认养</view>
+      <view class="tab_card">
+        <view>
+          <image src="../../images/new/ico_quan.png" class="card_icon"></image>
+          全部
+        </view>
+        <view>
+          <image src="../../images/new/ico_ren.png" class="card_icon"></image>
+          认养中
+        </view>
+        <view>
+          <image src="../../images/new/ico_wan.png" class="card_icon"></image>
+          已完成
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <popupView showPopup="{{popupShow}}" height="{{558}}"> 
+    <view>
+      <view class="card_item">
+        <image src="https://yhm.m666m.cc/addons/kundian_farm/resource/image/animal-src.png" class="item_pic"></image>
+        <view class="item_right">
+          <view class="item_title">海马人样</view>
+          <view class="item_number">$200.32</view>
+        </view>
+      </view>
+      <view class="flex_center flex_center2">
+        <text class="">数量</text>
+        <view class="selectedNum-wrapper">
+            <view bindtap="reduce">-</view>
+            <input bindinput="inputNum" type="number" value="{{selectNum}}"></input>
+            <view bindtap="add">+</view>
+        </view>
+      </view>
+
+      <button type="primary" hover-class="none" bindtap="setPopupHide">立即领养</button>
+    </view>
+
+  </popupView>
+
+</view>
+
