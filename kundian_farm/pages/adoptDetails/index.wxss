@@ -20,11 +20,12 @@ page { font-size: 30rpx; background: #f8f8f9; }
 .pd_30{padding: 0 30rpx; height: auto;}
 .shadow_card{ top: -100rpx; }
 
+.item_desc{font-size: 28rpx; color: #666; margin-top: 10rpx; margin-bottom: 30rpx;}
 .shadow_card .item_title{ margin-top: 20rpx; font-size: 34rpx; color: #333333; font-weight: 500;}
 .shadow_card .item_money{font-size: 46rpx; color: #ED4F4F; font-weight: 500;}
 .shadow_card .progress{ margin-left: 40rpx; position: relative; height: 26rpx; width: 240rpx;}
 .shadow_card .progress_bg, .shadow_card .progress_active{width: 100%; height: 26rpx; border-radius: 16px; position: absolute; top: 0;}
-.shadow_card .progress_bg{ background-color: #F2F2F2;  z-index: 1;}
+.shadow_card .progress_bg{overflow: hidden; background-color: #F2F2F2;  z-index: 1;}
 .shadow_card .progress_active{width: 30%; background-color: #447FFF;  z-index: 3;}
 .flex_center{display: flex; justify-content: space-between; align-items: center; font-size: 28rpx;}
 .text1{margin: 30rpx 0;}

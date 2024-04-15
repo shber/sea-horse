@@ -3717,5 +3717,37 @@ button[type=primary]{background-color: #447FFF; border-radius: 25px;}
     box-shadow: 0 2rpx 20rpx 0 rgba(0,0,0,0.08); border-radius: 20rpx;
     position: relative;
 }
+.text_overflow, .text_over {
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+  }
+  
+  .text_overflow2 {
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+  }
+  
+  .text_overflow3 {
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+  }
 
     

@@ -5,8 +5,8 @@ page { font-size: 30rpx; background: #f8f8f9; }
 
 .flex_center{display: flex; align-items: center; justify-content: space-between;}
 .flex_left{display: flex; align-items: center;}
-.user_info{margin-top: 200rpx;}
-.header{height: 500rpx; padding: 30rpx; color: #fff; font-size: 30rpx; box-sizing: border-box; background-image: linear-gradient(179deg, #447FFF 0%, #447FFF 38%, rgba(68,127,255,0.80) 84%, rgba(68,127,255,0.00) 100%);}
+.user_info{margin-top: 150rpx;}
+.header{height: 450rpx; padding: 30rpx; color: #fff; font-size: 30rpx; box-sizing: border-box; background-image: linear-gradient(179deg, #447FFF 0%, #447FFF 38%, rgba(68,127,255,0.80) 84%, rgba(68,127,255,0.00) 100%);}
 .user_pic{width: 120rpx; height: 120rpx; border-radius: 50%; margin-right: 30rpx;}
 .shadow_card .money{font-size: 66rpx; color: #ED4F4F; line-height: 100rpx; font-weight: 500;}
 .label_tip{font-size: 24rpx; color: #666666; margin-bottom: 30rpx;}
