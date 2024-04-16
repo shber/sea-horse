@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-15 20:17:51
+ * @LastEditTime: 2024-04-16 12:11:42
  * @Description: 
  */
 // var n = new getApp();
@@ -33,14 +33,14 @@ Page({
           username: self.data.username
       },
       success: function(a) {
-          wx.showToast({ title: "发送成功", icon: "none", });
-          timer = setInterval(()=>{
-            if(self.data.time == 0){clearInterval(timer) 
-              self.setData({time: 60})
-              return false
-            }
-            self.setData({time: self.data.time-1})
-          },1000)
+        wx.showToast({ title: "发送成功", icon: "none", });
+        timer = setInterval(()=>{
+          if(self.data.time == 0){clearInterval(timer) 
+            self.setData({time: 60})
+            return false
+          }
+          self.setData({time: self.data.time-1})
+        },1000)
       }
     });
   },

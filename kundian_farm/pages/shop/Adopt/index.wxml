@@ -1,52 +1,76 @@
-<view wx:if="{{is_tarbar}}">
-    <tarbar SystemInfo="{{SystemInfo}}" list="{{tarbar}}" path="kundian_farm/pages/shop/Adopt/index"></tarbar>
+<!--
+ * @Author: Shber
+ * @Date: 2023-09-13 18:48:16
+ * @LastEditors: Shber
+ * @LastEditTime: 2024-04-16 12:09:56
+ * @Description: 
+-->
+<view>
+  <tarbar SystemInfo="{{SystemInfo}}" list="{{tarbar}}" path="kundian_farm/pages/shop/Adopt/index"></tarbar>
 </view>
-<view style="padding-bottom:{{isIphoneX?'178':'110'}}rpx">
-    <view class="index_container" wx:if="{{currentStyle==1}}">
-        <view class="cover_container">
-            <image class="bgImg" mode="aspectFill" src="{{currentImg}}"></image>
-            <view class="gradual"></view>
+<view class="my_content">
+  <view class="tab_info">
+    <view>成熟时间</view>
+    <view class="active">价格</view>
+    <view>溢价比例</view>
+  </view>
+  <view class="pd_30">
+    <view class="graph adopt_list">
+      <view>
+        <view class="list_item">
+          <image src="https://yhm.m666m.cc/addons/kundian_farm/resource/image/animal-src.png" class="item_pic"></image>
+          <view class="flex_wid">
+              <view class="item_title">海马人样</view>
+              <view class="flex_center text1">
+                  <view class="flex_center">  
+                      <image src="../../../images/new/ico_shu.png" class="icon_time"></image>转卖数量
+                  </view>
+                  <text class="number">200只</text>
+              </view>
+              <view class="flex_center text1">
+                <view class="flex_center">  
+                    <image src="../../../images/new/ico_time.png" class="icon_time"></image>距离成熟
+                </view>
+                <text>64天/90天</text>
+            </view>
+              <view class="progress">
+                  <view class="progress_bg"></view>
+                  <view class="progress_active"></view>
+              </view>
+          </view>
         </view>
-        <swiper autoplay="true" bindchange="cardSwiper" circular="true" class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" duration="500" indicatorActiveColor="#0081ff" indicatorColor="#8799a3" interval="5000">
-            <swiper-item catchtap="Adopt" class="{{cardCur==index?'cur':''}}" data-id="{{item.id}}" wx:for="{{Adopt}}">
-                <view class="swiper-item">
-                    <image src="{{item.animal_src}}"></image>
-                </view>
-                <view class="text-black text-center" wx:if="{{showName}}">{{item.animal_name}}</view>
-            </swiper-item>
-        </swiper>
-    </view>
-    <view class="index_container" wx:if="{{currentStyle==2}}">
-        <scroll-view class="scrollView" scrollY="true">
-            <view class="scroll-img-container" wx:for="{{Adopt}}" wx:key="id">
-                <image catchtap="Adopt" class="animalSrc" data-id="{{item.id}}" src="{{item.animal_src}}"></image>
-                <view class="animal_name" wx:if="{{showName}}">{{item.animal_name}}</view>
-            </view>
-            <view class="block"></view>
-        </scroll-view>
-    </view>
-    <view wx:if="{{currentStyle==3}}">
-        <view catchtap="Adopt" class="adopt_wrapper" data-id="{{item.id}}" wx:for="{{Adopt}}" wx:key="id">
-            <image src="{{item.animal_src}}"></image>
-            <view class="desc_wrapper">
-                <view>{{item.animal_name}}</view>
-                <view>介绍:{{item.animal_desc}}</view>
-            </view>
-            <view class="footer">
-                <view class="item">
-                    <view>认养价格</view>
-                    <view>￥{{item.price}}</view>
-                </view>
-                <view class="item">
-                    <view>生长周期</view>
-                    <view>{{item.mature_period}}天</view>
-                </view>
-                <view class="item">
-                    <view>剩余数量</view>
-                    <view>{{item.count}}</view>
-                </view>
-            </view>
+        <view class="flex_center flex_center1">
+          <text class="red_num">$232.00</text>
+          <view class="">
+            <button type="primary" hover-class="none" class="primary" bindtap="setPopupShow">立即领养</button>
+          </view>
         </view>
-        <view class="block"></view>
+      </view>
     </view>
+  </view>
+
+  <popupView showPopup="{{popupShow}}" height="{{558}}"> 
+    <view>
+      <view class="card_item">
+        <image src="https://yhm.m666m.cc/addons/kundian_farm/resource/image/animal-src.png" class="item_pic"></image>
+        <view class="item_right">
+          <view class="item_title">海马人样</view>
+          <view class="item_number">$200.32</view>
+        </view>
+      </view>
+      <view class="flex_center flex_center2">
+        <text class="">数量</text>
+        <view class="selectedNum-wrapper">
+          <view bindtap="reduce">-</view>
+          <input bindinput="inputNum" type="number" value="{{selectNum}}"></input>
+          <view bindtap="add">+</view>
+        </view>
+      </view>
+
+      <button type="primary" hover-class="none" bindtap="setPopupHide">立即领养</button>
+    </view>
+
+  </popupView>
+
 </view>
+

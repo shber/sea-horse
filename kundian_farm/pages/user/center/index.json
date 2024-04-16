@@ -1,8 +1,11 @@
 {
-    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": false,
     "navigationBarTitleText": "个人中心",
+    "backgroundColor": "#fff",
     "usingComponents": {
         "tarbar": "/components/tarbar/tarbar",
-        "cu-custom": "/colorui/components/cu-custom"
+        "cu-custom": "/colorui/components/cu-custom",
+        "popupView": "/components/popupView/index"
     }
 }

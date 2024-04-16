@@ -1,7 +1,10 @@
 {
-    "navigationBarTitleText": "认养",
+    "enablePullDownRefresh": false,
+    "navigationBarTitleText": "转卖",
+    "backgroundColor": "#fff",
     "usingComponents": {
         "tarbar": "/components/tarbar/tarbar",
-        "cu-custom": "/colorui/components/cu-custom"
+        "cu-custom": "/colorui/components/cu-custom",
+        "popupView": "/components/popupView/index"
     }
 }

@@ -1,6 +1,9 @@
 {
+    "enablePullDownRefresh": false,
     "navigationBarTitleText": "订单列表",
+    "backgroundColor": "#fff",
     "usingComponents": {
-        "cu-custom": "/colorui/components/cu-custom"
+        "cu-custom": "/colorui/components/cu-custom",
+        "popupView": "/components/popupView/index"
     }
 }

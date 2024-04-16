@@ -11,6 +11,27 @@
     "miniprogram": {
       "list": [
         {
+          "name": "个人中心",
+          "pathName": "kundian_farm/pages/user/center/index",
+          "query": "is_tarbar=true",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "转卖列表",
+          "pathName": "kundian_farm/pages/shop/Adopt/index",
+          "query": "is_tarbar=true",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "订单列表",
+          "pathName": "kundian_farm/pages/shop/orderList/index",
+          "query": "status=2",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "确认订单",
           "pathName": "kundian_farm/pages/shop/confirmAdopt/index",
           "query": "count=1&aid=undefined",
@@ -21,27 +42,6 @@
           "name": "认养详情",
           "pathName": "kundian_farm/pages/adoptDetails/index",
           "query": "id=13",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "个人中心",
-          "pathName": "kundian_farm/pages/userInfo/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "订单列表",
-          "pathName": "kundian_farm/pages/adoptList/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "转卖列表",
-          "pathName": "kundian_farm/pages/saleList/index",
-          "query": "",
           "launchMode": "default",
           "scene": null
         },
