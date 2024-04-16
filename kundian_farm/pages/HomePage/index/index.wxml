@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2020-12-01 23:03:44
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-15 18:23:40
+ * @LastEditTime: 2024-04-16 18:35:16
  * @Description: 
 -->
 <tarbar SystemInfo="{{SystemInfo}}" list="{{tarbar}}" path="kundian_farm/pages/HomePage/index/index"></tarbar>
@@ -44,17 +44,6 @@
                     <view class="item_title">{{item.animal_name}}</view>
                     <view class="item_desc">{{item.gain_desc}}</view>
 
-                    <!-- <view class="flex_center text1">
-                        <view class="flex_center">  
-                            <image src="../../../images/new/ico_time.png" class="icon_time"></image>距离成熟
-                        </view>
-                        <text>{{item.putaway_time}}天/{{item.mature_period}}天</text>
-                    </view>
-                    <view class="progress">
-                        <view class="progress_bg">
-                            <view class="progress_active" style="width:{{item.progressNum}}%"></view>
-                        </view>
-                    </view> -->
                     <view class="flex_center flex_center11">
                         <text class="red_num">¥ {{item.price || 0}}</text>
                         <button type="primary" hover-class="none" class="primary" bindtap="setPopupShow">立即领养</button>

@@ -5,6 +5,7 @@
     "navigationBarTitleText": "首页",
     "enablePullDownRefresh": true,
     "usingComponents": {
+        "ec-canvas": "/components/echarts/ec-canvas/ec-canvas",
         "tarbar": "/components/tarbar/tarbar"
     }
 }

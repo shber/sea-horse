@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-16 14:56:02
+ * @LastEditTime: 2024-04-16 18:31:16
  * @Description: 
  */
 // var n = new getApp();
@@ -10,6 +10,7 @@ var a = new getApp(), t = a.siteInfo.uniacid;
 Page({
   data: {
     popupShow: false,
+    price:'',
     nickName: "",
     avatarUrl: "../../../images/icon/moren.png",
     SystemInfo: a.globalData.sysData,
@@ -61,14 +62,117 @@ Page({
         avatarUrl: tt.avatarurl,
         nickName: tt.nickname
     }), 
-    // this.getUserData(), 
+    this.getUserData(), 
     e.setData({
         tarbar: wx.getStorageSync("kundianFarmTarbar")
     });
 },
   onLoad(a) {
-
+    let uid = wx.getStorageSync("uid_" + t)
+    uid || wx.navigateTo({
+        url: "../../login/index"
+    })
   },
+  inputNum(e){
+    this.setData({price:e.detail.value})
+},
+recharge(){
+    const self = this
+    if(!this.data.price){
+        return wx.showToast({ title: "请输入充值金额", icon: "none", });
+    }
+
+    a.util.request({
+        url: "entry/wxapp/class",
+        data: {
+            op: "user_recharge",
+            control: "user",
+            uniacid: t,
+            price  : self.data.price
+        },
+        success: function(res) {
+            console.log('充值结果', res);
+        }
+      });
+},
+nowPay: function(r) {
+    const self = this
+    if(!this.data.price){
+        return wx.showToast({ title: "请输入充值金额", icon: "none", });
+    }
+    // var n = r.currentTarget.dataset.orderid;
+    a.util.request({
+        url: "entry/wxapp/class",
+        data: {
+            // orderid: n,
+            // uniacid: a,
+            op: "user_recharge",
+            control: "user",
+            uniacid: t,
+            price  : self.data.price
+        },
+        cachetime: "0",
+        success: function(r) {
+            if (r.data && r.data.data && !r.data.errno) {
+                var i = r.data.data.package;
+                wx.requestPayment({
+                    timeStamp: r.data.data.timeStamp,
+                    nonceStr: r.data.data.nonceStr,
+                    package: r.data.data.package,
+                    signType: "MD5",
+                    paySign: r.data.data.paySign,
+                    success: function(r) {
+                        var d = t.util.url("entry/wxapp/active") + "m=" + e;
+                        wx.request({
+                            url: d,
+                            data: {
+                                op: "notify",
+                                uniacid: a,
+                                uid: uid,
+                                orderid: n,
+                                prepay_id: i
+                            },
+                            success: function(t) {
+                                wx.hideLoading(), wx.showToast({
+                                    title: "支付成功",
+                                    success: function(t) {
+                                        wx.redirectTo({
+                                            url: "../payforResult/index?status=true&order_id=" + n
+                                        });
+                                    }
+                                });
+                            }
+                        });
+                    },
+                    fail: function(t) {
+                        wx.showModal({
+                            title: "提示",
+                            content: "您取消了支付",
+                            showCancel: !1
+                        });
+                    }
+                });
+            }
+            "JSAPI支付必须传openid" == r.data.message && wx.navigateTo({
+                url: "../../login/index"
+            });
+        },
+        fail: function(t) {
+            wx.showModal({
+                title: "系统提示",
+                content: t.data.message ? t.data.message : "错误",
+                showCancel: !1,
+                success: function(t) {
+                    t.confirm;
+                }
+            });
+        }
+    });
+},
+
+  setPopupShow(){
+    this.setData({popupShow:true})
+    },
   intoOrder(a) {
     var {status} = a.currentTarget.dataset;
     wx.navigateTo({

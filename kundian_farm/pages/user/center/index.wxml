@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-16 14:56:08
+ * @LastEditTime: 2024-04-16 15:50:11
  * @Description: 
 -->
 <view>
@@ -23,7 +23,7 @@
       <view class="money">560.12</view>
       <view class="label_tip">账户余额（元）</view>
       <view class="flex_center">
-        <button type="primary" class="small_btn small_btn1" hover-class="none" bindtap="setPopupHide">充值</button>
+        <button type="primary" class="small_btn small_btn1" hover-class="none" bindtap="setPopupShow">充值</button>
         <button type="primary" 
         bindtap="intoCash"
         class="small_btn small_btn2" hover-class="none">提现</button>
@@ -51,25 +51,14 @@
 
   <popupView showPopup="{{popupShow}}" height="{{558}}"> 
     <view>
-      <view class="card_item">
-        <image src="https://yhm.m666m.cc/addons/kundian_farm/resource/image/animal-src.png" class="item_pic"></image>
-        <view class="item_right">
-          <view class="item_title">海马人样</view>
-          <view class="item_number">$200.32</view>
-        </view>
-      </view>
-      <view class="flex_center flex_center2">
-        <text class="">数量</text>
-        <view class="selectedNum-wrapper">
-            <view bindtap="reduce">-</view>
-            <input bindinput="inputNum" type="number" value="{{selectNum}}"></input>
-            <view bindtap="add">+</view>
-        </view>
-      </view>
+      <view class="cash_title">账户充值</view>
+      <input class="cash_input" bindinput="inputNum" type="number" placeholder="请输入金额" value="{{price}}"></input>
 
-      <button type="primary" hover-class="none" bindtap="setPopupHide">立即领养</button>
+      <view class="btn_group">
+        <button type="primary" class="default" hover-class="none" bindtap="setPopupHide">取消</button>
+        <button type="primary" class="primary" hover-class="none" bindtap="nowPay">立即充值</button>
+      </view>
     </view>
-
   </popupView>
 
 </view>

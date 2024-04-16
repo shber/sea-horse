@@ -1,5 +1,9 @@
 {
+    "enablePullDownRefresh": false,
     "navigationBarTitleText": "认养详情",
+    "navigationStyle": "custom",
+    "backgroundTextStyle":"dark",
+    "backgroundColor": "#fff",
     "usingComponents": {
         "cu-custom": "/colorui/components/cu-custom"
     }
