@@ -70,6 +70,7 @@ s.base64Encode = function(e) {
         a = a + "&m=" + t;
     }
     var r = o(a, e.data);
+    console.log(r && (a = a + "&sign=" + r), a);
     return r && (a = a + "&sign=" + r), a;
 }, s.request = function(t) {
     require("underscore.js");

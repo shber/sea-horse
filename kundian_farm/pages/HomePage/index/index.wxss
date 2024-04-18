@@ -16,7 +16,7 @@
 .right .red{ background-color: #ED4F4F; box-shadow: 0 0 0 6rpx #fcbaba;}
 .right .blue{ background-color: #447FFF; box-shadow: 0 0 0 6rpx #9fbbf6;}
 .right1{margin-left: 40rpx;}
-#mychart_line{width: 100%; height: 170rpx; position: absolute; bottom: 16rpx; left: 0; z-index: 9;}
+#mychart_line{width: 100%; height: 170rpx; position: absolute; bottom: 32rpx; left: 0; z-index: 9;}
 .home_bar{display: flex; align-items: center; background-color: #E8EFFC; border-radius: 20rpx; padding: 16rpx 30rpx 16rpx; margin: 30rpx 0;}
 .bar_pic{display: block; flex-shrink: 0; width: 70rpx; height: 82rpx;}
 .bar_right{position: relative; margin-left: 24rpx; padding-left: 24rpx;}

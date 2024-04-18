@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-16 18:31:16
+ * @LastEditTime: 2024-04-17 15:15:30
  * @Description: 
  */
 // var n = new getApp();
@@ -16,6 +16,7 @@ Page({
     SystemInfo: a.globalData.sysData,
     isIphoneX: a.globalData.isIphoneX,
     tarbar: a.tarbar,
+    userInfo:{}
   },
   getUserData: function() {
     var tt = this, n = wx.getStorageSync("uid_" + t);
@@ -39,7 +40,8 @@ Page({
                 is_admin: o,
                 userInfo: d,
                 aboutData: u,
-                back_img: s
+                back_img: s,
+                userInfo:e.userInfo
             }) : tt.setData({
                 noPayCount: n,
                 peiCount: r,
@@ -47,7 +49,8 @@ Page({
                 is_admin: o,
                 userInfo: d,
                 aboutData: u,
-                back_img: s
+                back_img: s,
+                userInfo:e.userInfo
             }), d || (wx.removeStorageSync("kundian_farm_wxInfo"), wx.removeStorageSync("userInfo"), 
             wx.navigateTo({
                 url: "../../login/index"
@@ -81,9 +84,9 @@ recharge(){
     if(!this.data.price){
         return wx.showToast({ title: "请输入充值金额", icon: "none", });
     }
-
+    let url = a.util.getNewUrl("entry/wxapp/class", "kundian_farm_plugin_play");
     a.util.request({
-        url: "entry/wxapp/class",
+        url: url,
         data: {
             op: "user_recharge",
             control: "user",
@@ -100,15 +103,18 @@ nowPay: function(r) {
     if(!this.data.price){
         return wx.showToast({ title: "请输入充值金额", icon: "none", });
     }
+   let wx_info = wx.getStorageSync("kundian_farm_wxInfo")
+   let userInfo = wx.getStorageSync("userInfo")
     // var n = r.currentTarget.dataset.orderid;
     a.util.request({
         url: "entry/wxapp/class",
         data: {
-            // orderid: n,
-            // uniacid: a,
             op: "user_recharge",
             control: "user",
             uniacid: t,
+            state:'we7sid-'+ userInfo.sessionid,
+            m: 'kundian_farm',
+            uid: wx_info.uid,
             price  : self.data.price
         },
         cachetime: "0",
@@ -122,26 +128,10 @@ nowPay: function(r) {
                     signType: "MD5",
                     paySign: r.data.data.paySign,
                     success: function(r) {
-                        var d = t.util.url("entry/wxapp/active") + "m=" + e;
-                        wx.request({
-                            url: d,
-                            data: {
-                                op: "notify",
-                                uniacid: a,
-                                uid: uid,
-                                orderid: n,
-                                prepay_id: i
-                            },
-                            success: function(t) {
-                                wx.hideLoading(), wx.showToast({
-                                    title: "支付成功",
-                                    success: function(t) {
-                                        wx.redirectTo({
-                                            url: "../payforResult/index?status=true&order_id=" + n
-                                        });
-                                    }
-                                });
-                            }
+                        wx.showModal({
+                            title: "提示",
+                            content: "充值成功",
+                            showCancel: !1
                         });
                     },
                     fail: function(t) {

@@ -1,5 +1,5 @@
 page { font-size: 30rpx; background: #f8f8f9; }
-.my_content{ position: relative; padding-top: 80rpx;}
+.my_content{ position: relative; padding-top: 80rpx; padding-bottom: 140rpx;}
 .pd_30{padding: 0 30rpx; height: auto;}
 
 .graph{
@@ -16,10 +16,10 @@ page { font-size: 30rpx; background: #f8f8f9; }
 .flex_center{display: flex; align-items: center; justify-content: space-between;}
 .adopt_list .text1{font-size: 24rpx; color: #999999; margin-top: 16rpx;}
 .flex_center .red_num{font-size: 40rpx; color: #ED4F4F; font-weight: 500;}
-.adopt_list .progress{margin: 12rpx 0rpx; position: relative; height: 26rpx;}
+.adopt_list .progress{margin: 12rpx 0rpx; position: relative; height: 26rpx; border-radius: 12rpx !important; overflow: hidden;}
 .adopt_list .progress_bg, .adopt_list .progress_active{width: 100%; height: 26rpx; border-radius: 16px; position: absolute; top: 0;}
 .adopt_list .progress_bg{ background-color: #F2F2F2;  z-index: 1;}
-.adopt_list .progress_active{width: 30%; background-color: #447FFF;  z-index: 3;}
+.adopt_list .progress_active{width: 100%; background-color: #447FFF;  z-index: 3;}
 .primary{height: 64rpx; line-height: 64rpx; border-radius: 12rpx !important; font-size: 28rpx;}
 .flex_center1{margin-top: 34rpx;}
 

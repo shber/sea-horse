@@ -13,7 +13,14 @@
         {
           "name": "认养详情",
           "pathName": "kundian_farm/pages/shop/AdoptRules/index",
-          "query": "id=13&aid=14",
+          "query": "id=14&aid=14",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "商城",
+          "pathName": "kundian_farm/pages/shop/index/index",
+          "query": "is_tarbar=true",
           "launchMode": "default",
           "scene": null
         },

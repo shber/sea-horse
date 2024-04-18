@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-16 19:10:05
+ * @LastEditTime: 2024-04-18 17:39:37
  * @Description: 
  */
 var a = require("../../../../wxParse/wxParse.js")
@@ -16,10 +16,12 @@ Page({
     index: 0,
     count: 1,
     live:[],
+    aid: '',
   },
   onLoad: function (a) {
     this.getDetailsData(a.id)
     this.liveInit(a.id)
+    this.setData({aid: a.id})
   },
   checkTab(e){
     const {index} = e.currentTarget.dataset;
@@ -101,7 +103,9 @@ Page({
     }) : parseInt(n) > parseInt(e.count) ? wx.showToast({
         title: "库存不足",
         icon: "none"
-    }) : (wx.setStorageSync("kundian_farm_buy_animal", e), wx.navigateTo({
+    }) : (wx.setStorageSync("kundian_farm_buy_animal", e), 
+    console.log('e', e),
+    wx.navigateTo({
       // /kundian_farm/pages
         url: "/kundian_farm/pages/shop/confirmAdopt/index?count=" + n + "&aid=" + i
     }));

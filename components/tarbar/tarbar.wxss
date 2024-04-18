@@ -19,12 +19,13 @@
 }
 
 .footer .f-li image {
-    width: 25px;
-    height: 25px;
+    width: 22px;
+    height: 22px;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 5rpx;
 }
 
 .footer .f-li text {
     display: block;
+    font-size: 22rpx;
 }

@@ -104,9 +104,9 @@
 },
     "window": {
         "backgroundTextStyle": "dark",
-        "navigationBarBackgroundColor": "white",
+        "navigationBarBackgroundColor": "#447fff",
         "navigationBarTitleText": "WeChat",
-        "navigationBarTextStyle": "black"
+        "navigationBarTextStyle": "white"
     },
     "subPackages": [
         {
@@ -181,9 +181,9 @@
     },
     "window": {
         "backgroundTextStyle": "dark",
-        "navigationBarBackgroundColor": "#fff",
+        "navigationBarBackgroundColor": "#447fff",
         "navigationBarTitleText": "WeChat",
-        "navigationBarTextStyle": "black"
+        "navigationBarTextStyle": "white"
     },
     "usingComponents": {
         "cu-custom": "/colorui/components/cu-custom"

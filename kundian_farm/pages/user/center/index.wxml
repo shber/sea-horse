@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-16 15:50:11
+ * @LastEditTime: 2024-04-17 14:11:09
  * @Description: 
 -->
 <view>
@@ -20,7 +20,7 @@
   </view>
   <view class="pd_30 card1">
     <view class="shadow_card">
-      <view class="money">560.12</view>
+      <view class="money">{{userInfo.money || 0}}</view>
       <view class="label_tip">账户余额（元）</view>
       <view class="flex_center">
         <button type="primary" class="small_btn small_btn1" hover-class="none" bindtap="setPopupShow">充值</button>
@@ -35,7 +35,7 @@
       <view class="tab_card">
         <view bindtap="intoOrder" data-status="1">
           <image src="../../../images/new/ico_quan.png" class="card_icon"></image>
-          全部1
+          全部
         </view>
         <view bindtap="intoOrder" data-status="2">
           <image src="../../../images/new/ico_ren.png" class="card_icon"></image>

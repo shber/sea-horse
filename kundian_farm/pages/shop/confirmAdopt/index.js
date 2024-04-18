@@ -101,6 +101,8 @@ Page({
         });
     },
     surePay: function(a) {
+        const self = this
+        console.log('33', this.data);
         var o = this, n = o.data, i = n.userName, s = n.userTel, r = n.rules, u = n.count, c = n.aid, d = n.specVal, l = n.totalPrice, p = n.userCoupon, g = n.order_id, w = n.discount;
         if ("" != i && void 0 != i) if ("" != s && void 0 != s) {
             var x = 0, h = 0, m = wx.getStorageSync("uid_" + e);
@@ -109,6 +111,134 @@ Page({
                 content: "请先阅读并同意农场协议",
                 showCancel: !1
             }), !1;
+
+            wx.showModal({
+                title: '提示',
+                content: '您确定用余额支付吗？',
+                success (res) {
+                  if (res.confirm) {
+                    // self.setData({
+                    //     pay_text: "正在下单"
+                    // }), 
+                    t.util.request({
+                        url: "entry/wxapp/class",
+                        data: {
+                            control: "animal",
+                            op: "sureAdoptAnimal",
+                            uid: m,
+                            uniacid: e,
+                            count: u,
+                            spec_id: d.id,
+                            aid: n.animalData.id,
+                            coupon_id: x,
+                            coupon_price: h,
+                            username: i,
+                            phone: s,
+                            totalPrice: l,
+                            order_id: g,
+                            discount: w
+                        },
+                        success: function(a) {
+                            if (0 == a.data.code) {
+                                var n = a.data.order_id;
+                                wx.showToast({
+                                    title: "您已支付成功",
+                                    success: function() {
+                                        wx.navigateBack()
+                                    }
+                                });
+                                return false
+                                o.setData({
+                                    order_id: n
+                                }), t.util.request({
+                                    url: "entry/wxapp/pay",
+                                    data: {
+                                        op: "getAnimalPayOrder",
+                                        orderid: n,
+                                        uniacid: e,
+                                        file: "animal"
+                                    },
+                                    cachetime: "0",
+                                    success: function(a) {
+                                        if (a.data && a.data.data && !a.data.errno) {
+                                            var i = a.data.data.package;
+                                            wx.requestPayment({
+                                                timeStamp: a.data.data.timeStamp,
+                                                nonceStr: a.data.data.nonceStr,
+                                                package: a.data.data.package,
+                                                signType: "MD5",
+                                                paySign: a.data.data.paySign,
+                                                success: function(a) {
+                                                    wx.showLoading({
+                                                        title: "加载中"
+                                                    }), t.util.request({
+                                                        url: "entry/wxapp/class",
+                                                        data: {
+                                                            control: "animal",
+                                                            op: "sendMsg",
+                                                            order_id: n,
+                                                            uniacid: e,
+                                                            prepay_id: i
+                                                        },
+                                                        success: function() {
+                                                            wx.showModal({
+                                                                title: "提示",
+                                                                content: "支付成功",
+                                                                showCancel: !1,
+                                                                success: function() {
+                                                                    wx.redirectTo({
+                                                                        url: "../../user/Animal/index?current=2"
+                                                                    });
+                                                                }
+                                                            }), wx.hideLoading();
+                                                        }
+                                                    });
+                                                },
+                                                fail: function(a) {
+                                                    wx.showModal({
+                                                        title: "系统提示",
+                                                        content: "您取消了支付!",
+                                                        showCancel: !1,
+                                                        success: function(a) {
+                                                            a.confirm && o.setData({
+                                                                pay_text: "立即下单"
+                                                            });
+                                                        }
+                                                    }), wx.hideLoading();
+                                                }
+                                            });
+                                        } else console.log("fail1"), o.setData({
+                                            pay_text: "立即下单"
+                                        });
+                                    },
+                                    fail: function(a) {
+                                        "JSAPI支付必须传openid" == a.data.message ? wx.navigateTo({
+                                            url: "/kundian_farm/pages/login/index"
+                                        }) : wx.showModal({
+                                            title: "系统提示",
+                                            content: a.data.message ? a.data.message : "错误",
+                                            showCancel: !1,
+                                            success: function(a) {
+                                                a.confirm && o.setData({
+                                                    pay_text: "立即下单"
+                                                });
+                                            }
+                                        });
+                                    }
+                                });
+                            }else{
+                                wx.showToast({ title: a.data.msg, icon: "error", });
+                            
+                            }
+                        }
+                    });
+                  } else if (res.cancel) {
+                    console.log('用户点击取消')
+                    wx.showToast({ title: "您已取消支付", icon: "none", });
+                  }
+                }
+              })    
+              return false        
             this.setData({
                 pay_text: "正在下单"
             }), t.util.request({
@@ -120,7 +250,7 @@ Page({
                     uniacid: e,
                     count: u,
                     spec_id: d.id,
-                    aid: c,
+                    aid: n.animalData.id,
                     coupon_id: x,
                     coupon_price: h,
                     username: i,
@@ -132,6 +262,7 @@ Page({
                 success: function(a) {
                     if (0 == a.data.code) {
                         var n = a.data.order_id;
+                        return false
                         o.setData({
                             order_id: n
                         }), t.util.request({
