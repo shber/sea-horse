@@ -22,7 +22,9 @@ Page({
         order_id: 0,
         iscostShow: !0,
         pay_text: "立即下单",
-        discount: 0
+        discount: 0,
+        type:0,
+        adoptId:''
     },
     onLoad: function(o) {
         var n = 0, i = t.bgColor, s = t.assistColor;
@@ -34,7 +36,9 @@ Page({
             animalData: u,
             bottom: n,
             bgColor: i,
-            assistColor: s
+            assistColor: s,
+            type: o.type,
+            adoptId: o.adid // 领养id
         });
         var l = this, p = wx.getStorageSync("uid_" + e);
         t.util.request({
@@ -124,7 +128,7 @@ Page({
                         url: "entry/wxapp/class",
                         data: {
                             control: "animal",
-                            op: "sureAdoptAnimal",
+                            op: o.data.type == 1 ? "adoptOrder" : "sureAdoptAnimal",
                             uid: m,
                             uniacid: e,
                             count: u,
@@ -136,7 +140,8 @@ Page({
                             phone: s,
                             totalPrice: l,
                             order_id: g,
-                            discount: w
+                            discount: w,
+                            id: o.data.adoptId // 转卖传的
                         },
                         success: function(a) {
                             if (0 == a.data.code) {

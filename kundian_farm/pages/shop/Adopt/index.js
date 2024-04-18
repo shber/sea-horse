@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-18 17:47:38
+ * @LastEditTime: 2024-04-18 21:02:02
  * @Description: 
  */
 // var n = new getApp();
@@ -24,6 +24,9 @@ Page({
     count: 1,
   },
   onLoad: function (a) {
+
+  },
+  onShow(){
     this.getDataList()
   },
   goPath () {
@@ -50,7 +53,6 @@ Page({
           asc : this.data['type'+this.data.orderType]
       },
       success: function(res) {
-        console.log('res', res);
         self.setData({
           animalData: res.data.animalData,
       })
@@ -73,7 +75,7 @@ Page({
         wx.setStorageSync("kundian_farm_buy_animal", _data.animalData)
         self.setData({popupShow:false})
         wx.navigateTo({
-            url: "/kundian_farm/pages/shop/confirmAdopt/index?count=" + self.data.count + "&aid=" + self.data.itemData.aid
+            url: "/kundian_farm/pages/shop/confirmAdopt/index?type=1&count=" + self.data.count + "&aid=" + self.data.itemData.aid + "&adid=" + self.data.itemData.id
         })
       }
     })

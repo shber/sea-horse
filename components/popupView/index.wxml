@@ -2,14 +2,21 @@
  * @Author: Shber
  * @Date: 2024-04-11 21:11:09
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-11 21:22:05
+ * @LastEditTime: 2024-04-18 21:19:59
  * @Description: 
 -->
-<view class="popupView" wx:if="{{ showPopup }}">
+<!--
+ * @Author: Shber
+ * @Date: 2024-04-11 21:11:09
+ * @LastEditors: Shber
+ * @LastEditTime: 2024-04-18 21:19:54
+ * @Description: 
+-->
+<view class="popupView" bindtap="hidePopup" wx:if="{{ showPopup }}">
     <!-- 遮罩区域，点击隐藏弹出层 -->
     <view class="close" bindtap="changePopupView"></view> 
     <!-- 内容区 -->
-    <view class="content" style="height: {{height}}rpx">
+    <view class="content" catchtap="noclick" style="height: {{height}}rpx">
         <slot></slot>
     </view>
 </view>

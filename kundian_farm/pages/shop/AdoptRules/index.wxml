@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-16 18:55:56
+ * @LastEditTime: 2024-04-18 21:20:45
  * @Description: 
 -->
 <import src="../../../../wxParse/wxParse.wxml"></import>
@@ -10,11 +10,11 @@
 <view class="my_content">
   <view class="header">
     <image src="{{details.animal_src}}" class="pic_bg"></image>
-    <view class="head_tab">
+    <!-- <view class="head_tab">
       <view class="active">图片</view>
       <view>监控1</view>
       <view>监控1</view>
-    </view>
+    </view> -->
   </view>
 
   <view class="pd_30 top_100">

@@ -18,6 +18,7 @@ Component({
       multipleSlots: true // 复数插槽: 是
     },
     methods: {
+      noclick(){},
       showPopup() { // 显示弹窗
         this.setData({ showPopup: true});
       },

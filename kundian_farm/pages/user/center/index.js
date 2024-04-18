@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-17 15:15:30
+ * @LastEditTime: 2024-04-18 21:16:58
  * @Description: 
  */
 // var n = new getApp();
@@ -79,60 +79,40 @@ Page({
   inputNum(e){
     this.setData({price:e.detail.value})
 },
-recharge(){
-    const self = this
-    if(!this.data.price){
-        return wx.showToast({ title: "请输入充值金额", icon: "none", });
-    }
-    let url = a.util.getNewUrl("entry/wxapp/class", "kundian_farm_plugin_play");
-    a.util.request({
-        url: url,
-        data: {
-            op: "user_recharge",
-            control: "user",
-            uniacid: t,
-            price  : self.data.price
-        },
-        success: function(res) {
-            console.log('充值结果', res);
-        }
-      });
-},
 nowPay: function(r) {
     const self = this
     if(!this.data.price){
         return wx.showToast({ title: "请输入充值金额", icon: "none", });
     }
-   let wx_info = wx.getStorageSync("kundian_farm_wxInfo")
-   let userInfo = wx.getStorageSync("userInfo")
-    // var n = r.currentTarget.dataset.orderid;
+    self.setPopupHide()
     a.util.request({
         url: "entry/wxapp/class",
         data: {
             op: "user_recharge",
             control: "user",
             uniacid: t,
-            state:'we7sid-'+ userInfo.sessionid,
-            m: 'kundian_farm',
-            uid: wx_info.uid,
             price  : self.data.price
         },
         cachetime: "0",
         success: function(r) {
-            if (r.data && r.data.data && !r.data.errno) {
-                var i = r.data.data.package;
+            console.log('rrr', r);
+            if (r.data && !r.data.errno) {
+                // var i = r.data.data.package;
+                console.log('srrr', r);
                 wx.requestPayment({
-                    timeStamp: r.data.data.timeStamp,
-                    nonceStr: r.data.data.nonceStr,
-                    package: r.data.data.package,
+                    timeStamp: r.data.timeStamp,
+                    nonceStr: r.data.nonceStr,
+                    package: r.data.package,
                     signType: "MD5",
-                    paySign: r.data.data.paySign,
+                    paySign: r.data.paySign,
                     success: function(r) {
+                        console.log('usccc', r);
                         wx.showModal({
                             title: "提示",
                             content: "充值成功",
                             showCancel: !1
                         });
+                        self.getUserData()
                     },
                     fail: function(t) {
                         wx.showModal({

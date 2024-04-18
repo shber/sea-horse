@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-18 17:15:43
+ * @LastEditTime: 2024-04-18 20:59:17
  * @Description: 
  */
 // var n = new getApp();
@@ -11,12 +11,12 @@ var t = new getApp(), e = t.siteInfo.uniacid;
 Page({
   data: {
     popupShow: false,
-    activeNum: 1,
+    activeNum: 0,
     tabInfo:[
-      {label:'全部', val:1},
-      {label:'认养中', val:2},
-      {label:'转卖中', val:3},
-      {label:'已完成', val:4}
+      {label:'全部', val:0},
+      {label:'认养中', val:1},
+      {label:'转卖中', val:2},
+      {label:'已完成', val:3}
     ],
     count:1,
     itemData:{},
@@ -91,6 +91,7 @@ Page({
     var {id} = e.currentTarget.dataset;
     this.setData({activeNum: id})
     console.log(id);
+    this.setData({animalData: []})
     this.getOrderData();
   },
   getOrderData: function() {

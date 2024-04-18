@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-18 17:23:58
+ * @LastEditTime: 2024-04-18 21:00:53
  * @Description: 
 -->
 <view>
@@ -46,6 +46,12 @@
         </view>
       </view>
     </view>
+    <view wx:if="{{animalData.length == 0}}">
+      <view class="none">
+          <image src="../../../images/icon/none.png"></image>
+          <text class="tags">暂无转卖订单</text>
+      </view>
+  </view>
   </view>
 
   <popupView showPopup="{{popupShow}}" height="{{558}}"> 

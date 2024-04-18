@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-18 16:47:09
+ * @LastEditTime: 2024-04-18 21:00:08
  * @Description: 
 -->
 <view class="my_content">
@@ -43,6 +43,13 @@
           </view>
         </view>
       </view>
+
+      <view wx:if="{{animalData.length == 0}}">
+        <view class="none">
+            <image src="../../../images/icon/none.png"></image>
+            <text class="tags">您还没有相关的订单</text>
+        </view>
+    </view>
   </view>
 
   <popupView showPopup="{{popupShow}}" height="{{628}}"> 

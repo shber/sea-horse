@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-17 14:11:09
+ * @LastEditTime: 2024-04-18 21:13:26
  * @Description: 
 -->
 <view>
@@ -56,7 +56,7 @@
 
       <view class="btn_group">
         <button type="primary" class="default" hover-class="none" bindtap="setPopupHide">取消</button>
-        <button type="primary" class="primary" hover-class="none" bindtap="nowPay">立即充值</button>
+        <button type="primary" class="primary" hover-class="none" bindtap="nowPay">立即充值1</button>
       </view>
     </view>
   </popupView>
