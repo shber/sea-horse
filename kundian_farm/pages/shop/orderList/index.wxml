@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-19 15:34:45
+ * @LastEditTime: 2024-04-19 19:53:20
  * @Description: 
 -->
 <view class="my_content">
@@ -20,6 +20,10 @@
                 <view class="item_title">{{item.animal_name}}</view>
                 <text class="status">{{item.status_txt}}</text>
               </view>
+              <view class="flex_center text1" wx:if="{{item.status == '9'}}">
+                <view class="flex_center"><image src="../../../images/new/ico_shu.png" class="icon_time"></image>转卖数量 </view>
+                <text>{{item.count}}只</text>
+              </view>
               <view class="flex_center text1">
                 <view class="flex_center"><image src="../../../images/new/ico_time.png" class="icon_time"></image>距离成熟 </view>
                 <text>{{item.adopt_day}}天/{{item.predict_ripe}}天</text>
@@ -27,20 +31,33 @@
               <view class="progress">
                   <view class="progress_bg"></view> <view class="progress_active" style="width:{{(item.adopt_day/ item.predict_ripe)*100}}%"></view>
               </view>
-              <view class="flex_center text2">
+              <view class="flex_center text2" wx:if="{{item.status != '9'}}">
                 <view class="number">¥ {{item.total_price}}</view> <text>x{{item.count}}</text>
               </view>
           </view>
         </view>
         <view class="flex_center flex_center1">
-          <view class="text">
+          <view class="text text100" wx:if="{{item.status == '9'}}">
             <view>编号：{{item.order_number}}</view>
-            <view>建议售价：{{item.jian_yi_price}}</view>
+            <view style="display: flex; align-items: center; justify-content: space-between;">建议售价：¥ {{item.jian_yi_price}}
+              <view >转卖价格：<text class="red_color">¥ {{item.resale_price}}</text></view>
+            </view>
+            <view class="btn_small">
+              <button wx:if="{{item.status == 2}}" type="primary" hover-class="none" class="primary" data-item="{{item}}" bindtap="setPopupShow">立即转卖</button>
+              <button wx:if="{{item.status == 9}}" type="primary" hover-class="none" class="primary" data-item="{{item}}" bindtap="closeSale">取消转卖</button>
+            </view>
           </view>
-          <view class="">
-            <button wx:if="{{item.status == 2}}" type="primary" hover-class="none" class="primary" data-item="{{item}}" bindtap="setPopupShow">立即转卖</button>
-            <button wx:if="{{item.status == 9}}" type="primary" hover-class="none" class="primary" data-item="{{item}}" bindtap="closeSale">取消转卖</button>
-          </view>
+          <block wx:else>
+            <view class="text">
+              <view>编号：{{item.order_number}}</view>
+              <view>建议售价：¥ {{item.jian_yi_price}}</view>
+            </view>
+            <view class="">
+              <button wx:if="{{item.status == 2}}" type="primary" hover-class="none" class="primary" data-item="{{item}}" bindtap="setPopupShow">立即转卖</button>
+              <button wx:if="{{item.status == 9}}" type="primary" hover-class="none" class="primary" data-item="{{item}}" bindtap="closeSale">取消转卖</button>
+            </view>
+          </block>
+
         </view>
       </view>
 
@@ -52,7 +69,7 @@
     </view>
   </view>
 
-  <popupView showPopup="{{popupShow}}" height="{{628}}"> 
+  <popupView showPopup="{{popupShow}}" height="{{558}}"> 
     <view>
       <view class="card_item">
         <image src="{{itemData.animal_src}}" class="item_pic"></image>
@@ -61,7 +78,9 @@
             <view class="item_title">{{itemData.animal_name}} 海马人样</view>
             <view class="item_tip">建议售价：¥ {{itemData.jian_yi_price}}</view>
           </view>
-          <view class="item_number">¥ {{itemData.total_price}}</view>
+          <view class="item_number">
+            <input class="input_num" placeholder="请输入转卖价格" bindinput="inputChange" type="number" value="{{stylePrice}}"></input>
+          </view>
         </view>
       </view>
       <view class="flex_center flex_center2">

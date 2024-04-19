@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-18 17:39:37
+ * @LastEditTime: 2024-04-19 20:56:15
  * @Description: 
  */
 var a = require("../../../../wxParse/wxParse.js")
@@ -31,6 +31,12 @@ Page({
     wx.reLaunch({
       url: '/kundian_farm/pages/register/index'
     });
+  },
+  goback(){
+    // wx.navigateBack()
+    wx.navigateBack({
+      delta: 1
+  });
   },
   liveInit: function(id) {
     var i = this;

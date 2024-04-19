@@ -37,3 +37,9 @@ page { font-size: 30rpx; background: #f8f8f9; }
     position: fixed; bottom: 0; z-index: 9; background-color: #fff;
 }
 
+.back_icon_bg{
+    display: flex; align-items: center;
+    width: 64rpx; height: 64rpx; position: fixed; top: 50rpx; left: 30rpx; z-index: 79;
+    background-color: rgba(0,0,0, 0.4); border-radius: 50%;
+}
+.back_icon_bg image{margin-left: 20rpx;}

@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-19 15:42:12
+ * @LastEditTime: 2024-04-19 20:50:46
  * @Description: 
 -->
 <view>
@@ -16,7 +16,6 @@
       <view wx:else bindtap="goLogin">登录/注册</view>
     </view>
 
-    
   </view>
   <view class="pd_30 card1">
     <view class="shadow_card">
@@ -47,6 +46,16 @@
         </view>
       </view>
     </view>
+
+    <view class="shadow_card card2">
+      <view class="flex_center" bindtap="goDistribution" data-url="distribution/index/index">
+        <view class="flex_left">
+          <image src="../../../images/new/ico_xiao.png" style="margin-right: 10rpx;" class="card_icon1"></image>
+          分销中心
+        </view>
+        <image src="../../../images/new/ico_di_right.png" style="margin-right: 10rpx; width: 24rpx; height: 24rpx;"></image>
+      </view>
+    </view>
   </view>
 
   <popupView showPopup="{{popupShow}}" height="{{558}}"> 
@@ -58,6 +67,14 @@
         <button type="primary" class="default" hover-class="none" bindtap="setPopupHide">取消</button>
         <button type="primary" class="primary" hover-class="none" bindtap="nowPay">立即充值</button>
       </view>
+    </view>
+  </popupView>
+
+  <popupView showPopup="{{setAuth}}" height="{{458}}"> 
+    <view>
+      <view class="tip_title">微信未授权</view>
+      <view class="tip_desc">您需要先手动授权，再进行充值</view>
+      <button type="primary" class="primary" bindgetuserinfo="updateUserInfo" class="login" openType="getUserInfo">微信授权</button>
     </view>
   </popupView>
 

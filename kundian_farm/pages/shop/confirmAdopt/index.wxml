@@ -13,14 +13,14 @@
             </view>
         </view>
     </view>
-    <view class="desc line-h">
+    <!-- <view class="desc line-h">
         <text class="iconfont icon-youhuiquan1 f44" style="color:{{bgColor}}"></text>
         <text class="coupon-title">优惠券</text>
         <text class="iconfont icon-right right-icon iconSmall" wx:if="{{couponCount>0}}"></text>
         <text bindtap="useCoupon" class="keyong" wx:if="{{userCoupon!=''}}">-￥{{userCoupon.coupon.coupon_price}}</text>
         <text bindtap="useCoupon" class="keyong" wx:elif="{{couponCount>0}}">{{couponCount}}张优惠券可用</text>
         <text class="keyong" wx:else>暂无优惠券可用</text>
-    </view>
+    </view> -->
 </view>
 <view class="user_container cf474747 f26">
     <view class="land_title plt40">
@@ -59,19 +59,21 @@
 </view>
 <view class="block" wx:if="{{animalData.gain_desc}}"></view>
 <view class="footer flex" style="padding-bottom:{{bottom}}rpx">
-    <view class="left">
+    <!-- <view class="left">
         订单金额：￥{{totalPrice}}
     </view>
-    <view bindtap="costxq" class="detailed">明细</view>
-    <form bindsubmit="surePay">
+    <view bindtap="costxq" class="detailed">明细</view> -->
+    <!-- <form bindsubmit="surePay">
         <button class="right cu-btn round bg-green" disabled="{{pay_text=='正在下单'}}" formType="submit" style="background: linear-gradient(to right, {{bgColor}}, {{assistColor}});height:70rpx;">
         {{pay_text}}
         </button>
-    </form>
+    </form> -->
+    <button type="primary" hover-class="none" class="primary" bindtap="surePay">{{pay_text}}</button>
+
 </view>
 <view bindtap="costxq" class="mask" wx:if="{{iscostShow==false}}"></view>
 <view class="cost {{iscostShow?'hideServer':'showServer'}}">
-    <view class="cost_title">
+    <!-- <view class="cost_title">
         <text></text>
         <text>费用明细</text>
         <text bindtap="costxq" class="iconfont icon-close"></text>
@@ -95,7 +97,7 @@
             <view>会员折扣</view>
             <view>-￥{{discount}}</view>
         </view>
-    </view>
+    </view> -->
     <form bindsubmit="surePay">
         <button class="cost_sub" disabled="{{pay_text=='正在下单'}}" formType="submit" style="background: linear-gradient(to right, {{bgColor}}, {{assistColor}});">{{pay_text}}</button>
     </form>

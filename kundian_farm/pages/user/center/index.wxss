@@ -2,7 +2,7 @@ page { font-size: 30rpx; background: #f8f8f9; }
 .my_content{ position: relative; }
 .pd_30{padding: 0 30rpx; height: auto;}
 
-
+.card_icon1{width: 36rpx; height: 36rpx;}
 .flex_center{display: flex; align-items: center; justify-content: space-between;}
 .flex_left{display: flex; align-items: center;}
 .user_info{margin-top: 150rpx;}
@@ -27,6 +27,10 @@ page { font-size: 30rpx; background: #f8f8f9; }
 .btn_group{display: flex; margin-top: 120rpx;}
 .btn_group .primary, .btn_group .default{flex: 1; margin: 0 30rpx; border-radius: 5px !important;}
 .default{background-color: #fff !important; color: #447FFF !important; border-color: #447FFF !important;}
+
+.flex_left{display: flex; align-items: center;}
+.tip_title{text-align: center; margin: 30rpx 0 20rpx; font-size: 32rpx;}
+.tip_desc{ text-align: center; font-size: 28rpx; color: #999; margin-bottom: 80rpx;}
 
 
 

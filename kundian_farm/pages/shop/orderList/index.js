@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-19 15:46:26
+ * @LastEditTime: 2024-04-19 18:53:28
  * @Description: 
  */
 // var n = new getApp();
@@ -19,6 +19,7 @@ Page({
       {label:'已完成', val:3}
     ],
     count:1,
+    stylePrice:'',
     itemData:{},
     animalData:[],
     number:function(a, b){
@@ -32,10 +33,16 @@ Page({
   onShow: function (a) {
     this.getOrderData();
   },
+  inputChange(e){
+    this.setData({stylePrice: e.detail.value})
+  },
   onSale(e){
     const self = this
     var count = this.data.count;
     let itemData = this.data.itemData
+    if(!self.data.stylePrice){
+      return wx.showToast({ title: '请输入转卖价格', icon: "none" })
+    }
     t.util.request({
       url: "entry/wxapp/class",
       data: {
@@ -44,7 +51,7 @@ Page({
           uniacid: e,
           id: itemData.id,
           count: count,
-          price: itemData.total_price,
+          price: self.data.stylePrice,
       },
       success: function(res) {
         console.log('rs',res);
@@ -147,12 +154,19 @@ Page({
   chooseNum(a) {
     let count = this.data.count
     let itemcount = this.data.itemcount
-      a.detail.value > itemcount ? wx.showToast({
+      if(a.detail.value > itemcount){
+        wx.showToast({
           title: "已超出可选数量",
           icon: "none"
-      }) : this.setData({
+        })
+        this.setData({
+          count: itemcount
+        });
+      }else{
+        this.setData({
           count: a.detail.value
-      });
+        });
+      }
   },
   setPopupShow(e){
     var {item} = e.currentTarget.dataset;

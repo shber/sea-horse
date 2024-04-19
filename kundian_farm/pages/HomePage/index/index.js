@@ -2,57 +2,12 @@
  * @Author: Shber
  * @Date: 2019-08-23 19:19:20
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-19 16:46:57
+ * @LastEditTime: 2024-04-19 20:11:21
  * @Description: 
  */
 var r = new getApp()
 var a = new getApp(), t = a.siteInfo.uniacid;
 import * as echarts from '../../../../components/echarts/ec-canvas/echarts';
-
-
-// function initChart(canvas, width, height=100, dpr) {
-//     const chart = echarts.init(canvas, null, {
-//       width: width,
-//       height: height,
-//       devicePixelRatio: dpr // 像素比
-//     });
-//     canvas.setChart(chart);
-  
-//     var option = {
-//         grid: {
-//           containLabel: false,
-//         },
-//         xAxis: {
-//           type: 'category',
-//           boundaryGap: false,
-//           data: ['15号', '16号', '17号', '18号', '19号', '20号'],
-//         },
-//         yAxis: {
-//           x: 'center',
-//           type: 'value',
-//           axisLabel: {
-//             show: false  // 隐藏 Y 轴标签
-//             },
-//           splitLine: {
-//             show: false, // 隐藏 Y 轴的分割线
-//           }
-//         },
-//         series: [{
-//           name: '价格',
-//           type: 'line',
-//           data: [18, 36, 65, 30, 78, 40, 33],
-//           symbol: 'none', lineStyle: { color: '#ED4F4F' }
-//         }, {
-//           name: '销量',
-//           type: 'line',
-//           data: [12, 50, 51, 35, 70, 30, 20],
-//           symbol: 'none',
-//           lineStyle: { color: '#447FFF' }
-//         }]
-//       };
-//     chart.setOption(option);
-//     return chart;
-//   }
 
 Page({
     data: {
@@ -76,6 +31,9 @@ Page({
       this.getFirstData()
       this.getAdoptList()
       this.getStatistics()
+
+      var u = e.user_uid || 0, g = wx.getStorageSync("uid_" + t);
+      void 0 != u && 0 != u && (wx.setStorageSync("farm_share_uid", u), a.loginBindParent(u, g));
 
     },
     intoArticle(t) {

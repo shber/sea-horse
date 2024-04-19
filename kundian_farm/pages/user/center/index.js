@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-19 15:47:37
+ * @LastEditTime: 2024-04-19 20:50:09
  * @Description: 
  */
 // var n = new getApp();
@@ -16,7 +16,8 @@ Page({
     SystemInfo: a.globalData.sysData,
     isIphoneX: a.globalData.isIphoneX,
     tarbar: a.tarbar,
-    userInfo:{}
+    userInfo:{},
+    setAuth: false,
   },
   getUserData: function() {
     var tt = this, n = wx.getStorageSync("uid_" + t);
@@ -79,8 +80,18 @@ Page({
   inputNum(e){
     this.setData({price:e.detail.value})
 },
+goDistribution(){
+    wx.navigateTo({
+        url: "/kundian_farm/pages/distribution/index/index"
+    })
+},
 nowPay: function(r) {
     const self = this
+    const userInfo = wx.getStorageSync("userInfo")
+    if(!userInfo.sessionid){
+        this.setData({setAuth:true})
+        return wx.showToast({ title: "请先手动进行微信授权", icon: "none", });
+    }
     if(!this.data.price){
         return wx.showToast({ title: "请输入充值金额", icon: "none", });
     }
@@ -123,9 +134,7 @@ nowPay: function(r) {
                     }
                 });
             }
-            "JSAPI支付必须传openid" == r.data.message && wx.navigateTo({
-                url: "../../login/index"
-            });
+            "JSAPI支付必须传openid" == r.data.message && self.setData({setAuth:true})
         },
         fail: function(t) {
             wx.showModal({
@@ -133,11 +142,23 @@ nowPay: function(r) {
                 content: t.data.message ? t.data.message : "错误",
                 showCancel: !1,
                 success: function(t) {
-                    t.confirm;
+                    self.setData({setAuth:true})
                 }
             });
         }
     });
+},
+
+updateUserInfo(){
+    const self = this
+    a.util.getUserInfo(function (n) {
+        console.log(n, '测试打印1');
+        wx.setStorageSync("uid_" + t, n.memberInfo.uid), 
+        wx.setStorageSync("kundian_farm_sessionid", n.sessionid),
+        wx.setStorageSync("kundian_farm_wxInfo", n.wxInfo);
+        wx.showToast({ title: "授权成功", icon: "none", });
+        self.setData({setAuth:false})
+    })
 },
 
   setPopupShow(){

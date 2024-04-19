@@ -1,3 +1,10 @@
+<!--
+ * @Author: Shber
+ * @Date: 2019-08-23 19:19:22
+ * @LastEditors: Shber
+ * @LastEditTime: 2024-04-19 18:17:17
+ * @Description: 
+-->
 <view>
     <view class="head_container" style="background:{{bgColor}}">
         <view class="head_content">
@@ -45,30 +52,22 @@
         </view>
     </view>
     <view class="flex border-bottom">
-        <view bindtap="intoOrder" class="menu_item" data-ordertype="2">
+        <!-- <view bindtap="intoOrder" class="menu_item" data-ordertype="2">
             <view class="item_content">
                 <text class="iconfont icon-dingdan2 f44" style="color:{{bgColor}}"></text>
                 <view class="mt20">组团订单</view>
+            </view>
+        </view> -->
+        <view bindtap="intoTeam" class="menu_item ">
+            <view class="item_content">
+                <text class="iconfont icon-center-team f44" style="color:{{bgColor}}"></text>
+                <view class="mt20">我的团队</view>
             </view>
         </view>
         <view bindtap="intoOrder" class="menu_item border-left" data-ordertype="3">
             <view class="item_content">
                 <text class="iconfont icon-dingdan2 f44" style="color:{{bgColor}}"></text>
                 <view class="mt20">认养订单</view>
-            </view>
-        </view>
-        <view class="menu_item border-left">
-            <view bindtap="intoOrder" class="item_content" data-ordertype="4">
-                <text class="iconfont icon-dingdan2 f44" style="color:{{bgColor}}"></text>
-                <view class="mt20">租赁订单</view>
-            </view>
-        </view>
-    </view>
-    <view class="flex">
-        <view bindtap="intoTeam" class="menu_item ">
-            <view class="item_content">
-                <text class="iconfont icon-center-team f44" style="color:{{bgColor}}"></text>
-                <view class="mt20">我的团队</view>
             </view>
         </view>
         <view bindtap="intoCode" class="menu_item border-left">
@@ -78,9 +77,19 @@
                 <view class="mt20" wx:else>我的分销码</view>
             </view>
         </view>
+        <!-- <view class="menu_item border-left">
+            <view bindtap="intoOrder" class="item_content" data-ordertype="4">
+                <text class="iconfont icon-dingdan2 f44" style="color:{{bgColor}}"></text>
+                <view class="mt20">租赁订单</view>
+            </view>
+        </view> -->
+    </view>
+    <!-- <view class="flex">
+
+
         <view bindtap="intoCode" class="menu_item border-left">
             <view class="item_content"></view>
         </view>
-    </view>
+    </view> -->
 </view>
 <view style="width100%;height:60rpx;"></view>

@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-19 15:49:21
+ * @LastEditTime: 2024-04-19 18:54:16
  * @Description: 
  */
 // var n = new getApp();
@@ -105,12 +105,19 @@ Page({
   chooseNum(a) {
     let count = this.data.count
     let itemcount = this.data.itemcount
-      a.detail.value > itemcount ? wx.showToast({
-          title: "已超出可选数量",
-          icon: "none"
-      }) : this.setData({
-          count: a.detail.value
+    if(a.detail.value > itemcount){
+      wx.showToast({
+        title: "已超出可选数量",
+        icon: "none"
+      })
+      this.setData({
+        count: itemcount
       });
+    }else{
+      this.setData({
+        count: a.detail.value
+      });
+    }
   },
   setPopupShow(e){
     var {item} = e.currentTarget.dataset;
