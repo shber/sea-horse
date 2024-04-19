@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-18 21:02:02
+ * @LastEditTime: 2024-04-19 15:49:21
  * @Description: 
  */
 // var n = new getApp();
@@ -27,6 +27,11 @@ Page({
 
   },
   onShow(){
+    let uid = wx.getStorageSync("uid_" + t)
+    uid || wx.navigateTo({
+        url: "../../login/index"
+    })
+    
     this.getDataList()
   },
   goPath () {
@@ -111,7 +116,7 @@ Page({
     var {item} = e.currentTarget.dataset;
     // this.data.itemData = item
     this.data.itemcount = item.count
-    this.setData({itemData:item, popupShow:true})
+    this.setData({count:1, itemData:item, popupShow:true})
   },
   setPopupHide(){
     this.setData({popupShow:false})

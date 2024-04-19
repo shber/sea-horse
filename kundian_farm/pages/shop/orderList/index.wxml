@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-18 21:00:08
+ * @LastEditTime: 2024-04-19 15:34:45
  * @Description: 
 -->
 <view class="my_content">
@@ -28,7 +28,7 @@
                   <view class="progress_bg"></view> <view class="progress_active" style="width:{{(item.adopt_day/ item.predict_ripe)*100}}%"></view>
               </view>
               <view class="flex_center text2">
-                <view class="number">${{item.total_price}}</view> <text>x{{item.count}}</text>
+                <view class="number">¥ {{item.total_price}}</view> <text>x{{item.count}}</text>
               </view>
           </view>
         </view>
@@ -59,9 +59,9 @@
         <view class="item_right">
           <view>
             <view class="item_title">{{itemData.animal_name}} 海马人样</view>
-            <view class="item_tip">建议售价：¥{{itemData.jian_yi_price}}</view>
+            <view class="item_tip">建议售价：¥ {{itemData.jian_yi_price}}</view>
           </view>
-          <view class="item_number">${{itemData.total_price}}</view>
+          <view class="item_number">¥ {{itemData.total_price}}</view>
         </view>
       </view>
       <view class="flex_center flex_center2">

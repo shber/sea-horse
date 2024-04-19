@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-18 21:13:26
+ * @LastEditTime: 2024-04-19 15:42:12
  * @Description: 
 -->
 <view>
@@ -33,11 +33,11 @@
     <view class="shadow_card card2">
       <view class="my_title">我的认养</view>
       <view class="tab_card">
-        <view bindtap="intoOrder" data-status="1">
+        <view bindtap="intoOrder" data-status="0">
           <image src="../../../images/new/ico_quan.png" class="card_icon"></image>
           全部
         </view>
-        <view bindtap="intoOrder" data-status="2">
+        <view bindtap="intoOrder" data-status="1">
           <image src="../../../images/new/ico_ren.png" class="card_icon"></image>
           认养中
         </view>
@@ -56,7 +56,7 @@
 
       <view class="btn_group">
         <button type="primary" class="default" hover-class="none" bindtap="setPopupHide">取消</button>
-        <button type="primary" class="primary" hover-class="none" bindtap="nowPay">立即充值1</button>
+        <button type="primary" class="primary" hover-class="none" bindtap="nowPay">立即充值</button>
       </view>
     </view>
   </popupView>

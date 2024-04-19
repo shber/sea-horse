@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-18 21:16:58
+ * @LastEditTime: 2024-04-19 15:47:37
  * @Description: 
  */
 // var n = new getApp();
@@ -141,7 +141,7 @@ nowPay: function(r) {
 },
 
   setPopupShow(){
-    this.setData({popupShow:true})
+    this.setData({price: "", popupShow:true})
     },
   intoOrder(a) {
     var {status} = a.currentTarget.dataset;

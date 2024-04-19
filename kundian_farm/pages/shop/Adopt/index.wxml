@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-18 21:00:53
+ * @LastEditTime: 2024-04-19 15:35:46
  * @Description: 
 -->
 <view>
@@ -39,7 +39,7 @@
           </view>
         </view>
         <view class="flex_center flex_center1">
-          <text class="red_num">¥{{item.total_price}}</text>
+          <text class="red_num">¥ {{item.total_price}}</text>
           <view class="">
             <button type="primary" hover-class="none" class="primary" data-item="{{item}}" bindtap="setPopupShow">立即领养</button>
           </view>
@@ -60,7 +60,7 @@
         <image src="{{itemData.animal_src}}" class="item_pic"></image>
         <view class="item_right">
           <view class="item_title">{{itemData.animal_name}}</view>
-          <view class="item_number">¥{{itemData.total_price}}</view>
+          <view class="item_number">¥ {{itemData.total_price}}</view>
         </view>
       </view>
       <view class="flex_center flex_center2">

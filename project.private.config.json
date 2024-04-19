@@ -11,6 +11,20 @@
     "miniprogram": {
       "list": [
         {
+          "name": "订单确认1",
+          "pathName": "kundian_farm/pages/shop/confirmAdopt/index",
+          "query": "count=1&aid=13",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "订单列表",
+          "pathName": "kundian_farm/pages/shop/orderList/index",
+          "query": "status=2",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "认养详情",
           "pathName": "kundian_farm/pages/shop/AdoptRules/index",
           "query": "id=14&aid=14",
@@ -35,13 +49,6 @@
           "name": "转卖列表",
           "pathName": "kundian_farm/pages/shop/Adopt/index",
           "query": "is_tarbar=true",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "订单列表",
-          "pathName": "kundian_farm/pages/shop/orderList/index",
-          "query": "status=2",
           "launchMode": "default",
           "scene": null
         },

@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-18 20:59:17
+ * @LastEditTime: 2024-04-19 15:46:26
  * @Description: 
  */
 // var n = new getApp();
@@ -26,9 +26,11 @@ Page({
        return  a / b == 0 ?  1 : (a / b)*100
     }
   },
+  onLoad(e){
+    this.setData({activeNum: e.status || 0})
+  },
   onShow: function (a) {
     this.getOrderData();
-
   },
   onSale(e){
     const self = this
@@ -77,7 +79,7 @@ Page({
               if(res.data.code == 1){
                 wx.showToast({ title: "取消成功", icon: "none" })
                 self.getOrderData()
-                self.setData({popupShow:false})
+                self.setData({count:1,popupShow:false})
               }else{
                 wx.showToast({ title: res.data.msg, icon: "none" })
               }
@@ -96,9 +98,10 @@ Page({
   },
   getOrderData: function() {
     var a = this, r = a.data.currentIndex, n = wx.getStorageSync("uid_" + e);
-    wx.showLoading({
-        title: "玩命加载中..."
-    }), t.util.request({
+    // wx.showLoading({
+    //     title: "玩命加载中..."
+    // }),
+     t.util.request({
         url: "entry/wxapp/class",
         data: {
             control: "animal",
@@ -158,7 +161,7 @@ Page({
     this.setData({
       itemData: item
     })
-    this.setData({popupShow:true})
+    this.setData({count:1, popupShow:true})
   },
   setPopupHide(){
     this.setData({popupShow:false})
