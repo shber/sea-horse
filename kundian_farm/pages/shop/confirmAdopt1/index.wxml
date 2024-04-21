@@ -7,7 +7,8 @@
             <text class="adopt-name">{{animalData.animal_name}}</text>
             <text class="spec">描述：{{animalData.animal_desc}}</text>
             <view class="li-right-desc">
-                <text class="price" wx:if="{{specVal!=''}}">￥{{specVal.price}}</text>
+                <text class="price" wx:if="{{specVal!=''}}">￥{{specVal.price}}</text> 
+                <text class="price" wx:elif="{{real_price!=''}}">￥{{real_price}}</text>
                 <text class="price" wx:else>￥{{animalData.price}}</text>
                 <text class="count">×{{count}}</text>
             </view>

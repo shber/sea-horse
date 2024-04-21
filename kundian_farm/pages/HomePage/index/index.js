@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2019-08-23 19:19:20
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-21 13:52:48
+ * @LastEditTime: 2024-04-21 17:41:48
  * @Description: 
  */
 var r = new getApp()
@@ -30,7 +30,7 @@ Page({
     onLoad: function(e) {
       this.getFirstData()
       this.getAdoptList()
-
+      this.getStatistics()
       var u = e.user_uid || 0, g = wx.getStorageSync("uid_" + t);
       void 0 != u && 0 != u && (wx.setStorageSync("farm_share_uid", u), a.loginBindParent(u, g));
 

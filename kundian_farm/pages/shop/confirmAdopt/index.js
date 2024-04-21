@@ -24,7 +24,8 @@ Page({
         pay_text: "立即下单",
         discount: 0,
         type:0,
-        adoptId:''
+        adoptId:'',
+        real_price: ''
     },
     onLoad: function(o) {
         var n = 0, i = t.bgColor, s = t.assistColor;
@@ -38,7 +39,8 @@ Page({
             bgColor: i,
             assistColor: s,
             type: o.type,
-            adoptId: o.adid // 领养id
+            adoptId: o.adid, // 领养id
+            real_price: o.price
         });
         var l = this, p = wx.getStorageSync("uid_" + e);
         t.util.request({

@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2019-08-23 19:19:22
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-21 13:48:39
+ * @LastEditTime: 2024-04-21 17:38:53
  * @Description: 
 -->
 <view class="my_content">
@@ -25,6 +25,7 @@
             <view class="flex_center text2">
               <view class="number">
                 <text class="price" wx:if="{{specVal!=''}}">￥{{specVal.price}}</text>
+                <text class="price" wx:elif="{{real_price!=''}}">￥{{real_price}}</text>
                 <text class="price" wx:else>￥{{animalData.price}}</text>
               </view> <text>x{{count}}</text>
             </view>

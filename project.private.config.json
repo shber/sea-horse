@@ -11,6 +11,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "自定义认养",
+          "pathName": "kundian_farm/pages/shop/confirmAdopt/index",
+          "query": "type=1&count=1&aid=13&adid=60&price=500.00",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "提现",
           "pathName": "kundian_farm/pages/user/cash/cash",
           "query": "",
