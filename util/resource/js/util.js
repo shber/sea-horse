@@ -127,15 +127,19 @@ s.base64Encode = function(e) {
         t.complete && "function" == typeof t.complete && t.complete(e);
     }), a));
 }, s.getWe7User = function(e, t) {
+    var _uid = wx.getStorageSync("uid_" + t);
+    var n = wx.getStorageSync("userInfo") || {};
+
+    console.log('useruser~~~~~~~~~~', _uid);
     wx.showLoading({
         title: "玩命加载中....",
         mask: !0
     });
-    var n = wx.getStorageSync("userInfo") || {};
     s.request({
         url: "auth/session/openid",
         data: {
-            code: t || ""
+            code: t || "",
+            uid: _uid
         },
         cachetime: 0,
         showLoading: !1,
