@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-16 12:11:42
+ * @LastEditTime: 2024-04-21 10:25:19
  * @Description: 
  */
 // var n = new getApp();
@@ -73,9 +73,12 @@ Page({
       },
       success: function(res) {
         if(res.data.code == 0){
-          wx.showToast({ title: "注册成功", icon: "none", });
-          wx.reLaunch({
-            url: '/kundian_farm/pages/login/index'
+          wx.showToast({ title: "注册成功", icon: "none", complete(){
+            setTimeout(()=>{          
+            wx.reLaunch({
+              url: '/kundian_farm/pages/login/index'
+            })},2000)
+          }
           });
         }else{
           wx.showToast({ title: res.data.msg, icon: "none", });

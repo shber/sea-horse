@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-15 19:20:21
+ * @LastEditTime: 2024-04-21 10:06:08
  * @Description: 
 -->
 <view class="login_content">
@@ -17,7 +17,7 @@
     </view>
     <view class="label label1">
       <image src="../../images/new/login1.png" class="login_icon"></image>
-      <input  type="number" maxlength="6" class="login_input" value="{{password}}" bindinput="bindKeyInput" data-name="password" placeholder-class="placeholder" placeholder="请输入密码"/>
+      <input  type="number" class="login_input" value="{{password}}" bindinput="bindKeyInput" data-name="password" placeholder-class="placeholder" placeholder="请输入密码"/>
     </view>
     <view class="label_code label1">
       <view class="label" style="flex:3">

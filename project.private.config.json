@@ -11,6 +11,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "分销",
+          "pathName": "kundian_farm/pages/distribution/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "订单确认1",
           "pathName": "kundian_farm/pages/shop/confirmAdopt/index",
           "query": "count=1&aid=13",
