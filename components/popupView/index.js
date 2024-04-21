@@ -8,7 +8,11 @@ Component({
       },
       height:{
         type:Number
-        }
+        },
+        bgClose:{
+          type:Boolean,
+          value: false
+          }
     },
     data: {
       localArray:["西安","重庆","北京市","西安","重庆","北京", ],
@@ -23,6 +27,7 @@ Component({
         this.setData({ showPopup: true});
       },
       hidePopup() { // 隐藏弹窗
+        if(this.data.bgClose){return false}
         this.setData({showPopup: false});
       },
     }

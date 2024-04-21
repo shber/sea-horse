@@ -149,9 +149,7 @@ Page({
                                 wx.showToast({
                                     title: "您已支付成功",
                                     success: function() {
-                                        wx.navigateBack({
-                                            delta: 1
-                                        });
+                                        wx.navigateBack()
                                     }
                                 });
                                 return false

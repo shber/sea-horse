@@ -19,3 +19,7 @@ page {
 .primary{margin-top: 150rpx;}
 .link{ margin-top: 50rpx; display: flex; color: #447FFF; justify-content: center; text-align: center; text-decoration: underline;}
 button[type=primary]{background-color: #447FFF; border-radius: 25px;}
+
+.flex_left{display: flex; align-items: center;}
+.tip_title{text-align: center; margin: 30rpx 0 20rpx; font-size: 32rpx;}
+.tip_desc{ text-align: center; font-size: 28rpx; color: #999; margin-bottom: 80rpx;}

@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2019-08-23 19:19:20
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-21 10:11:39
+ * @LastEditTime: 2024-04-21 13:52:48
  * @Description: 
  */
 var r = new getApp()
@@ -46,7 +46,7 @@ Page({
     intoAdopt(e) {
       const {id} = e.currentTarget.dataset;
         wx.navigateTo({
-            url: "/kundian_farm/pages/shop/AdoptRules/index?id="+id
+            url: "/kundian_farm/pages/shop/AdoptRules/index?aid="+id
         });
     },
     onPageScroll: function(a) {

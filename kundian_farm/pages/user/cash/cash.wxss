@@ -5,15 +5,27 @@ form {
     display: block;
     padding-bottom: 32rpx;
 }
+.pd_30{padding: 30rpx; height: auto;}
 
 .block {
-    border-bottom: 1rpx solid #e3e3e3;
+    border-bottom: 1rpx solid #ececec;
     background: #fff;
     padding: 32rpx 24rpx;
 }
+.block1 {
+    background: #fff;
+    padding: 32rpx 24rpx;
+}
+.block2{
+    background: #fff;
+    padding: 32rpx 0rpx;
+}
+.icon_size{width: 46rpx; height: 46rpx; margin-right: 10rpx;}
+.shadow_card1{padding: 0 30rpx;}
 
 .user-money {
-    font-size: 15pt;
+    font-size: 36rpx;
+    margin-bottom: 24rpx;
 }
 
 .cash-max-day {
@@ -29,13 +41,14 @@ form {
 }
 
 .cash-input {
-    font-size: 28rpx;
+    font-size: 32rpx;
     height: 100%;
     width: 100%;
-    padding: 0 32rpx;
+    padding: 0 16rpx;
 }
-
+.shadow_card1 .flex-grow-0{margin-right: 24rpx;}
 .cash-min {
+    color: #999;
     font-size: 9pt;
 }
 
@@ -63,9 +76,16 @@ form {
 }
 
 .pay {
-    border: 1rpx #666 solid;
-    padding: 16rpx 32rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300rpx; height: 100rpx;
+    border: 1rpx #f2f2f2 solid;
+    /* padding: 32rpx 80rpx; */
     position: relative;
+    border-radius: 12rpx;
+    overflow: hidden;
+
 }
 
 .pay-img {

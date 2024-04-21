@@ -11,6 +11,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "提现",
+          "pathName": "kundian_farm/pages/user/cash/cash",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "分销",
           "pathName": "kundian_farm/pages/distribution/index/index",
           "query": "",

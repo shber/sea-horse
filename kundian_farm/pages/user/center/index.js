@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-19 20:50:09
+ * @LastEditTime: 2024-04-21 13:40:56
  * @Description: 
  */
 // var n = new getApp();
@@ -88,10 +88,10 @@ goDistribution(){
 nowPay: function(r) {
     const self = this
     const userInfo = wx.getStorageSync("userInfo")
-    if(!userInfo.sessionid){
-        this.setData({setAuth:true})
-        return wx.showToast({ title: "请先手动进行微信授权", icon: "none", });
-    }
+    // if(!userInfo.sessionid){
+    //     this.setData({setAuth:true})
+    //     return wx.showToast({ title: "请先手动进行微信授权", icon: "none", });
+    // }
     if(!this.data.price){
         return wx.showToast({ title: "请输入充值金额", icon: "none", });
     }
@@ -134,7 +134,7 @@ nowPay: function(r) {
                     }
                 });
             }
-            "JSAPI支付必须传openid" == r.data.message && self.setData({setAuth:true})
+            "JSAPI支付必须传openid" == r.data.message  // && self.setData({setAuth:true})
         },
         fail: function(t) {
             wx.showModal({
@@ -142,7 +142,7 @@ nowPay: function(r) {
                 content: t.data.message ? t.data.message : "错误",
                 showCancel: !1,
                 success: function(t) {
-                    self.setData({setAuth:true})
+                   // self.setData({setAuth:true})
                 }
             });
         }

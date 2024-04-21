@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-19 18:53:28
+ * @LastEditTime: 2024-04-21 11:18:36
  * @Description: 
  */
 // var n = new getApp();
@@ -35,6 +35,12 @@ Page({
   },
   inputChange(e){
     this.setData({stylePrice: e.detail.value})
+  },
+  intoAdoptDetail: function(t) {
+    var a = t.currentTarget.dataset.adoptid;
+    wx.navigateTo({
+        url: "../../shop/adoptiveState/index?adopt_id=" + a
+    });
   },
   onSale(e){
     const self = this

@@ -43,3 +43,41 @@ page { font-size: 30rpx; background: #f8f8f9; }
     background-color: rgba(0,0,0, 0.4); border-radius: 50%;
 }
 .back_icon_bg image{margin-left: 20rpx;}
+
+.banner {
+    width: 100%;
+    height: 750rpx;
+    position: relative;
+}
+
+.swiper {
+    width: 100%;
+    height: 750rpx;
+    text-align: center;
+}
+
+.slide-image {
+    width: 100%;
+    height: 100%;
+}
+.adopt-video {
+    width: 100%;
+    height: 750rpx;
+    background: black;
+}
+
+.live-play {
+    width: 100%;
+    margin-top: 85rpx;
+}
+
+.video {
+    width: 100%;
+    height: 450rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 150rpx;
+}
+.cu-li{position: absolute; bottom: 146rpx; left: 0; z-index: 999;}
+.banner_bg{width: 100%; height: 750rpx; position: relative;}

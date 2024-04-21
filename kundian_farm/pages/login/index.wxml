@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-15 18:35:11
+ * @LastEditTime: 2024-04-21 10:58:46
  * @Description: 
 -->
 <view class="login_content">
@@ -24,5 +24,14 @@
       <text class="link" bindtap="goPath">没有账户，立即注册</text>
     </view>
   </view>
+
+
+  <popupView bgClose="{{true}}" showPopup="{{setAuth}}" height="{{458}}"> 
+    <view>
+      <view class="tip_title">微信未授权</view>
+      <view class="tip_desc">您需要先手动授权，再进行充值</view>
+      <button type="primary" class="primary" bindgetuserinfo="updateUserInfo" class="login" openType="getUserInfo">微信授权</button>
+    </view>
+  </popupView>
 </view>
 

@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-15 20:13:44
+ * @LastEditTime: 2024-04-21 13:44:47
  * @Description: 
  */
 // var n = new getApp();
@@ -30,6 +30,7 @@ Page({
     if(!this.data.password){
       return wx.showToast({ title: "请输入密码", icon: "none", });
     }
+    const userInfo = wx.getStorageSync("userInfo")
     wx.showLoading({
       title: "登录中..."
     }) 
@@ -43,21 +44,42 @@ Page({
       },
       success: function({data}) {
         if(data.code == 0){
-          wx.showToast({ title: "登录成功", icon: "none", });
-          // wx.setStorageSync("userInfo", data)
-          wx.setStorageSync("uid_" + data.userInfo.uniacid, data.userInfo.uid)
-          wx.setStorageSync("kundian_farm_sessionid", data.sessionid)
-          wx.setStorageSync("kundian_farm_wxInfo", data.userInfo);
-          wx.reLaunch({
-            url: '/kundian_farm/pages/HomePage/index/index'
-          });
+          if(!userInfo.sessionid){
+            self.setData({setAuth:true})
+            return wx.showToast({ title: "登录成功,请绑定微信账号", icon: "none", });
+          }else{
+              wx.setStorageSync("userInfo", data)
+              wx.setStorageSync("uid_" + data.userInfo.uniacid, data.userInfo.uid)
+              wx.setStorageSync("kundian_farm_sessionid", data.sessionid)
+              wx.setStorageSync("kundian_farm_wxInfo", data.userInfo);
+              wx.reLaunch({
+                url: '/kundian_farm/pages/HomePage/index/index'
+              });
+          }
+          // wx.showToast({ title: "登录成功,请绑定微信账号", icon: "none", });
+          // self.setData({setAuth:true})
+          // self.updateUserInfo()
         }else{
           wx.showToast({ title: data.msg, icon: "none", });
         }
         wx.hideLoading();
       }
-  });
+    });
 
+  },
+  updateUserInfo(){
+    const self = this
+    a.util.getUserInfo(function (n) {
+        console.log(n, '测试打印1');
+        wx.setStorageSync("uid_" + t, n.memberInfo.uid), 
+        wx.setStorageSync("kundian_farm_sessionid", n.sessionid),
+        wx.setStorageSync("kundian_farm_wxInfo", n.wxInfo);
+        wx.showToast({ title: "授权成功", icon: "none", });
+        self.setData({setAuth:false})
+        wx.reLaunch({
+          url: '/kundian_farm/pages/HomePage/index/index'
+        });
+    })
   },
   goPath () {
     wx.reLaunch({

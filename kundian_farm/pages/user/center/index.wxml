@@ -61,7 +61,7 @@
   <popupView showPopup="{{popupShow}}" height="{{558}}"> 
     <view>
       <view class="cash_title">账户充值</view>
-      <input class="cash_input" bindinput="inputNum" type="number" placeholder="请输入金额" value="{{price}}"></input>
+      <input class="cash_input" bindinput="inputNum" type="digit" placeholder="请输入金额" value="{{price}}"></input>
 
       <view class="btn_group">
         <button type="primary" class="default" hover-class="none" bindtap="setPopupHide">取消</button>

@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-19 19:53:20
+ * @LastEditTime: 2024-04-21 11:21:52
  * @Description: 
 -->
 <view class="my_content">
@@ -12,7 +12,7 @@
 
 
   <view class="pd_30">
-    <view class="graph adopt_item" wx:for="{{animalData}}" wx:key="*this">
+    <view class="graph adopt_item" bindtap="intoAdoptDetail" data-adoptid="{{item.id}}" wx:for="{{animalData}}" wx:key="*this">
         <view class="list_item">
           <image src="{{item.animal_src}}" class="item_pic"></image>
           <view class="flex_wid">
@@ -43,8 +43,8 @@
               <view >转卖价格：<text class="red_color">¥ {{item.resale_price}}</text></view>
             </view>
             <view class="btn_small">
-              <button wx:if="{{item.status == 2}}" type="primary" hover-class="none" class="primary" data-item="{{item}}" bindtap="setPopupShow">立即转卖</button>
-              <button wx:if="{{item.status == 9}}" type="primary" hover-class="none" class="primary" data-item="{{item}}" bindtap="closeSale">取消转卖</button>
+              <button wx:if="{{item.status == 2}}" type="primary" hover-class="none" class="primary" data-item="{{item}}" catchtap="setPopupShow">立即转卖</button>
+              <button wx:if="{{item.status == 9}}" type="primary" hover-class="none" class="primary" data-item="{{item}}" catchtap="closeSale">取消转卖</button>
             </view>
           </view>
           <block wx:else>
@@ -53,8 +53,8 @@
               <view>建议售价：¥ {{item.jian_yi_price}}</view>
             </view>
             <view class="">
-              <button wx:if="{{item.status == 2}}" type="primary" hover-class="none" class="primary" data-item="{{item}}" bindtap="setPopupShow">立即转卖</button>
-              <button wx:if="{{item.status == 9}}" type="primary" hover-class="none" class="primary" data-item="{{item}}" bindtap="closeSale">取消转卖</button>
+              <button wx:if="{{item.status == 2}}" type="primary" hover-class="none" class="primary" data-item="{{item}}" catchtap="setPopupShow">立即转卖</button>
+              <button wx:if="{{item.status == 9}}" type="primary" hover-class="none" class="primary" data-item="{{item}}" catchtap="closeSale">取消转卖</button>
             </view>
           </block>
 
