@@ -127,7 +127,7 @@ s.base64Encode = function(e) {
         t.complete && "function" == typeof t.complete && t.complete(e);
     }), a));
 }, s.getWe7User = function(e, t) {
-    var _uid = wx.getStorageSync("uid_" + t);
+    var _uid = wx.getStorage("open_uid");
     var n = wx.getStorageSync("userInfo") || {};
 
     console.log('useruser~~~~~~~~~~', _uid);

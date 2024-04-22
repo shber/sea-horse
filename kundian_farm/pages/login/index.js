@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-21 15:59:55
+ * @LastEditTime: 2024-04-22 11:05:34
  * @Description: 
  */
 // var n = new getApp();
@@ -73,9 +73,9 @@ Page({
     const self = this
     a.util.getUserInfo(function (n) {
         console.log(n, '测试打印1');
-        wx.setStorageSync("uid_" + t, n.userInfo.uid), 
+        // wx.setStorageSync("uid_" + t, n.userInfo.uid), 
         wx.setStorageSync("kundian_farm_sessionid", n.sessionid),
-        wx.setStorageSync("kundian_farm_wxInfo", n.wxInfo);
+        // wx.setStorageSync("kundian_farm_wxInfo", n.wxInfo);
         wx.showToast({ title: "授权成功", icon: "none", });
         self.setData({setAuth:false})
                 
