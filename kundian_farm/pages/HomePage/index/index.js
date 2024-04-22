@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2019-08-23 19:19:20
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-22 19:17:45
+ * @LastEditTime: 2024-04-22 19:26:31
  * @Description: 
  */
 var r = new getApp()
@@ -179,41 +179,6 @@ Page({
               });
               canvas.setChart(chart);
             
-              // var option = {
-              //     grid: {
-              //       containLabel: false,
-              //     },
-              //     xAxis: {
-              //       type: 'category',
-              //       boundaryGap: false,
-              //       data:res.data.x
-              //     },
-              //     yAxis: {
-              //       x: 'center',
-              //       type: 'value',
-              //       axisLabel: {
-              //         show: false  // 隐藏 Y 轴标签
-              //         },
-              //       splitLine: {
-              //         show: false, // 隐藏 Y 轴的分割线
-              //       }
-              //     },
-              //     series: [{
-              //       name: '价格',
-              //       type: 'line',
-              //       data:res.data.y1,
-              //       symbol: 'none', lineStyle: { color: '#ED4F4F' }
-              //     }, {
-              //       name: '销量',
-              //       type: 'line',
-              //       data: res.data.y2,
-              //       symbol: 'none',
-              //       lineStyle: { color: '#447FFF' }
-              //     }]
-              //   };
-                
-              // chart.setOption(option);
-
               setOption(chart, res.data.x, res.data.y1, res.data.y2);
               self.chart = chart;
               self.setData({
@@ -222,8 +187,6 @@ Page({
               });
               return chart;
             }) 
-            // function initChart
-              // self.setData({'ec.onInit': initChart })
           }
       })
     },
