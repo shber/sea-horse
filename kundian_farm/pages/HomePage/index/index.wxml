@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2020-12-01 23:03:44
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-16 18:35:16
+ * @LastEditTime: 2024-04-22 19:15:23
  * @Description: 
 -->
 <tarbar SystemInfo="{{SystemInfo}}" list="{{tarbar}}" path="kundian_farm/pages/HomePage/index/index"></tarbar>
@@ -26,7 +26,8 @@
                     <view class="right right1"> <view class="red"></view> 销量</view>
                 </view>
             </view>
-            <ec-canvas id="mychart_line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+            <ec-canvas wx:if="{{!isDisposed}}"  id="mychart_line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+            <!-- <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas> -->
         </view>
         <view class="home_bar" bindtap="intoArticle">
             <image src="../../../images/new/img_gao.png" class="bar_pic"></image>

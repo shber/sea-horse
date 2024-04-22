@@ -2,18 +2,58 @@
  * @Author: Shber
  * @Date: 2019-08-23 19:19:20
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-21 17:41:48
+ * @LastEditTime: 2024-04-22 19:17:45
  * @Description: 
  */
 var r = new getApp()
 var a = new getApp(), t = a.siteInfo.uniacid;
 import * as echarts from '../../../../components/echarts/ec-canvas/echarts';
 
+
+function setOption(chart, x=[], y1=[], y2=[]) {
+  var option = {
+    grid: {
+      containLabel: false,
+    },
+    xAxis: {
+      type: 'category',
+      boundaryGap: false,
+      data:x
+    },
+    yAxis: {
+      x: 'center',
+      type: 'value',
+      axisLabel: {
+        show: false  // 隐藏 Y 轴标签
+        },
+      splitLine: {
+        show: false, // 隐藏 Y 轴的分割线
+      }
+    },
+    series: [{
+      name: '价格',
+      type: 'line',
+      data:y1,
+      symbol: 'none', lineStyle: { color: '#ED4F4F' }
+    }, {
+      name: '销量',
+      type: 'line',
+      data: y2,
+      symbol: 'none',
+      lineStyle: { color: '#447FFF' }
+    }]
+  };
+  chart.setOption(option);
+}
+
 Page({
     data: {
         ec: {
-          onInit: null
+          onInit: null,
+          lazyLoad: true
         },
+        isLoaded: false,
+        isDisposed: false,
         SystemInfo: a.globalData.sysData,
         tarbar: a.tarbar,
         background: ['https://st-b2b.maiyatian.com/product/202404/t254984736522305.png', 
@@ -28,20 +68,25 @@ Page({
         progressNum: 0,
     },
     onLoad: function(e) {
+      const self = this
       this.getFirstData()
       this.getAdoptList()
-      this.getStatistics()
+
       var u = e.user_uid || 0, g = wx.getStorageSync("uid_" + t);
       void 0 != u && 0 != u && (wx.setStorageSync("farm_share_uid", u), a.loginBindParent(u, g));
 
     },
     onShow: function() {
+      // this.getStatistics()
+    },
+    onReady(){
+      this.ecComponent = this.selectComponent('#mychart_line');
       this.getStatistics()
     },
     intoArticle(t) {
-        wx.navigateTo({
-            url: "/kundian_farm/pages/information/index/index"
-        });
+      wx.navigateTo({
+          url: "/kundian_farm/pages/information/index/index"
+      });
     },
     intoAdopt(e) {
       const {id} = e.currentTarget.dataset;
@@ -126,56 +171,59 @@ Page({
               uniacid: t
           },
           success: function(res) {
-              // wx.hideLoading();
-              // option.xAxis.data = res.data.x
-              // option.series[0].data = res.data.y1
-              // option.series[1].data = res.data.y2
+            self.ecComponent.init((canvas, width, height=100, dpr)=> {
+              const chart = echarts.init(canvas, null, {
+                width: width,
+                height: height,
+                devicePixelRatio: dpr // 像素比
+              });
+              canvas.setChart(chart);
+            
+              // var option = {
+              //     grid: {
+              //       containLabel: false,
+              //     },
+              //     xAxis: {
+              //       type: 'category',
+              //       boundaryGap: false,
+              //       data:res.data.x
+              //     },
+              //     yAxis: {
+              //       x: 'center',
+              //       type: 'value',
+              //       axisLabel: {
+              //         show: false  // 隐藏 Y 轴标签
+              //         },
+              //       splitLine: {
+              //         show: false, // 隐藏 Y 轴的分割线
+              //       }
+              //     },
+              //     series: [{
+              //       name: '价格',
+              //       type: 'line',
+              //       data:res.data.y1,
+              //       symbol: 'none', lineStyle: { color: '#ED4F4F' }
+              //     }, {
+              //       name: '销量',
+              //       type: 'line',
+              //       data: res.data.y2,
+              //       symbol: 'none',
+              //       lineStyle: { color: '#447FFF' }
+              //     }]
+              //   };
+                
+              // chart.setOption(option);
 
-
-              function initChart(canvas, width, height=100, dpr) {
-                const chart = echarts.init(canvas, null, {
-                  width: width,
-                  height: height,
-                  devicePixelRatio: dpr // 像素比
-                });
-                canvas.setChart(chart);
-              
-                var option = {
-                    grid: {
-                      containLabel: false,
-                    },
-                    xAxis: {
-                      type: 'category',
-                      boundaryGap: false,
-                      data:res.data.x
-                    },
-                    yAxis: {
-                      x: 'center',
-                      type: 'value',
-                      axisLabel: {
-                        show: false  // 隐藏 Y 轴标签
-                        },
-                      splitLine: {
-                        show: false, // 隐藏 Y 轴的分割线
-                      }
-                    },
-                    series: [{
-                      name: '价格',
-                      type: 'line',
-                      data:res.data.y1,
-                      symbol: 'none', lineStyle: { color: '#ED4F4F' }
-                    }, {
-                      name: '销量',
-                      type: 'line',
-                      data: res.data.y2,
-                      symbol: 'none',
-                      lineStyle: { color: '#447FFF' }
-                    }]
-                  };
-                chart.setOption(option);
-                return chart;
-              }
-              self.setData({'ec.onInit': initChart })
+              setOption(chart, res.data.x, res.data.y1, res.data.y2);
+              self.chart = chart;
+              self.setData({
+                isLoaded: true,
+                isDisposed: false
+              });
+              return chart;
+            }) 
+            // function initChart
+              // self.setData({'ec.onInit': initChart })
           }
       })
     },
