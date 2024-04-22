@@ -1,0 +1,31 @@
+<!-- eslint-disable  -->
+<view class="container_tip">
+  <view class="{{isTransparent ? 'top_operate_tpt' : 'top_operate'}}" style="height: {{statusBarHeight + navBarHeight}}px">
+    <view class="fixed_operate" style="padding-top: {{statusBarHeight}}px; height: {{navBarHeight}}px">
+      <block wx:if="{{titleLeft}}">
+        <view class="top_title new_top_title">{{title}}</view>
+        <view class="mask_box"></view>
+      </block>
+      <block wx:else>
+        <view class="back_box">
+          <view wx:if="{{isBtnShow}}" class="back_btn" bindtap="goPathFn">
+            <image wx:if="{{backBtnShow}}" src="/kundian_farm/images/icon/home-light.png" data-index="{{0}}" style="width: 36rpx; height: 36rpx;" class="back_icon "></image>
+            <image wx:else src="/kundian_farm/images/icon/back-light.png" data-index="{{1}}" style="width: 16rpx; height: 28rpx; margin-left: -5rpx;" class="back_icon"></image>
+
+          </view>
+        </view>
+        <view class="top_title" wx:if="{{ !isTransparent }}">{{title}}</view>
+        <view class="mask_box"></view>
+        <view wx:if="{{Share}}" class="onShare" style="position: relative;right:{{width + 'px'}}">
+          <button open-type="share" style="opacity: 0;z-index: 999;" class="onShare"></button>
+          <!-- <image class="onShare" style="position: relative;top:-32px" src="https://img.mingchu.co/Nuploads/headpic/6437c1d0cfb0a.png"></image> -->
+          <view style="position: relative;top:-28px" class="onShares">
+          </view>
+        </view>
+
+      </block>
+    </view>
+
+  </view>
+
+</view>

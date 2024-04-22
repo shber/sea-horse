@@ -2,13 +2,16 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-21 11:58:54
+ * @LastEditTime: 2024-04-22 17:23:29
  * @Description: 
 -->
 <import src="../../../../wxParse/wxParse.wxml"></import>
-<view class="back_icon_bg" bindtap="goback">
+<back-home title="123" is-show="{{ true }}" is-transparent="{{ true }}" />
+
+
+<!-- <view class="back_icon_bg" bindtap="goback">
   <image src="../../../images/icon/back-light.png" style="width: 16rpx; height: 28rpx;" class="back_icon"></image>
-</view>
+</view> -->
 <view class="my_content">
  <!--  <view class="header">
     <image src="{{animalData.animal_src}}" class="pic_bg"></image>
