@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-22 11:05:34
+ * @LastEditTime: 2024-04-22 18:30:24
  * @Description: 
  */
 // var n = new getApp();
@@ -47,7 +47,7 @@ Page({
           //   self.setData({setAuth:true})
           //   return wx.showToast({ title: "登录成功,请绑定微信账号", icon: "none", });
           // }else{
-              wx.setStorage("open_uid", data.userInfo.uid)
+              wx.setStorageSync("open_uid", data.userInfo.uid)
               wx.setStorageSync("userInfo", data)
               wx.setStorageSync("uid_" + data.userInfo.uniacid, data.userInfo.uid)
               wx.setStorageSync("kundian_farm_sessionid", data.sessionid)
