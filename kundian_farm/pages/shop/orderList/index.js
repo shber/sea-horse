@@ -1,190 +1,240 @@
-/*
- * @Author: Shber
- * @Date: 2023-09-13 18:48:16
- * @LastEditors: Shber
- * @LastEditTime: 2024-04-21 11:18:36
- * @Description: 
- */
-// var n = new getApp();
 var t = new getApp(), e = t.siteInfo.uniacid;
 
 Page({
-  data: {
-    popupShow: false,
-    activeNum: 0,
-    tabInfo:[
-      {label:'全部', val:0},
-      {label:'认养中', val:1},
-      {label:'转卖中', val:2},
-      {label:'已完成', val:3}
-    ],
-    count:1,
-    stylePrice:'',
-    itemData:{},
-    animalData:[],
-    number:function(a, b){
-        console.log(a, b);
-       return  a / b == 0 ?  1 : (a / b)*100
-    }
-  },
-  onLoad(e){
-    this.setData({activeNum: e.status || 0})
-  },
-  onShow: function (a) {
-    this.getOrderData();
-  },
-  inputChange(e){
-    this.setData({stylePrice: e.detail.value})
-  },
-  intoAdoptDetail: function(t) {
-    var a = t.currentTarget.dataset.adoptid;
-    wx.navigateTo({
-        url: "../../shop/adoptiveState/index?adopt_id=" + a
-    });
-  },
-  onSale(e){
-    const self = this
-    var count = this.data.count;
-    let itemData = this.data.itemData
-    if(!self.data.stylePrice){
-      return wx.showToast({ title: '请输入转卖价格', icon: "none" })
-    }
-    t.util.request({
-      url: "entry/wxapp/class",
-      data: {
-          control: "animal",
-          op: "re_sale",
-          uniacid: e,
-          id: itemData.id,
-          count: count,
-          price: self.data.stylePrice,
-      },
-      success: function(res) {
-        console.log('rs',res);
-        if(res.data.code == 1){
-          wx.showToast({ title: "转卖成功", icon: "none" })
-          self.getOrderData()
-          self.setData({popupShow:false})
-        }else{
-          wx.showToast({ title: res.data.msg, icon: "none" })
-        }
-      }
-    })
-  },
-  closeSale(e){
-    const self = this
-    var {item} = e.currentTarget.dataset;
-
-    wx.showModal({
-      title: '提示',
-      content: '您确定取消转卖吗？',
-      success (res) {
-        if (res.confirm) {
-          t.util.request({
+    data: {
+        bgColor: t.bgColor,
+        currentIndex: "4",
+        orderData: [],
+        status: "",
+        page: 1,
+        isContent: !0,
+        show_verify: !0,
+        verify_qrcode: ""
+    },
+    onLoad: function(a) {
+        var r = this;
+        if (a.status) n = a.status; else var n = 4;
+        wx.getStorageSync("uid_" + e);
+        r.setData({
+            currentIndex: n
+        }), this.getOrderData(), t.util.setNavColor(e);
+    },
+    onShow: function(t) {
+        this.getOrderData();
+    },
+    getOrderData: function() {
+        var a = this, r = a.data.currentIndex, n = wx.getStorageSync("uid_" + e);
+        wx.showLoading({
+            title: "玩命加载中..."
+        }), t.util.request({
             url: "entry/wxapp/class",
             data: {
-                control: "animal",
-                op: "cancel_re_sale",
+                control: "order",
+                op: "orderList",
                 uniacid: e,
-                id: item.id,
+                uid: n,
+                status: r
             },
-            success: function(res) {
-              if(res.data.code == 1){
-                wx.showToast({ title: "取消成功", icon: "none" })
-                self.getOrderData()
-                self.setData({count:1,popupShow:false})
-              }else{
-                wx.showToast({ title: res.data.msg, icon: "none" })
-              }
+            success: function(t) {
+                var e = t.data.orderData;
+                e.length > 0 ? a.setData({
+                    orderData: e,
+                    page: 1,
+                    isContent: !0
+                }) : a.setData({
+                    isContent: !1
+                }), wx.hideLoading();
             }
-          })
-        }
-      }
-    })  
-  },
-  checkTab(e){
-    var {id} = e.currentTarget.dataset;
-    this.setData({activeNum: id})
-    console.log(id);
-    this.setData({animalData: []})
-    this.getOrderData();
-  },
-  getOrderData: function() {
-    var a = this, r = a.data.currentIndex, n = wx.getStorageSync("uid_" + e);
-    // wx.showLoading({
-    //     title: "玩命加载中..."
-    // }),
-     t.util.request({
-        url: "entry/wxapp/class",
-        data: {
-            control: "animal",
-            op: "getMyAnimal",
+        });
+    },
+    changeIndex: function(t) {
+        this.setData({
+            currentIndex: t.currentTarget.dataset.index
+        }), this.getOrderData();
+    },
+    sendRequest: function(e, a, r) {
+        var n = this;
+        wx.showModal({
+            title: "提示",
+            content: e,
+            success: function(e) {
+                e.confirm && t.util.request({
+                    url: "entry/wxapp/class",
+                    data: a,
+                    success: function(t) {
+                        1 == t.data.code ? wx.showModal({
+                            title: "提示",
+                            content: t.data.msg,
+                            showCancel: !1,
+                            success: function() {
+                                n.getOrderData();
+                            }
+                        }) : wx.showToast({
+                            title: "取消失败"
+                        });
+                    }
+                });
+            }
+        });
+    },
+    cancelOrder: function(t) {
+        var a = wx.getStorageSync("uid_" + e), r = t.currentTarget.dataset.orderid, n = {
+            control: "order",
+            op: "cancelOrder",
+            uid: a,
             uniacid: e,
-            uid: n,
-            status: this.data.activeNum
-        },
-        success: function(t) {
-            var e = t.data.animalData;
-            e.length > 0 ? a.setData({
-                animalData: e,
-                page: 1,
-                isContent: !0
-            }) : a.setData({
-                isContent: !1
-            }), wx.hideLoading();
-        }
-    });
-},
-
-  goPath () {
-    wx.reLaunch({
-      url: '/kundian_farm/pages/register/index'
-    });
-  },
-  reduceNum() {
-    let count = this.data.count
-    1 != count && this.setData({
-      count: parseInt(count) - 1
-    });
-  },
-  addNum() {
-    let count = this.data.count
-    let itemcount = this.data.itemcount
-    parseInt(count) + 1 > itemcount? wx.showToast({
-        title: "已超出可选数量",
-        icon: "none"
-    }) : this.setData({
-        count: parseInt(count) + 1
-    });
-  },
-  chooseNum(a) {
-    let count = this.data.count
-    let itemcount = this.data.itemcount
-      if(a.detail.value > itemcount){
-        wx.showToast({
-          title: "已超出可选数量",
-          icon: "none"
-        })
-        this.setData({
-          count: itemcount
+            order_id: r
+        };
+        this.sendRequest("确认取消订单吗？", n, 1);
+    },
+    payOrder: function(a) {
+        wx.getStorageSync("uid_" + e);
+        var r = a.currentTarget.dataset.orderid;
+        t.util.request({
+            url: "entry/wxapp/pay",
+            data: {
+                op: "getShopPayOrder",
+                orderid: r,
+                uniacid: e,
+                file: "shop"
+            },
+            cachetime: "0",
+            success: function(a) {
+                if (a.data && a.data.data && !a.data.errno) {
+                    var n = a.data.data.package;
+                    wx.requestPayment({
+                        timeStamp: a.data.data.timeStamp,
+                        nonceStr: a.data.data.nonceStr,
+                        package: a.data.data.package,
+                        signType: "MD5",
+                        paySign: a.data.data.paySign,
+                        success: function(a) {
+                            wx.showLoading({
+                                title: "加载中"
+                            }), t.util.request({
+                                url: "entry/wxapp/class",
+                                data: {
+                                    control: "shop",
+                                    order_id: r,
+                                    op: "sendMsg",
+                                    uniacid: e,
+                                    prepay_id: n
+                                },
+                                success: function() {
+                                    wx.showModal({
+                                        title: "提示",
+                                        content: "支付成功",
+                                        showCancel: !1,
+                                        success: function() {
+                                            wx.redirectTo({
+                                                url: "../orderList/index"
+                                            });
+                                        }
+                                    }), wx.hideLoading();
+                                }
+                            });
+                        },
+                        fail: function(t) {
+                            wx.showModal({
+                                title: "系统提示",
+                                content: "您取消了支付!",
+                                showCancel: !1,
+                                success: function(t) {}
+                            }), wx.hideLoading();
+                        }
+                    });
+                } else console.log("fail1");
+            },
+            fail: function(t) {
+                "JSAPI支付必须传openid" == t.data.message ? wx.navigateTo({
+                    url: "/kundian_farm/pages/login/index"
+                }) : wx.showModal({
+                    title: "系统提示",
+                    content: t.data.message ? t.data.message : "错误",
+                    showCancel: !1,
+                    success: function(t) {
+                        t.confirm;
+                    }
+                });
+            }
         });
-      }else{
-        this.setData({
-          count: a.detail.value
+    },
+    applyRefund: function(t) {
+        var a = wx.getStorageSync("uid_" + e), r = t.currentTarget.dataset.orderid, n = {
+            control: "order",
+            op: "applyRefund",
+            uid: a,
+            uniacid: e,
+            order_id: r
+        };
+        this.sendRequest("确认申请退款吗？", n, 2);
+    },
+    sureGoods: function(t) {
+        var a = wx.getStorageSync("uid_" + e), r = t.currentTarget.dataset.orderid, n = {
+            control: "order",
+            op: "sureGoods",
+            uid: a,
+            uniacid: e,
+            order_id: r
+        };
+        this.sendRequest("确认已经收到货了吗?", n, 3);
+    },
+    intoOrderDetail: function(t) {
+        var e = t.currentTarget.dataset.orderid;
+        wx.navigateTo({
+            url: "../Group/orderDetails/index?order_id=" + e
         });
-      }
-  },
-  setPopupShow(e){
-    var {item} = e.currentTarget.dataset;
-    this.data.itemData = item
-    this.data.itemcount = item.count
-    this.setData({
-      itemData: item
-    })
-    this.setData({count:1, popupShow:true})
-  },
-  setPopupHide(){
-    this.setData({popupShow:false})
-  },
-
+    },
+    onReachBottom: function(e) {
+        var a = this, r = t.siteInfo.uniacid, n = wx.getStorageSync("uid_" + r), d = a.data, o = d.currentIndex, i = d.page, s = d.orderData;
+        t.util.request({
+            url: "entry/wxapp/class",
+            data: {
+                control: "order",
+                op: "orderList",
+                uniacid: r,
+                uid: n,
+                status: o,
+                page: i
+            },
+            success: function(t) {
+                if (t.data.orderData) {
+                    for (var e = t.data.orderData, r = 0; r < e.length; r++) s.push(e[r]);
+                    a.setData({
+                        orderData: s,
+                        page: parseInt(i) + 1
+                    });
+                }
+            }
+        });
+    },
+    deleteOrder: function(t) {
+        var a = wx.getStorageSync("uid_" + e), r = t.currentTarget.dataset.orderid, n = {
+            control: "order",
+            op: "deleteOrder",
+            uniacid: e,
+            orderid: r,
+            uid: a
+        };
+        this.sendRequest("确认删除订单吗?", n, 4);
+    },
+    commentOrder: function(t) {
+        wx.navigateTo({
+            url: "/kundian_farm/pages/shop/comment/index?order_id=" + t.currentTarget.dataset.orderid
+        });
+    },
+    showVerifyQrocde: function(t) {
+        var e = t.currentTarget.dataset.orderid, a = "";
+        this.data.orderData.map(function(t) {
+            t.id == e && (a = t.offline_qrocde);
+        }), this.setData({
+            verify_qrcode: a,
+            show_verify: !1
+        });
+    },
+    hideVerify: function(t) {
+        this.setData({
+            show_verify: !0
+        });
+    }
 });

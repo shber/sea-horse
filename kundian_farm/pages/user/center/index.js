@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-21 13:40:56
+ * @LastEditTime: 2024-04-30 20:54:28
  * @Description: 
  */
 // var n = new getApp();
@@ -164,10 +164,16 @@ updateUserInfo(){
   setPopupShow(){
     this.setData({price: "", popupShow:true})
     },
-  intoOrder(a) {
+    intoOrder: function(a) {
+        var e = a.currentTarget.dataset.status;
+        wx.navigateTo({
+            url: "../../shop/orderList/index?status=" + e
+        });
+    },
+  intoAdopt(a) {
     var {status} = a.currentTarget.dataset;
     wx.navigateTo({
-        url: "../../shop/orderList/index?status=" + status
+        url: "../../shop/adoptList/index?status=" + status
     });
   },
   intoCash(a) {

@@ -53,6 +53,7 @@
         "kundian_farm/pages/shop/commentList/index",
         "kundian_farm/pages/shop/prodeteilVideo/index",
         "kundian_farm/pages/shop/orderList/index",
+        "kundian_farm/pages/shop/adoptList/index",
         "kundian_farm/pages/shop/confrimOrder/index",
         "kundian_farm/pages/shop/proList/index",
         "kundian_farm/pages/shop/AdoptRules/index",

@@ -101,7 +101,7 @@
                     <view class="f32 cfred" wx:if="{{send_price!=0}}">￥{{send_price}}</view>
                     <view class="f32 cfred" wx:else>免运费</view>
                 </view>
-                <view class="flexSb list_com">
+                <!-- <view class="flexSb list_com">
                     <view>
                         <text class="f30">优惠券：</text>
                     </view>
@@ -113,7 +113,7 @@
                     <view class="f32 flex" wx:else>
                         <view class="cf93">暂无优惠券</view>
                     </view>
-                </view>
+                </view> -->
             </view>
         </view>
         <view class="total" wx:if="{{discount>0}}">

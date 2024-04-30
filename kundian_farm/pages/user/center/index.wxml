@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-19 20:50:46
+ * @LastEditTime: 2024-04-30 20:51:20
  * @Description: 
 -->
 <view>
@@ -32,18 +32,40 @@
     <view class="shadow_card card2">
       <view class="my_title">我的认养</view>
       <view class="tab_card">
-        <view bindtap="intoOrder" data-status="0">
+        <view bindtap="intoAdopt" data-status="0">
           <image src="../../../images/new/ico_quan.png" class="card_icon"></image>
           全部
         </view>
-        <view bindtap="intoOrder" data-status="1">
+        <view bindtap="intoAdopt" data-status="1">
           <image src="../../../images/new/ico_ren.png" class="card_icon"></image>
           认养中
         </view>
-        <view bindtap="intoOrder" data-status="3">
+        <view bindtap="intoAdopt" data-status="3">
           <image src="../../../images/new/ico_wan.png" class="card_icon"></image>
           已完成
         </view>
+      </view>
+    </view>
+
+    <view class="shadow_card card2">
+      <view class="my_title my_title1">我的订单</view>
+      <view class="flexSb listDesc">
+          <view class="order_btn" bindtap="intoOrder" data-status="4">
+            <image src="../../../images/new/pes_ico_all.png" class="roder_icon"></image>
+            <view class="mt10">全部订单</view>
+          </view>
+          <view class="order_btn" bindtap="intoOrder" data-status="1">
+            <image src="../../../images/new/pes_ico_fu.png" class="roder_icon"></image>
+            <view class="mt10">待付款</view>
+          </view>
+          <view class="order_btn" bindtap="intoOrder" data-status="2">
+            <image src="../../../images/new/pes_ico_pei.png" class="roder_icon"></image>
+            <view class="mt10">待配送</view>
+          </view>
+          <view class="order_btn" bindtap="intoOrder" data-status="3">
+            <image src="../../../images/new/pes_ico_shou.png" class="roder_icon"></image>
+            <view class="mt10">待收货</view>
+          </view>
       </view>
     </view>
 

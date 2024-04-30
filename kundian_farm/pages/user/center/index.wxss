@@ -1,5 +1,5 @@
 page { font-size: 30rpx; background: #f8f8f9; }
-.my_content{ position: relative; }
+.my_content{ position: relative; padding-bottom: 50rpx; }
 .pd_30{padding: 0 30rpx; height: auto;}
 
 .card_icon1{width: 36rpx; height: 36rpx;}
@@ -31,6 +31,12 @@ page { font-size: 30rpx; background: #f8f8f9; }
 .flex_left{display: flex; align-items: center;}
 .tip_title{text-align: center; margin: 30rpx 0 20rpx; font-size: 32rpx;}
 .tip_desc{ text-align: center; font-size: 28rpx; color: #999; margin-bottom: 80rpx;}
+.listDesc{margin: 50rpx 0 20rpx;}
+.order_btn{display: flex; justify-content: center; flex-direction: column; align-items: center; font-size: 28rpx; color: #333333; }
+.roder_icon{width: 48rpx; height: 48rpx; margin-bottom: 10rpx;}
+.my_title1::after{
+    background-image: none !important;
+}
 
 
 
