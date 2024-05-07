@@ -114,7 +114,7 @@ Page({
             var x = 0, h = 0, m = wx.getStorageSync("uid_" + e);
             if ("" != p && (console.log(p), x = p.coupon.id, h = p.coupon.coupon_price), !r) return wx.showModal({
                 title: "提示",
-                content: "请先阅读并同意农场协议",
+                content: "请先阅读并同意认养协议",
                 showCancel: !1
             }), !1;
 

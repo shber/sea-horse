@@ -13,7 +13,8 @@ Page({
         farmSetData: [],
         order_id: 0,
         recovery_method: 1,
-        remark: ""
+        remark: "",
+        shou_fee:0,
     },
     onLoad: function(t) {
         var i = this, n = t.adopt_id, o = wx.getStorageSync("kundian_farm_setData"), r = 1;
@@ -40,7 +41,8 @@ Page({
                     adoptData: n,
                     userName: t.name,
                     phone: t.phone,
-                    address: o
+                    address: o,
+                    shou_fee: a.shou_fee
                 });
             }
         });
@@ -80,7 +82,7 @@ Page({
                 uid: i,
                 recovery_method: l,
                 remark: u,
-                total_price: t.data.farmSetData.animal_send_price,
+                total_price: t.data.farmSetData.animal_send_price*1 + t.data.shou_fee,
                 self_address: p.self_lifting_address
             }, f = t.data.order_id;
             f ? 2 == l ? wx.redirectTo({
