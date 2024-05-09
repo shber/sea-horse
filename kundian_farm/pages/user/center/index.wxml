@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-30 20:51:20
+ * @LastEditTime: 2024-05-09 15:18:02
  * @Description: 
 -->
 <view>
@@ -24,7 +24,7 @@
       <view class="flex_center">
         <button type="primary" class="small_btn small_btn1" hover-class="none" bindtap="setPopupShow">充值</button>
         <button type="primary" 
-        bindtap="intoCash"
+        bindtap="goWallet"
         class="small_btn small_btn2" hover-class="none">提现</button>
       </view>
     </view>
