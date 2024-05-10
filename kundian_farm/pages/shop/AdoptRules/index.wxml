@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-22 17:23:29
+ * @LastEditTime: 2024-05-10 14:11:07
  * @Description: 
 -->
 <import src="../../../../wxParse/wxParse.wxml"></import>
@@ -51,6 +51,7 @@
       <view class="item_money">¥ {{animalData.price}}</view>
       <view class="item_title">{{animalData.animal_name}}</view>
       <view class="item_desc">{{animalData.gain_desc}}</view>
+      <view class="item_desc1">库存：{{animalData.count}}</view>
 
       <!-- <view class="flex_center text1">
           <view class="flex_center">

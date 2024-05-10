@@ -23,6 +23,8 @@ page { font-size: 30rpx; background: #f8f8f9; }
 .html_content{background-color: #fff;}
 
 .item_desc{font-size: 28rpx; color: #666; margin-top: 10rpx; margin-bottom: 30rpx;}
+.item_desc1{font-size: 28rpx; margin-top: 0rpx; margin-bottom: 0rpx;}
+
 .shadow_card .item_title{ margin-top: 20rpx; font-size: 34rpx; color: #333333; font-weight: 500;}
 .shadow_card .item_money{font-size: 46rpx; color: #ED4F4F; font-weight: 500;}
 .shadow_card .progress{ margin-left: 40rpx; position: relative; height: 26rpx; width: 240rpx;}
