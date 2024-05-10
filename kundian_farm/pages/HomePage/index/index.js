@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2019-08-23 19:19:20
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-22 19:26:31
+ * @LastEditTime: 2024-05-10 15:56:57
  * @Description: 
  */
 var r = new getApp()
@@ -34,13 +34,44 @@ function setOption(chart, x=[], y1=[], y2=[]) {
       name: '价格',
       type: 'line',
       data:y1,
-      symbol: 'none', lineStyle: { color: '#ED4F4F' }
+      // symbol: 'none', 
+      lineStyle: { color: '#ED4F4F' },
+      itemStyle: {
+        color: '#ED4F4F' // 设置圆点的颜色
+      },
+      label: {
+        show: true, // 显示标签
+        color: '#ED4F4F',
+        formatter: function (params) { // 使用函数来设置标签的内容
+          if (params.value !== 0) {
+              return params.value;
+          } else {
+              return ''; // 如果值为 0，返回空字符串，不显示标签
+          }
+        },
+        position: 'top' // 标签位置
+      }
     }, {
       name: '销量',
       type: 'line',
       data: y2,
-      symbol: 'none',
-      lineStyle: { color: '#447FFF' }
+      // symbol: 'none',
+      lineStyle: { color: '#447FFF' },
+      itemStyle: {
+        color: '#447FFF' // 设置圆点的颜色
+      },
+      label: {
+        show: true, // 显示标签
+        color: '#447FFF',
+        formatter: function (params) { // 使用函数来设置标签的内容
+          if (params.value !== 0) {
+              return params.value;
+          } else {
+              return ''; // 如果值为 0，返回空字符串，不显示标签
+          }
+        },
+        position: 'top' // 标签位置
+      }
     }]
   };
   chart.setOption(option);

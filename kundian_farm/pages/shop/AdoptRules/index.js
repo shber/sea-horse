@@ -178,7 +178,7 @@ Page({
             title: "库存不足",
             icon: "none"
         }) : (wx.setStorageSync("kundian_farm_buy_animal", e), wx.navigateTo({
-            url: "../confirmAdopt/index?count=" + n + "&aid=" + i
+            url: "../confirmAdopt/index?count=" + n + "&aid=" + i + "&price=" + e.price
         }));
     },
     onShareAppMessage: function() {
