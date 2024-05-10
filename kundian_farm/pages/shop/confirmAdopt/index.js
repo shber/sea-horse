@@ -109,7 +109,7 @@ Page({
     surePay: function(a) {
         const self = this
         console.log('33', this.data);
-        var o = this, n = o.data, i = n.userName, s = n.userTel, r = n.rules, u = n.count, c = n.aid, d = n.specVal, l = n.totalPrice, p = n.userCoupon, g = n.order_id, w = n.discount;
+        var o = this, n = o.data, i = n.userName, s = n.userTel, r = n.rules, u = n.count, c = n.aid, d = n.specVal, l = n.real_price * n.count, p = n.userCoupon, g = n.order_id, w = n.discount;
         if ("" != i && void 0 != i) if ("" != s && void 0 != s) {
             var x = 0, h = 0, m = wx.getStorageSync("uid_" + e);
             if ("" != p && (console.log(p), x = p.coupon.id, h = p.coupon.coupon_price), !r) return wx.showModal({
