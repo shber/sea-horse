@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-21 11:21:52
+ * @LastEditTime: 2024-05-27 16:10:35
  * @Description: 
 -->
 <view class="my_content">
@@ -51,6 +51,8 @@
             <view class="text">
               <view>编号：{{item.order_number}}</view>
               <view>建议售价：¥ {{item.jian_yi_price}}</view>
+              <view wx:if="{{item.status !== 9}}">死亡数量：{{item.si_count}}</view>
+
             </view>
             <view class="">
               <button wx:if="{{item.status == 2}}" type="primary" hover-class="none" class="primary" data-item="{{item}}" catchtap="setPopupShow">立即转卖</button>
