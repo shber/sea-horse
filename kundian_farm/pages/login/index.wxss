@@ -13,13 +13,14 @@ page {
 .label{display: flex; align-items: center; padding: 26rpx 40rpx;
     background-color: #F6F6F6; border-radius: 50rpx;
 }
+.primary{margin-top: 150rpx;}
 .placeholder{color: #B8B8B8;}
 .label1{margin-top: 50rpx;}
 .login_icon{width: 34rpx; height: 34rpx; margin-right: 26rpx;}
-.primary{margin-top: 150rpx;}
 .link{ margin-top: 50rpx; display: flex; color: #447FFF; justify-content: center; text-align: center; text-decoration: underline;}
-button[type=primary]{background-color: #447FFF; border-radius: 25px;}
-
+.btn_group{display: flex; align-items: center; margin-top: 140rpx;}
+button[type=primary]{flex: 1; background-color: #447FFF; border-radius: 25px;}
+button[type=default]{flex: 1; margin-right: 40rpx; background-color: #D6D6D6; border-radius: 25px; border: none;}
 .flex_left{display: flex; align-items: center;}
 .tip_title{text-align: center; margin: 30rpx 0 20rpx; font-size: 32rpx;}
 .tip_desc{ text-align: center; font-size: 28rpx; color: #999; margin-bottom: 80rpx;}

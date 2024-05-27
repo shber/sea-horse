@@ -36,6 +36,7 @@
     word-break: break-all;
 }
 .primary{height: 64rpx; line-height: 64rpx; margin: 0; border-radius: 12rpx !important; font-size: 28rpx;}
+
 /* .flex_center11{justify-content: space-between;} */
 .adopt_list .icon_time{ width: 20rpx; height: 20rpx; margin-right: 8rpx; }
 .flex_wid{width: 390rpx;}

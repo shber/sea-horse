@@ -11,6 +11,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "kundian_farm/pages/login/index",
+          "pathName": "kundian_farm/pages/login/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "kundian_farm/pages/user/confirmOrder/index",
           "pathName": "kundian_farm/pages/user/confirmOrder/index",
           "query": "adopt_id=54",

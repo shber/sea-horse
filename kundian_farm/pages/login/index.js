@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-22 18:30:24
+ * @LastEditTime: 2024-05-27 18:59:27
  * @Description: 
  */
 // var n = new getApp();
@@ -12,6 +12,7 @@ Page({
   data: {
     username: '',
     password: '',
+    setAuth:false,
   },
   onLoad: function (a) {
   },
@@ -84,6 +85,11 @@ Page({
         });
     })
 
+  },
+  goHome () {
+    wx.reLaunch({
+      url: '/kundian_farm/pages/HomePage/index/index'
+    });
   },
   goPath () {
     wx.reLaunch({

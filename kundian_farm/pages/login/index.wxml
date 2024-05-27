@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-21 15:15:04
+ * @LastEditTime: 2024-05-27 19:01:30
  * @Description: 
 -->
 <view class="login_content">
@@ -29,8 +29,11 @@
   <popupView bgClose="{{true}}" showPopup="{{setAuth}}" height="{{458}}"> 
     <view>
       <view class="tip_title">微信未授权</view>
-      <view class="tip_desc">您需要先手动授权</view>
-      <button type="primary" hover-class="none" class="primary" bindgetuserinfo="updateUserInfo" class="login" openType="getUserInfo">微信授权</button>
+      <view class="tip_desc">您需要先手动授权，未授权可能会影响后续支付</view>
+      <view class="btn_group">
+        <button type="default" hover-class="none" bindtap="goHome">取消授权</button>
+        <button type="primary" hover-class="none" bindgetuserinfo="updateUserInfo" class="login" openType="getUserInfo">微信授权</button>
+      </view>
     </view>
   </popupView>
 </view>

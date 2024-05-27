@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-05-09 15:17:49
+ * @LastEditTime: 2024-05-27 18:47:34
  * @Description: 
  */
 // var n = new getApp();
@@ -88,10 +88,10 @@ goDistribution(){
 nowPay: function(r) {
     const self = this
     const userInfo = wx.getStorageSync("userInfo")
-    // if(!userInfo.sessionid){
-    //     this.setData({setAuth:true})
-    //     return wx.showToast({ title: "请先手动进行微信授权", icon: "none", });
-    // }
+    if(!userInfo.sessionid){
+        this.setData({setAuth:true})
+        return wx.showToast({ title: "请先手动进行微信授权", icon: "none", });
+    }
     if(!this.data.price){
         return wx.showToast({ title: "请输入充值金额", icon: "none", });
     }
