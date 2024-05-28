@@ -5,6 +5,7 @@
     "backgroundTextStyle":"dark",
     "backgroundColor": "#fff",
     "usingComponents": {
+        "back-home": "/components/backHome/index",
         "popupView": "/components/popupView/index",
         "cu-custom": "/colorui/components/cu-custom"
     }

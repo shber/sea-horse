@@ -2,9 +2,11 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-05-27 19:01:30
+ * @LastEditTime: 2024-05-28 15:42:47
  * @Description: 
 -->
+<back-home title="123" is-show="{{ true }}" is-transparent="{{ true }}" />
+
 <view class="login_content">
   <view class="header">
     <view class="title">密码登录</view>
