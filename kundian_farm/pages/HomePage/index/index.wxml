@@ -2,54 +2,58 @@
  * @Author: Shber
  * @Date: 2020-12-01 23:03:44
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-22 19:26:30
+ * @LastEditTime: 2024-05-30 14:29:40
  * @Description: 
 -->
 <tarbar SystemInfo="{{SystemInfo}}" list="{{tarbar}}" path="kundian_farm/pages/HomePage/index/index"></tarbar>
 <!-- <navigation bgColor="{{setData.nav_top_color}}" fontColor="{{setData.front_color}}" hidden="{{isBarHidden}}" isIphoneX="{{isIphoneX}}" istopShow="true" title="{{setData.bar_title}}"></navigation> -->
 <view class="home_page">
-    <view class="swiper_pic">
-        <swiper style="height: 490rpx;" autoplay="{{autoplay}}" duration="{{duration}}">
-          <block wx:for="{{page[0].imgUrl}}" wx:key="*this">
-            <swiper-item class="swiper_item">
-                <image src="{{item.slide_src}}" class="swiper_pic"></image>
-            </swiper-item>
-          </block>
-        </swiper>
-      </view>
-      <view class="content">
-        <view class="graph">
-            <view class="charts_group"> 
-                <view class="my_title"><text>走势图</text></view>
-                <view class="right">
-                    <view class="right"> <view class="blue"></view> 价格</view>
-                    <view class="right right1"> <view class="red"></view> 销量</view>
+    <block wx:if="{{isOpen!=1}}">
+        <view class="swiper_pic">
+            <swiper style="height: 490rpx;" autoplay="{{autoplay}}" duration="{{duration}}">
+            <block wx:for="{{page[0].imgUrl}}" wx:key="*this">
+                <swiper-item class="swiper_item">
+                    <image src="{{item.slide_src}}" class="swiper_pic"></image>
+                </swiper-item>
+            </block>
+            </swiper>
+        </view>
+        <view class="content">
+            <view class="graph">
+                <view class="charts_group"> 
+                    <view class="my_title"><text>走势图</text></view>
+                    <view class="right">
+                        <view class="right"> <view class="blue"></view> 价格</view>
+                        <view class="right right1"> <view class="red"></view> 销量</view>
+                    </view>
+                </view>
+                <ec-canvas wx:if="{{!isDisposed}}"  id="mychart_line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+            </view>
+            <view class="home_bar" bindtap="intoArticle">
+                <image src="../../../images/new/img_gao.png" class="bar_pic"></image>
+                <view class="bar_right">
+                    <text class="bar_title">{{page[4].articleData[0].title}}</text>
+                    <text class="bar_desc">{{page[4].articleData[0].content}}</text>
                 </view>
             </view>
-            <ec-canvas wx:if="{{!isDisposed}}"  id="mychart_line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
-        </view>
-        <view class="home_bar" bindtap="intoArticle">
-            <image src="../../../images/new/img_gao.png" class="bar_pic"></image>
-            <view class="bar_right">
-                <text class="bar_title">{{page[4].articleData[0].title}}</text>
-                <text class="bar_desc">{{page[4].articleData[0].content}}</text>
-            </view>
-        </view>
- 
+    
 
-        <view class="graph adopt_list" wx:for="{{Adopt}}">
-            <view class="list_item" bindtap="intoAdopt" data-id="{{item.id}}">
-                <image src="{{item.animal_src}}" class="item_pic"></image>
-                <view class="flex_wid">
-                    <view class="item_title">{{item.animal_name}}</view>
-                    <view class="item_desc">{{item.gain_desc}}</view>
+            <view class="graph adopt_list" wx:for="{{Adopt}}">
+                <view class="list_item" bindtap="intoAdopt" data-id="{{item.id}}">
+                    <image src="{{item.animal_src}}" class="item_pic"></image>
+                    <view class="flex_wid">
+                        <view class="item_title">{{item.animal_name}}</view>
+                        <view class="item_desc">{{item.gain_desc}}</view>
 
-                    <view class="flex_center flex_center11">
-                        <text class="red_num">¥ {{item.price || 0}}</text>
-                        <button type="primary" hover-class="none" class="primary" bindtap="setPopupShow">立即领养</button>
+                        <view class="flex_center flex_center11">
+                            <text class="red_num">¥ {{item.price || 0}}</text>
+                            <button type="primary" hover-class="none" class="primary" bindtap="setPopupShow">立即领养</button>
+                        </view>
                     </view>
                 </view>
             </view>
         </view>
-      </view>
+    </block>
+    <image wx:else src="https://yhm.m666m.cc/attachment/images/4/2024/05/y93z9Bz5Mw59mc75WM29N1rKs14W2t.jpg" mode="widthFix" class="home_pic"></image>
+
 </view>

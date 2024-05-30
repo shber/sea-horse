@@ -2,11 +2,11 @@
  * @Author: Shber
  * @Date: 2019-08-23 19:19:22
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-19 20:07:10
+ * @LastEditTime: 2024-05-30 14:17:58
  * @Description: 
 -->
 <view class="footer" style="padding-bottom:{{os_x?'68':'0'}}rpx">
-    <view bindtap="navTo" class="f-li" data-current="{{path==item.path?true:false}}" data-path="{{item.path}}" style="width:{{100/list.length}}%;" wx:for="{{newList}}" wx:key="index">
+    <view bindtap="navTo" class="f-li" data-current="{{path==item.path?true:false}}" data-path="{{item.path}}" style="width:{{100/list.length}}%;" wx:for="{{list}}" wx:key="index">
         <image src="{{path==item.path?item.select_icon:item.icon}}"></image>
         <text class="title" style="color:{{path==item.path?item.select_color:item.color}}">{{item.name}}</text>
     </view>

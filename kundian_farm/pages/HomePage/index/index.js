@@ -2,13 +2,12 @@
  * @Author: Shber
  * @Date: 2019-08-23 19:19:20
  * @LastEditors: Shber
- * @LastEditTime: 2024-05-10 15:56:57
+ * @LastEditTime: 2024-05-30 14:43:11
  * @Description: 
  */
 var r = new getApp()
 var a = new getApp(), t = a.siteInfo.uniacid;
 import * as echarts from '../../../../components/echarts/ec-canvas/echarts';
-
 
 function setOption(chart, x=[], y1=[], y2=[]) {
   var option = {
@@ -97,12 +96,12 @@ Page({
         page: [],
         Adopt:[],
         progressNum: 0,
+        isOpen: wx.getStorageSync("open"),
     },
     onLoad: function(e) {
       const self = this
       this.getFirstData()
       this.getAdoptList()
-
       var u = e.user_uid || 0, g = wx.getStorageSync("uid_" + t);
       void 0 != u && 0 != u && (wx.setStorageSync("farm_share_uid", u), a.loginBindParent(u, g));
 

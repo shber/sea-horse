@@ -34,7 +34,8 @@ App({
             success: function(a) {
                 var n = a.data, i = n.tarbar, o = n.farmSetData;
                 console.log('i[0]', i[0]);
-                t.bgColor = o.background_color, t.assistColor = o.assist_color, wx.setStorageSync("kundianFarmTarbar", i), 
+                t.open = n.open
+                t.bgColor = o.background_color, t.assistColor = o.assist_color, wx.setStorageSync("open", n.open), wx.setStorageSync("kundianFarmTarbar", i), 
                 wx.setStorageSync("kundian_farm_setData", o), "kundian_farm/pages/HomePage/index/index" != i[0].path 
                 // && wx.reLaunch({
                 //     url: "/" + i[0].path + "?is_tarbar=true"
