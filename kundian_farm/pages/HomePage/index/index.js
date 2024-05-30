@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2019-08-23 19:19:20
  * @LastEditors: Shber
- * @LastEditTime: 2024-05-30 15:55:17
+ * @LastEditTime: 2024-05-30 16:03:08
  * @Description: 
  */
 var r = new getApp()
@@ -132,6 +132,7 @@ Page({
         // });
     },
     getOpenStatus: function(){
+      wx.removeStorageSync('open')
       const self = this
       a.util.request({
         url: 'entry/wxapp/class',
