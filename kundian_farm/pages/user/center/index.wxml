@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-05-09 15:18:02
+ * @LastEditTime: 2024-05-30 15:19:54
  * @Description: 
 -->
 <view>
@@ -18,7 +18,7 @@
 
   </view>
   <view class="pd_30 card1">
-    <view class="shadow_card">
+    <view class="shadow_card" wx:if="{{isOpen != 1}}">
       <view class="money">{{userInfo.money || 0}}</view>
       <view class="label_tip">账户余额（元）</view>
       <view class="flex_center">
@@ -69,7 +69,7 @@
       </view>
     </view>
 
-    <view class="shadow_card card2">
+    <view class="shadow_card card2" wx:if="{{isOpen != 1}}">
       <view class="flex_center" bindtap="goDistribution" data-url="distribution/index/index">
         <view class="flex_left">
           <image src="../../../images/new/ico_xiao.png" style="margin-right: 10rpx;" class="card_icon1"></image>

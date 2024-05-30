@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-05-27 18:47:34
+ * @LastEditTime: 2024-05-30 15:19:25
  * @Description: 
  */
 // var n = new getApp();
@@ -18,6 +18,7 @@ Page({
     tarbar: a.tarbar,
     userInfo:{},
     setAuth: false,
+    isOpen: wx.getStorageSync("open"),
   },
   getUserData: function() {
     var tt = this, n = wx.getStorageSync("uid_" + t);

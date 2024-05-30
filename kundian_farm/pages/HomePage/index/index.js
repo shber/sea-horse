@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2019-08-23 19:19:20
  * @LastEditors: Shber
- * @LastEditTime: 2024-05-30 14:43:11
+ * @LastEditTime: 2024-05-30 15:55:17
  * @Description: 
  */
 var r = new getApp()
@@ -96,10 +96,11 @@ Page({
         page: [],
         Adopt:[],
         progressNum: 0,
-        isOpen: wx.getStorageSync("open"),
+        isOpen: 1,
     },
     onLoad: function(e) {
       const self = this
+      this.getOpenStatus()
       this.getFirstData()
       this.getAdoptList()
       var u = e.user_uid || 0, g = wx.getStorageSync("uid_" + t);
@@ -130,6 +131,21 @@ Page({
         //     scrollTop: t
         // });
     },
+    getOpenStatus: function(){
+      const self = this
+      a.util.request({
+        url: 'entry/wxapp/class',
+        data: {
+            op: "getOpen",
+            uniacid: t,
+            control: "index"
+        },
+        success: function(res) {
+          self.setData({isOpen: res.data.open })
+          wx.setStorageSync("open", res.data.open)
+        }
+      });
+    },
     getFirstData: function() {
       var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0], r = this, n = wx.getStorageSync("uid_" + t);
       wx.getStorageSync("kundian_farm_setData");
@@ -143,7 +159,6 @@ Page({
               refresh: e
           },
           success: function(a) {
-            console.log('aaa', a);
               new Array();
               var e = !1;
               "search" == a.data.page[0].type && (e = !0), e || (r.data.barDistance = 128, r.data.isIphoneX && (r.data.barDistance = 176));
