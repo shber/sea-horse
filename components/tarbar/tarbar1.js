@@ -5,25 +5,7 @@
  * @LastEditTime: 2024-05-31 17:07:37
  * @Description: 
  */
-var a = new getApp(), t = a.siteInfo.uniacid;
-function getIsOpen(){
-  return new Promise((ress,rej)=>{
-    a.util.request({
-      url: 'entry/wxapp/class',
-      data: {
-          op: "getOpen",
-          uniacid: t,
-          control: "index"
-      },
-      success: function(res) {
-        let { open }= res.data 
-        a.globalData.isOpen = open
-        ress();
-      }
-    });
-  })
-  
-}
+var a = new getApp()
 Component({
     options: {
         multipleSlots: !0
@@ -58,9 +40,7 @@ Component({
                 "uniacid": "4"
             }]
     },
-     
-    async ready(){
-        await getIsOpen();
+    ready(){
         let isOpen = a.globalData.isOpen
         if(isOpen == 1){
             this.setData({
