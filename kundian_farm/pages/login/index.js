@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-05-31 12:12:51
+ * @LastEditTime: 2024-05-31 17:30:41
  * @Description: 
  */
 // var n = new getApp();
@@ -82,7 +82,7 @@ Page({
         
         let open = a.globalData.isOpen
         wx.reLaunch({
-          url: open == 0 ? '/kundian_farm/pages/HomePage/none/index' : '/kundian_farm/pages/HomePage/index/index'
+          url: open == 0 ? '/kundian_farm/pages/shop/index/index' : '/kundian_farm/pages/HomePage/index/index'
         });
     })
 
@@ -90,7 +90,7 @@ Page({
   goHome () {
     let open = a.globalData.isOpen
     wx.reLaunch({
-      url: open == 0 ? '/kundian_farm/pages/HomePage/none/index' : '/kundian_farm/pages/HomePage/index/index'
+      url: open == 0 ? '/kundian_farm/pages/shop/index/index' : '/kundian_farm/pages/HomePage/index/index'
     });
   },
   goPath () {

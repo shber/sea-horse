@@ -41,12 +41,11 @@ App({
                 t.bgColor = o.background_color, t.assistColor = o.assist_color, wx.setStorageSync("kundianFarmTarbar", i), 
                 // wx.setStorageSync("isOpen", n.open),
                 wx.setStorageSync("kundian_farm_setData", o), "kundian_farm/pages/HomePage/index/index" != i[0].path 
-                // n.open === 0 ? "kundian_farm/pages/HomePage/none/index" != i[0].path : "kundian_farm/pages/HomePage/index/index" != i[0].path
                 // && wx.reLaunch({
                 //     url: "/" + i[0].path + "?is_tarbar=true"
                 // });
                 if(n.open === 0){
-                    wx.redirectTo({
+                    wx.reLaunch({
                         url: "/kundian_farm/pages/shop/index/index"
                     });
                 }
