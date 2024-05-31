@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2019-08-23 19:19:20
  * @LastEditors: Shber
- * @LastEditTime: 2024-05-30 16:03:08
+ * @LastEditTime: 2024-05-31 10:31:50
  * @Description: 
  */
 var r = new getApp()
@@ -96,16 +96,20 @@ Page({
         page: [],
         Adopt:[],
         progressNum: 0,
-        isOpen: 1,
+        isOpen: 0,
+    },
+    onLaunch:function(){
+      this.getOpenStatus()
+
     },
     onLoad: function(e) {
       const self = this
-      this.getOpenStatus()
+      self.setData({isOpen: wx.getStorageSync('isOpen') })
       this.getFirstData()
       this.getAdoptList()
       var u = e.user_uid || 0, g = wx.getStorageSync("uid_" + t);
       void 0 != u && 0 != u && (wx.setStorageSync("farm_share_uid", u), a.loginBindParent(u, g));
-
+      
     },
     onShow: function() {
       // this.getStatistics()
@@ -132,7 +136,7 @@ Page({
         // });
     },
     getOpenStatus: function(){
-      wx.removeStorageSync('open')
+      // wx.removeStorageSync('open')
       const self = this
       a.util.request({
         url: 'entry/wxapp/class',

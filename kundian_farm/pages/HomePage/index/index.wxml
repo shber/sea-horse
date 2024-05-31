@@ -2,13 +2,13 @@
  * @Author: Shber
  * @Date: 2020-12-01 23:03:44
  * @LastEditors: Shber
- * @LastEditTime: 2024-05-30 14:29:40
+ * @LastEditTime: 2024-05-30 16:09:17
  * @Description: 
 -->
 <tarbar SystemInfo="{{SystemInfo}}" list="{{tarbar}}" path="kundian_farm/pages/HomePage/index/index"></tarbar>
 <!-- <navigation bgColor="{{setData.nav_top_color}}" fontColor="{{setData.front_color}}" hidden="{{isBarHidden}}" isIphoneX="{{isIphoneX}}" istopShow="true" title="{{setData.bar_title}}"></navigation> -->
 <view class="home_page">
-    <block wx:if="{{isOpen!=1}}">
+    <block wx:if="{{isOpen==1}}">
         <view class="swiper_pic">
             <swiper style="height: 490rpx;" autoplay="{{autoplay}}" duration="{{duration}}">
             <block wx:for="{{page[0].imgUrl}}" wx:key="*this">

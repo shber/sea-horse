@@ -1,5 +1,6 @@
 App({
     onLaunch: function() {
+        const self = this
         var a = this, t = this, n = wx.getStorageSync("kundian_farm_setData");
         n && (t.bgColor = n.background_color, t.assistColor = n.assist_color);
         var i = wx.getStorageSync("kundianFarmTarbar");
@@ -34,8 +35,9 @@ App({
             success: function(a) {
                 var n = a.data, i = n.tarbar, o = n.farmSetData;
                 console.log('i[0]', i[0]);
-                t.open = n.open
+                self.globalData.isOpen = a.open
                 t.bgColor = o.background_color, t.assistColor = o.assist_color, wx.setStorageSync("kundianFarmTarbar", i), 
+                wx.setStorageSync("isOpen", a.open),
                 wx.setStorageSync("kundian_farm_setData", o), "kundian_farm/pages/HomePage/index/index" != i[0].path 
                 // && wx.reLaunch({
                 //     url: "/" + i[0].path + "?is_tarbar=true"
@@ -124,7 +126,8 @@ App({
         screenHeight: 0,
         Proportion: 0,
         isFullScreen: !1,
-        tarbar: []
+        tarbar: [],
+        isOpen:0
     },
     siteInfo: {
         uniacid: "4",
