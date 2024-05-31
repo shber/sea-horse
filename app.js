@@ -46,8 +46,8 @@ App({
                 //     url: "/" + i[0].path + "?is_tarbar=true"
                 // });
                 if(n.open === 0){
-                    wx.reLaunch({
-                        url: "/kundian_farm/pages/HomePage/none/index"
+                    wx.redirectTo({
+                        url: "/kundian_farm/pages/shop/index/index"
                     });
                 }
 

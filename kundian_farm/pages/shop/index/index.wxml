@@ -1,4 +1,4 @@
-<view wx:if="{{is_tarbar}}">
+<view>
     <tarbar SystemInfo="{{SystemInfo}}" list="{{tarbar}}" path="kundian_farm/pages/shop/index/index"></tarbar>
 </view>
 <view>
