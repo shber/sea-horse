@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-05-27 18:59:27
+ * @LastEditTime: 2024-05-31 12:12:51
  * @Description: 
  */
 // var n = new getApp();
@@ -79,16 +79,18 @@ Page({
         // wx.setStorageSync("kundian_farm_wxInfo", n.wxInfo);
         wx.showToast({ title: "授权成功", icon: "none", });
         self.setData({setAuth:false})
-                
+        
+        let open = a.globalData.isOpen
         wx.reLaunch({
-          url: '/kundian_farm/pages/HomePage/index/index'
+          url: open == 0 ? '/kundian_farm/pages/HomePage/none/index' : '/kundian_farm/pages/HomePage/index/index'
         });
     })
 
   },
   goHome () {
+    let open = a.globalData.isOpen
     wx.reLaunch({
-      url: '/kundian_farm/pages/HomePage/index/index'
+      url: open == 0 ? '/kundian_farm/pages/HomePage/none/index' : '/kundian_farm/pages/HomePage/index/index'
     });
   },
   goPath () {

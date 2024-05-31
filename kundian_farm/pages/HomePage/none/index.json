@@ -1,0 +1,11 @@
+{
+    "navigationStyle": "custom",
+    "backgroundTextStyle":"dark",
+    "backgroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "ec-canvas": "/components/echarts/ec-canvas/ec-canvas",
+        "tarbar": "/components/tarbar/tarbar"
+    }
+}

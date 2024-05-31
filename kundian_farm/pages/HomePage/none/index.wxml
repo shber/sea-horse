@@ -1,0 +1,12 @@
+<!--
+ * @Author: Shber
+ * @Date: 2020-12-01 23:03:44
+ * @LastEditors: Shber
+ * @LastEditTime: 2024-05-31 10:59:07
+ * @Description: 
+-->
+<tarbar SystemInfo="{{SystemInfo}}" list="{{tarbar}}" path="kundian_farm/pages/none/index/index"></tarbar>
+<!-- <navigation bgColor="{{setData.nav_top_color}}" fontColor="{{setData.front_color}}" hidden="{{isBarHidden}}" isIphoneX="{{isIphoneX}}" istopShow="true" title="{{setData.bar_title}}"></navigation> -->
+<view class="home_page">
+    <image src="https://yhm.m666m.cc/attachment/images/4/2024/05/y93z9Bz5Mw59mc75WM29N1rKs14W2t.jpg" mode="widthFix" class="home_pic"></image>
+</view>

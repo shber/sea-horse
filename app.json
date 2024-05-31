@@ -1,6 +1,7 @@
 {
     "pages": [
         "kundian_farm/pages/HomePage/index/index",
+        "kundian_farm/pages/HomePage/none/index",
         "kundian_farm/pages/user/address/index",
         "kundian_farm/pages/shop/verify/index",
         "kundian_farm/pages/land/landList/index",

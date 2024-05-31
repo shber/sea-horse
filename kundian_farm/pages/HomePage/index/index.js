@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2019-08-23 19:19:20
  * @LastEditors: Shber
- * @LastEditTime: 2024-05-31 10:31:50
+ * @LastEditTime: 2024-05-31 14:02:45
  * @Description: 
  */
 var r = new getApp()
@@ -104,12 +104,12 @@ Page({
     },
     onLoad: function(e) {
       const self = this
-      self.setData({isOpen: wx.getStorageSync('isOpen') })
+      // self.setData({isOpen: wx.getStorageSync('isOpen') })
+      this.getOpenStatus()
       this.getFirstData()
       this.getAdoptList()
       var u = e.user_uid || 0, g = wx.getStorageSync("uid_" + t);
       void 0 != u && 0 != u && (wx.setStorageSync("farm_share_uid", u), a.loginBindParent(u, g));
-      
     },
     onShow: function() {
       // this.getStatistics()
@@ -136,7 +136,7 @@ Page({
         // });
     },
     getOpenStatus: function(){
-      // wx.removeStorageSync('open')
+      wx.removeStorageSync('open')
       const self = this
       a.util.request({
         url: 'entry/wxapp/class',
@@ -146,8 +146,10 @@ Page({
             control: "index"
         },
         success: function(res) {
-          self.setData({isOpen: res.data.open })
-          wx.setStorageSync("open", res.data.open)
+          let { open }= res.data 
+          a.globalData.isOpen = open
+          self.setData({isOpen: open })
+          wx.setStorageSync("isOpen", open)
         }
       });
     },
@@ -195,7 +197,7 @@ Page({
               uniacid: t
           },
           success: function(a) {
-              var r = a.data.animalData, e = r[0].animal_src;
+              var r = a.data.animalData, e = r.length && r[0].animal_src;
               let list = r.map(res=>{
                 res.progressNum = (res.putaway_time *1/ res.mature_period*1) * 100
                 return res

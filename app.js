@@ -1,6 +1,8 @@
 App({
     onLaunch: function() {
         const self = this
+        console.log('~~~~~onLaunch');
+        wx.removeStorageSync("isOpen")
         var a = this, t = this, n = wx.getStorageSync("kundian_farm_setData");
         n && (t.bgColor = n.background_color, t.assistColor = n.assist_color);
         var i = wx.getStorageSync("kundianFarmTarbar");
@@ -34,14 +36,21 @@ App({
             },
             success: function(a) {
                 var n = a.data, i = n.tarbar, o = n.farmSetData;
-                console.log('i[0]', i[0]);
-                self.globalData.isOpen = a.open
+                console.log('i[0]', i[0], n.open);
+                self.globalData.isOpen = n.open
                 t.bgColor = o.background_color, t.assistColor = o.assist_color, wx.setStorageSync("kundianFarmTarbar", i), 
-                wx.setStorageSync("isOpen", a.open),
+                // wx.setStorageSync("isOpen", n.open),
                 wx.setStorageSync("kundian_farm_setData", o), "kundian_farm/pages/HomePage/index/index" != i[0].path 
+                // n.open === 0 ? "kundian_farm/pages/HomePage/none/index" != i[0].path : "kundian_farm/pages/HomePage/index/index" != i[0].path
                 // && wx.reLaunch({
                 //     url: "/" + i[0].path + "?is_tarbar=true"
                 // });
+                if(n.open === 0){
+                    wx.reLaunch({
+                        url: "/kundian_farm/pages/HomePage/none/index"
+                    });
+                }
+
             }
         });
     },
