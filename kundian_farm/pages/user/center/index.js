@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-06-03 17:00:38
+ * @LastEditTime: 2024-06-03 17:05:12
  * @Description: 
  */
 // var n = new getApp();
@@ -85,7 +85,7 @@ Page({
     this.setData({price:e.detail.value})
 },
 goDistribution(){
-    if(this.userInfo.is_distributor == '1'){
+    if(this.data.userInfo.is_distributor == '1'){
         wx.navigateTo({
             url: "/kundian_farm/pages/distribution/index/index"
         })
