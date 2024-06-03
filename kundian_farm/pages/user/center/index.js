@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-05-31 10:32:28
+ * @LastEditTime: 2024-06-03 17:00:38
  * @Description: 
  */
 // var n = new getApp();
@@ -85,9 +85,15 @@ Page({
     this.setData({price:e.detail.value})
 },
 goDistribution(){
-    wx.navigateTo({
-        url: "/kundian_farm/pages/distribution/index/index"
-    })
+    if(this.userInfo.is_distributor == '1'){
+        wx.navigateTo({
+            url: "/kundian_farm/pages/distribution/index/index"
+        })
+    }else{
+        wx.navigateTo({
+            url: "/kundian_farm/pages/distribution/addinfo/index"
+        });
+    }
 },
 nowPay: function(r) {
     const self = this
