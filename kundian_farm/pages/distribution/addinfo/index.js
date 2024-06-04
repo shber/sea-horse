@@ -6,7 +6,7 @@ Page({
     data: {
         bgColor: "",
         assistColor: "",
-        click: !0,
+        click: 0,
         isShow: !1,
         distributionSet: [],
         config: []
