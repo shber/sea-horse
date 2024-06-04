@@ -11,6 +11,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "kundian_farm/pages/user/cash/cash",
+          "pathName": "kundian_farm/pages/user/cash/cash",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "kundian_farm/pages/distribution/examine/index",
           "pathName": "kundian_farm/pages/distribution/addinfo/index",
           "query": "",

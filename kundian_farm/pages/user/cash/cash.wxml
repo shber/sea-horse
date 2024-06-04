@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2019-08-23 19:19:22
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-21 12:36:44
+ * @LastEditTime: 2024-06-04 11:00:55
  * @Description: 
 -->
 <form bindsubmit="formSubmit" reportSubmit="true">
@@ -26,8 +26,8 @@
         <view class="flex-row">
             <view bindtap="select" class="flex-grow-0" data-index="0">
                 <view class="pay flex-row {{selected==0?'active':''}}">
-                    <image class="selected" src="../../../images/new/ico_zhi.png" class="icon_size"></image>
-                    <view class="flex-grow-0">支付宝</view>
+                    <!-- <image class="selected" src="../../../images/new/ico_zhi.png" class="icon_size"></image> -->
+                    <view class="flex-grow-0">{{user.pay}}</view>
                     <image class="selected" src="../../../images/icon/icon-share-selected.png" wx:if="{{selected==0}}"></image>
                 </view>
             </view>
@@ -42,15 +42,15 @@
     </view>
     <view class="shadow_card shadow_card1" style="margin-top: 30rpx;">
         <view class="block block2 flex-row" wx:if="{{selected==0}}">
-            <view class="flex-grow-0 flex-y-center">姓名</view>
+            <view class="flex-grow-0 flex-y-center">{{user.ping}}</view>
             <view class="flex-grow-1 flex-y-center">
-                <input class="cash-input" name="name" placeholder="请输入正确的姓名" placeholderStyle="color:#b3b3b3;font-size:16px" value="{{name}}"></input>
+                <input class="cash-input" name="name" placeholder="请输入" placeholderStyle="color:#b3b3b3;font-size:16px" value="{{name}}"></input>
             </view>
         </view>
         <view class="block2 flex-row" wx:if="{{selected==0}}">
-            <view class="flex-grow-0 flex-y-center">账号</view>
+            <view class="flex-grow-0 flex-y-center">{{user.shuzi}}</view>
             <view class="flex-grow-1 flex-y-center">
-                <input class="cash-input" name="mobile" placeholder="请输入正确的支付宝账号" placeholderStyle="color:#b3b3b3;font-size:16px" value="{{mobile}}"></input>
+                <input class="cash-input" name="mobile" placeholder="请输入" placeholderStyle="color:#b3b3b3;font-size:16px" value="{{mobile}}"></input>
             </view>
         </view>
     </view>
