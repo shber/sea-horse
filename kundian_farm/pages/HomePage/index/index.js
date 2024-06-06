@@ -2,14 +2,14 @@
  * @Author: Shber
  * @Date: 2019-08-23 19:19:20
  * @LastEditors: Shber
- * @LastEditTime: 2024-05-31 14:02:45
+ * @LastEditTime: 2024-06-06 16:46:04
  * @Description: 
  */
 var r = new getApp()
 var a = new getApp(), t = a.siteInfo.uniacid;
 import * as echarts from '../../../../components/echarts/ec-canvas/echarts';
 
-function setOption(chart, x=[], y1=[], y2=[]) {
+function setOption(chart, x=[], y1=[], y2=[], y3=[], y4=[], y5=[], y6=[], y7=[]) {
   var option = {
     grid: {
       containLabel: false,
@@ -29,28 +29,30 @@ function setOption(chart, x=[], y1=[], y2=[]) {
         show: false, // 隐藏 Y 轴的分割线
       }
     },
-    series: [{
-      name: '价格',
-      type: 'line',
-      data:y1,
-      // symbol: 'none', 
-      lineStyle: { color: '#ED4F4F' },
-      itemStyle: {
-        color: '#ED4F4F' // 设置圆点的颜色
-      },
-      label: {
-        show: true, // 显示标签
-        color: '#ED4F4F',
-        formatter: function (params) { // 使用函数来设置标签的内容
-          if (params.value !== 0) {
-              return params.value;
-          } else {
-              return ''; // 如果值为 0，返回空字符串，不显示标签
-          }
-        },
-        position: 'top' // 标签位置
-      }
-    }, {
+    series: [
+    //   {
+    //   name: '价格',
+    //   type: 'line',
+    //   data:y1,
+    //   // symbol: 'none', 
+    //   lineStyle: { color: '#ED4F4F' },
+    //   itemStyle: {
+    //     color: '#ED4F4F' // 设置圆点的颜色
+    //   },
+    //   label: {
+    //     show: true, // 显示标签
+    //     color: '#ED4F4F',
+    //     formatter: function (params) { // 使用函数来设置标签的内容
+    //       if (params.value !== 0) {
+    //           return params.value;
+    //       } else {
+    //           return ''; // 如果值为 0，返回空字符串，不显示标签
+    //       }
+    //     },
+    //     position: 'top' // 标签位置
+    //   }
+    // }, 
+    {
       name: '销量',
       type: 'line',
       data: y2,
@@ -71,7 +73,118 @@ function setOption(chart, x=[], y1=[], y2=[]) {
         },
         position: 'top' // 标签位置
       }
-    }]
+    },
+    {
+      name: '线纹海马',
+      type: 'line',
+      data: y3,
+      // symbol: 'none',
+      lineStyle: { color: '#FFDE95' },
+      itemStyle: {
+        color: '#FFDE95' // 设置圆点的颜色
+      },
+      label: {
+        show: true, // 显示标签
+        color: '#FFDE95',
+        formatter: function (params) { // 使用函数来设置标签的内容
+          if (params.value !== 0) {
+              return params.value;
+          } else {
+              return ''; // 如果值为 0，返回空字符串，不显示标签
+          }
+        },
+        position: 'top' // 标签位置
+      }
+    },
+    {
+      name: '膨腹海马',
+      type: 'line',
+      data: y4,
+      // symbol: 'none',
+      lineStyle: { color: '#ADD899' },
+      itemStyle: {
+        color: '#ADD899' // 设置圆点的颜色
+      },
+      label: {
+        show: true, // 显示标签
+        color: '#ADD899',
+        formatter: function (params) { // 使用函数来设置标签的内容
+          if (params.value !== 0) {
+              return params.value;
+          } else {
+              return ''; // 如果值为 0，返回空字符串，不显示标签
+          }
+        },
+        position: 'top' // 标签位置
+      }
+    },
+    {
+      name: '大海马',
+      type: 'line',
+      data: y5,
+      // symbol: 'none',
+      lineStyle: { color: '#F075AA' },
+      itemStyle: {
+        color: '#F075AA' // 设置圆点的颜色
+      },
+      label: {
+        show: true, // 显示标签
+        color: '#F075AA',
+        formatter: function (params) { // 使用函数来设置标签的内容
+          if (params.value !== 0) {
+              return params.value;
+          } else {
+              return ''; // 如果值为 0，返回空字符串，不显示标签
+          }
+        },
+        position: 'top' // 标签位置
+      }
+    },
+    {
+      name: '刺海马',
+      type: 'line',
+      data: y6,
+      // symbol: 'none',
+      lineStyle: { color: '#DC5F00' },
+      itemStyle: {
+        color: '#DC5F00' // 设置圆点的颜色
+      },
+      label: {
+        show: true, // 显示标签
+        color: '#DC5F00',
+        formatter: function (params) { // 使用函数来设置标签的内容
+          if (params.value !== 0) {
+              return params.value;
+          } else {
+              return ''; // 如果值为 0，返回空字符串，不显示标签
+          }
+        },
+        position: 'top' // 标签位置
+      }
+    },
+    {
+      name: '三斑海马',
+      type: 'line',
+      data: y7,
+      // symbol: 'none',
+      lineStyle: { color: '#A7E6FF' },
+      itemStyle: {
+        color: '#A7E6FF' // 设置圆点的颜色
+      },
+      label: {
+        show: true, // 显示标签
+        color: '#A7E6FF',
+        formatter: function (params) { // 使用函数来设置标签的内容
+          if (params.value !== 0) {
+              return params.value;
+          } else {
+              return ''; // 如果值为 0，返回空字符串，不显示标签
+          }
+        },
+        position: 'top' // 标签位置
+      }
+    },
+    ]
   };
   chart.setOption(option);
 }
@@ -231,7 +344,7 @@ Page({
               });
               canvas.setChart(chart);
             
-              setOption(chart, res.data.x, res.data.y1, res.data.y2);
+              setOption(chart, res.data.x, res.data.y1, res.data.y2, res.data.y3, res.data.y4, res.data.y5, res.data.y6, res.data.y7);
               self.chart = chart;
               self.setData({
                 isLoaded: true,

@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-06-03 16:08:03
+ * @LastEditTime: 2024-06-05 16:27:43
  * @Description: 
  */
 // var n = new getApp();
@@ -56,23 +56,23 @@ Page({
               // wx.reLaunch({
               //   url: '/kundian_farm/pages/HomePage/index/index'
               // });
-              var o = wx.getStorageSync("farm_share_uid");
-              a.util.request({
-                url: "entry/wxapp/class",
-                data: {
-                    control: "distribution",
-                    op: "bindParent",
-                    user_uid: o,
-                    uniacid: data.userInfo.uniacid,
-                    uid: data.userInfo.uid
-                },
-                success: function(a) {
-                    console.log(a);
-                },
-                error: function(a) {
-                    console.log(a);
-                }
-              });
+              // var o = wx.getStorageSync("farm_share_uid");
+              // a.util.request({
+              //   url: "entry/wxapp/class",
+              //   data: {
+              //       control: "distribution",
+              //       op: "bindParent",
+              //       user_uid: o,
+              //       uniacid: data.userInfo.uniacid,
+              //       uid: data.userInfo.uid
+              //   },
+              //   success: function(a) {
+              //       console.log(a);
+              //   },
+              //   error: function(a) {
+              //       console.log(a);
+              //   }
+              // });
 
               self.setData({setAuth:true})
               return wx.showToast({ title: "登录成功,请绑定微信账号", icon: "none", });
