@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2020-12-01 23:03:44
  * @LastEditors: Shber
- * @LastEditTime: 2024-06-06 16:48:12
+ * @LastEditTime: 2024-06-06 17:02:14
  * @Description: 
 -->
 <tarbar SystemInfo="{{SystemInfo}}" list="{{tarbar}}" path="kundian_farm/pages/HomePage/index/index"></tarbar>
@@ -19,10 +19,10 @@
             </swiper>
         </view>
         <view class="content">
-            <view class="graph" wx:if="{{isOpen === 1}}">
+            <view class="graph">
                 <view class="charts_group"> 
                     <view class="my_title"><text>走势图</text></view>
-                    <view class="right right_group">
+                    <view class="right right_group" wx:if="{{isOpen === 1}}">
                         <!-- <view class="right right1"> <view class="blue"></view> 价格</view> -->
                         <view class="right right1"> <view class="red"></view> 销量</view>
                         <view class="right right1"> <view class="no_shadow" style="background-color: #FFDE95;"></view> 线纹海马</view>
@@ -32,7 +32,7 @@
                         <view class="right right1"> <view class="no_shadow" style="background-color: #A7E6FF;"></view> 三斑海马</view>
                     </view>
                 </view>
-                <ec-canvas wx:if="{{!isDisposed}}"  id="mychart_line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+                <ec-canvas wx:if="{{!isDisposed}}" id="mychart_line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
             </view>
             <view class="home_bar" bindtap="intoArticle">
                 <image src="../../../images/new/img_gao.png" class="bar_pic"></image>
