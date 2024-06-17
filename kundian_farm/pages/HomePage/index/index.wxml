@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2020-12-01 23:03:44
  * @LastEditors: Shber
- * @LastEditTime: 2024-06-06 17:02:14
+ * @LastEditTime: 2024-06-17 14:19:18
  * @Description: 
 -->
 <tarbar SystemInfo="{{SystemInfo}}" list="{{tarbar}}" path="kundian_farm/pages/HomePage/index/index"></tarbar>
@@ -43,7 +43,7 @@
             </view>
     
 
-            <view class="graph adopt_list" wx:for="{{Adopt}}">
+            <view class="graph adopt_list" wx:for="{{Adopt}}" wx:key="id">
                 <view class="list_item" bindtap="intoAdopt" data-id="{{item.id}}">
                     <image src="{{item.animal_src}}" class="item_pic"></image>
                     <view class="flex_wid">

@@ -58,10 +58,15 @@ App({
     onError: function(a) {},
     util: require("util/resource/js/util.js"),
     loginBindParent: function(a, t) {
+        console.log('～～～～～～loginBindParent分销接口～～～～～～～', a, t);
         var n = this;
-        void 0 != t && 0 != t && void 0 != a && 0 != a && n.bindParent(a, t);
+        if (t !== undefined && t !== 0 && a !== undefined && a !== 0) {
+            n.bindParent(a, t);
+        }
+        // void 0 != t && 0 != t && void 0 != a && 0 != a && n.bindParent(a, t);
     },
     bindParent: function(a, t) {
+        console.log('～～～～～～分销接口～～～～～～～');
         var n = this;
         void 0 == a && 0 == a || n.util.request({
             url: "entry/wxapp/class",
