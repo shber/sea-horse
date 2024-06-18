@@ -179,7 +179,7 @@ Page({
     },
     sureAnimal: function(a) {
         var t = this.data, i = t.aid, e = t.animalData, n = t.count;
-        t.is_limit || e.limit_purchase > 0 && parseInt(n) > e.limit_purchase ? wx.showToast({
+        t.is_limit && e.limit_purchase > 0 && parseInt(n) > e.limit_purchase ? wx.showToast({
             title: "该商品有限购" + e.limit_purchase + e.unit,
             icon: "none"
         }) : parseInt(n) > parseInt(e.count) ? wx.showToast({
