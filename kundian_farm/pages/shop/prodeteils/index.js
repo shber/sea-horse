@@ -189,7 +189,7 @@ Page({
         });
     },
     chooseNum: function(t) {
-        var o = t.detail.value;
+        var o = t.detail.value*1;
         o <= 1 ? this.setData({
             count: 1
         }) : this.setData({

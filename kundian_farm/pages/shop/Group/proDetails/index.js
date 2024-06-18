@@ -168,14 +168,14 @@ Page({
             }), this.setData({
                 count: 1
             })) : this.setData({
-                count: s
+                count: s*1
             });
         } else parseInt(s) > o.count ? (wx.showToast({
             title: "库存不足"
         }), this.setData({
             count: 1
         })) : this.setData({
-            count: s
+            count: s*1
         });
     },
     goHome: function(t) {

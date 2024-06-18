@@ -57,7 +57,7 @@ Page({
     },
     chooseNum: function(t) {
         this.setData({
-            count: t.detail.value
+            count: t.detail.value*1
         });
     },
     doExchange: function(t) {

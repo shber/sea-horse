@@ -62,7 +62,7 @@ checkbox .wx-checkbox-input{
 }
 .text-flex{display: flex; align-items: center;}
 .content{margin-top: 40rpx; color: #333;}
-.adopt_item_pic{width: 90rpx; height: 90rpx; border-radius: 10rpx; margin-right: 24rpx;}
+.adopt_item_pic{width: 90rpx; height: 90rpx; border-radius: 10rpx; margin-right: 24rpx; flex-shrink: 0;}
 
 .footer {
     width: 100%;

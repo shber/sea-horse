@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-06-18 10:45:58
+ * @LastEditTime: 2024-06-18 14:24:52
  * @Description: 
  */
 // var n = new getApp();
@@ -34,7 +34,7 @@ Page({
     this.getOrderData();
   },
   inputChange(e){
-    this.setData({stylePrice: e.detail.value})
+    this.setData({stylePrice: e.detail.value*1})
   },
   intoAdoptDetail: function(t) {
     var a = t.currentTarget.dataset.adoptid;
@@ -147,14 +147,6 @@ Page({
       count: parseInt(count) - 1
     });
   },
-  numInput(e){
-    var a = this.data, t = e.detail.value*1, itemcount = this.data.itemcount
-    if(parseInt(t) > itemcount){
-      return  wx.showToast({ title: "已超出可选数量", icon: "none" })
-   }else{
-       this.setData({count:e.detail.value*1})
-   }
-  },
   addNum() {
     let count = this.data.count
     let itemcount = this.data.itemcount
@@ -167,8 +159,8 @@ Page({
   },
   chooseNum(a) {
     let count = this.data.count
-    let itemcount = this.data.itemcount
-      if(a.detail.value > itemcount){
+    let itemcount = this.data.itemcount * 1
+      if(a.detail.value*1 > itemcount){
         wx.showToast({
           title: "已超出可选数量",
           icon: "none"

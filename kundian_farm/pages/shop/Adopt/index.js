@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-06-18 10:58:07
+ * @LastEditTime: 2024-06-18 14:25:15
  * @Description: 
  */
 // var n = new getApp();
@@ -112,7 +112,7 @@ Page({
   },
   chooseNum(a) {
     let count = this.data.count
-    let itemcount = this.data.itemcount
+    let itemcount = this.data.itemcount*1
     if(a.detail.value > itemcount){
       wx.showToast({
         title: "已超出可选数量",
@@ -123,7 +123,7 @@ Page({
       });
     }else{
       this.setData({
-        count: a.detail.value
+        count: a.detail.value *1
       });
     }
   },
