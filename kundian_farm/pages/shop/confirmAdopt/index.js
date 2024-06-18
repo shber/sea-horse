@@ -151,7 +151,9 @@ Page({
                                 wx.showToast({
                                     title: "您已支付成功",
                                     success: function() {
-                                        wx.navigateBack()
+                                        setTimeout(()=>{
+                                            wx.navigateBack()
+                                        }, 3000)
                                     }
                                 });
                                 return false
@@ -235,7 +237,6 @@ Page({
                                 });
                             }else{
                                 wx.showToast({ title: a.data.msg, icon: "error", });
-                            
                             }
                         }
                     });
