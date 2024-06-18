@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-06-18 14:24:52
+ * @LastEditTime: 2024-06-18 15:53:22
  * @Description: 
  */
 // var n = new getApp();
@@ -91,6 +91,7 @@ Page({
             success: function(res) {
               if(res.data.code == 1){
                 wx.showToast({ title: "取消成功", icon: "none" })
+                self.setData({animalData: []})
                 self.getOrderData()
                 self.setData({count:1,popupShow:false})
               }else{
@@ -181,7 +182,7 @@ Page({
     this.setData({
       itemData: item
     })
-    this.setData({count:1, popupShow:true})
+    this.setData({count:1, stylePrice:'', popupShow:true})
   },
   setPopupHide(){
     this.setData({popupShow:false})
