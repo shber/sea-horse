@@ -141,6 +141,14 @@ Page({
             count: this.data.count - 1
         });
     },
+    numInput(e){
+        var a = this.data, t =  e.detail.value*1, i = a.animalData;
+        if(parseInt(t) > i.count){
+           return  wx.showToast({ title: "库存不足", icon: "none" })
+        }else{
+            this.setData({count:e.detail.value*1})
+        }
+    },
     addNum: function() {
         var a = this.data, t = a.count, i = a.animalData;
         parseInt(t) + 1 > i.count ? wx.showToast({

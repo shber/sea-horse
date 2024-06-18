@@ -1,3 +1,10 @@
+<!--
+ * @Author: Shber
+ * @Date: 2019-08-23 19:19:22
+ * @LastEditors: Shber
+ * @LastEditTime: 2024-06-18 10:43:50
+ * @Description: 
+-->
 <import src="../../../../../wxParse/wxParse.wxml"></import>
 <view>
     <swiper autoplay="{{autoplay}}" circular="true" class="swiperS" duration="{{duration}}" indicatorActiveColor="{{farmSetData.background_color}}" indicatorColor="" indicatorDots="{{true}}" interval="{{interval}}">
@@ -56,7 +63,7 @@
             <view class="plt30 f32 cf93">数量:</view>
             <view class="flex plt30">
                 <view catchtap="reduceNum" class="clickNumLift ml50">-</view>
-                <input bindinput="chooseNum" class="chooseN" type="Number" value="{{count}}"></input>
+                <input bindinput="chooseNum" class="chooseN" type="number" bindinput="numInput" value="{{count}}"></input>
                 <view catchtap="addNum" class="clickNumRight">+</view>
             </view>
         </view>

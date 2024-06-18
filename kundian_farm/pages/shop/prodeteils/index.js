@@ -179,6 +179,9 @@ Page({
             count: this.data.count - 1
         });
     },
+    numInput(e){
+        this.setData({count:e.detail.value*1})
+      },
     addNum: function() {
         var t = parseInt(this.data.count) + 1;
         this.setData({

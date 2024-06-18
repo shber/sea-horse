@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-04-21 17:30:59
+ * @LastEditTime: 2024-06-18 10:45:41
  * @Description: 
  */
 // var n = new getApp();
@@ -91,6 +91,14 @@ Page({
     1 != count && this.setData({
       count: parseInt(count) - 1
     });
+  },
+  numInput(e){
+    var a = this.data, t = e.detail.value*1, itemcount = this.data.itemcount;
+    if(parseInt(t) > itemcount){
+      return  wx.showToast({ title: "已超出可选数量", icon: "none" })
+   }else{
+       this.setData({count:e.detail.value*1})
+   }
   },
   addNum() {
     let count = this.data.count

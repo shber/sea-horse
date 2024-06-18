@@ -18,7 +18,7 @@ Page({
         userName: "",
         userTel: "",
         state: !1,
-        rules: !0,
+        rules: 0,
         order_id: 0,
         iscostShow: !0,
         pay_text: "立即下单",

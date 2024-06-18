@@ -10,7 +10,7 @@ Page({
         userName: "",
         userTel: "",
         state: !1,
-        rules: !0,
+        rules: 0,
         totalPrice: 0,
         copyTotalPrice: 0,
         lands: [],

@@ -104,7 +104,7 @@
             <view class="plt30 f32 cf93">数量:</view>
             <view class="flex plt30">
                 <view catchtap="reduceNum" class="clickNumLift ml50">-</view>
-                <input bindinput="chooseNum" class="chooseN" type="Number" value="{{count}}"></input>
+                <input bindinput="chooseNum" class="chooseN" bindinput="numInput" type="Number" value="{{count}}"></input>
                 <view catchtap="addNum" class="clickNumRight">+</view>
             </view>
         </view>

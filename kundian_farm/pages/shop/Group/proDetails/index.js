@@ -123,6 +123,23 @@ Page({
             count: this.data.count - 1
         });
     },
+    numInput(e){
+       var t = this.data, a = t.specVal, e = e.detail.value*1, o = t.goodsData;
+       if (1 == o.is_open_sku) {
+           if ("" == a || 0 == a.length) return wx.showToast({
+               title: "请选择规格"
+           }), !1;
+           parseInt(e) + 1 > a.count ? wx.showToast({
+               title: "库存不足"
+           }) : this.setData({
+               count: e.detail.value*1
+           });
+       } else parseInt(e) + 1 > o.count ? wx.showToast({
+           title: "库存不足"
+       }) : this.setData({
+           count: e.detail.value*1
+       });
+      },
     addNum: function() {
         var t = this.data, a = t.specVal, e = t.count, o = t.goodsData;
         if (1 == o.is_open_sku) {

@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-05-10 14:11:07
+ * @LastEditTime: 2024-06-18 10:31:40
  * @Description: 
 -->
 <import src="../../../../wxParse/wxParse.wxml"></import>
@@ -68,7 +68,7 @@
           <text class="red_num">数量</text>
           <view class="selectedNum-wrapper">
               <view bindtap="reduceNum">-</view>
-              <input bindinput="chooseNum" type="number" value="{{count}}"></input>
+              <input bindinput="chooseNum" type="number" bindinput="numInput" value="{{count}}"></input>
               <view bindtap="addNum">+</view>
           </view>
       </view>
