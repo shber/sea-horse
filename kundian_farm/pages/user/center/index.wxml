@@ -2,7 +2,7 @@
  * @Author: Shber
  * @Date: 2023-09-13 18:48:16
  * @LastEditors: Shber
- * @LastEditTime: 2024-05-31 16:48:12
+ * @LastEditTime: 2024-06-19 10:27:39
  * @Description: 
 -->
 <view>
@@ -77,6 +77,16 @@
         </view>
         <image src="../../../images/new/ico_di_right.png" style="margin-right: 10rpx; width: 24rpx; height: 24rpx;"></image>
       </view>
+    </view>
+    <view class="shadow_card card2">
+      <view class="flex_center">
+        <button class="kefu flex_left" open-type="contact">
+          <image src="../../../images/new/kefu.png" style="margin-right: 10rpx; margin-top: -4rpx;" class="card_icon1"></image>
+          微信客服
+        </button>
+        <image src="../../../images/new/ico_di_right.png" style="margin-right: 10rpx; width: 24rpx; height: 24rpx;"></image>
+      </view>
+
     </view>
   </view>
 

@@ -37,6 +37,8 @@ page { font-size: 30rpx; background: #f8f8f9; }
 .my_title1::after{
     background-image: none !important;
 }
+.kefu{background-color: #fff; padding-left: 0; border: none; font-size: 30rpx; line-height: 38rpx; color: #333333; text-align: left;}
+.kefu::after{border: none;}
 
 
 
